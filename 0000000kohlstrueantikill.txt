@@ -465,7 +465,36 @@ end
 	end
 	end)
 	
-
+	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+	lplayer.Character.ChildAdded:Connect(function(monke)
+	if monke.Name == "ice" and monkeice == true then
+	players:Chat("thaw all")
+	end
+	end)
+	end)
+	end)
+	
+	chatted:Connect(function(msg)
+	if msg:match("//loopfling") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	for i,v in pairs(getplr(person)) do
+	local person = v.Name
+	_G.loopfling = true
+	while wait() and _G.loopexplode do
+	chicken:Chat("fling " ..person.. "")
+	end
+	end
+	end
+	end)
+	
+	chatted:Connect(function(msg)
+	if msg:match("//loopflingoff") then
+	_G.loopfling = false
+	end
+	end)
 	
 	--// Exploiter Protection Part 2 (Chat Command, //protection, put all new updates above this or they won't work)
 	while wait(0.3) and protectionalreadyrunning == false do
