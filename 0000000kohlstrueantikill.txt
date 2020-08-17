@@ -444,24 +444,8 @@ end
 	end
 	end)
 
-		
-	--// Ivl19 (removal, crashes server on sight of exploiter) ENEMY SPOTTED! PROCEED TO EMERGENCY PROTOCOL!
-	local baddiespotted = true
-	
-	while wait() do
-	if players:FindFirstChild("Ivl19") then
-	baddiespotted = true
-	else
-	baddiespotted = false
-	end
-	end
-	
-	while wait() and baddiespotted == true do
-	if players:FindFirstChild("Ivl19") then
-	players:Chat("reset all")
-	players:Chat("respawn all")
-	end
-	end
+	_G.exceptionalsadminfinishedloading = true
+
 	
 	--// Exploiter Protection Part 2 (Chat Command, //protection, put all new updates above this or they won't work)
 	while wait(0.3) and protectionalreadyrunning == false do
