@@ -237,6 +237,7 @@ end
 	wait()
 	chicken:Chat("gear " ..person.. " 97885508")
 	chicken:Chat("gear " ..person.. " 16924676")
+	chicken:Chat("gear " ..person.. " 106064315")
 	end
 	end
 	end)
@@ -464,7 +465,6 @@ end
 	end
 	end)
 	
-	_G.exceptionalsadminfinishedloading = true
 
 	
 	--// Exploiter Protection Part 2 (Chat Command, //protection, put all new updates above this or they won't work)
