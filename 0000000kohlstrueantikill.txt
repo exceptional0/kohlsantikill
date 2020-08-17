@@ -20,6 +20,8 @@
 		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: Exploiter Protection (Chat Command, //protection, stops most lag from other exploiters from lagging you)
+		17: Loopfling (Chat Command, //loopfling, on,off)
+		18: AntiFreeze (Chat Command, Possibly Broken, //antifreeze, //antifreezeoff)
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
@@ -46,6 +48,9 @@
 	"shiftlock" (broken shiftlock for all, read #14 for more info)
 	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
 	"protection" (Stops other exploiters from lagging you with :tlag, and probably any other form of lag not explosion ect)
+	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
+	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
+	"antifreeze" (stops you from being frozen by thawing *everyone* once you are frozen)
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
