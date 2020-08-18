@@ -436,6 +436,34 @@ end
 	end
 	end)
 	
+	--// EverythingIsMagenta (chat command, //everythingismagenta)
+	chatted:Connect(function(msg)
+	if msg:match("//everythingismagenta") then
+	local splitstring = string.split(msg, " ")
+	local person = splitstring[2]
+	game.Players:Chat("gear me 18474459")
+	wait(0.1)
+	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
+	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
+	wait(0.6)
+	local a = workspace:GetDescendants()
+	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local ColorSelection = BrickColor.new("Magenta").Color
+	for i, v in pairs(a) do
+	if v:IsA("BasePart") then
+	local Data = {}
+	Data.Part = v
+	Data.Color = ColorSelection
+	local A_1 = "PaintPart"
+	local A_2 = Data
+	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	event:InvokeServer(A_1, A_2)
+	end
+	end
+	end
+	end)
+	
 	--// Exploiter Protection (Chat Command, //protection)
 	chatted:Connect(function(msg)
 	if msg:match("//protection") then
