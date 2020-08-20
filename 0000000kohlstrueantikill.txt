@@ -51,6 +51,7 @@
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
 	"antifreeze" (stops you from being frozen by thawing *everyone* once you are frozen)
+	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -243,6 +244,7 @@ end
 	chicken:Chat("gear " ..person.. " 97885508")
 	chicken:Chat("gear " ..person.. " 16924676")
 	chicken:Chat("gear " ..person.. " 106064315")
+	chicken:Chat("gear " ..person.. " 77443461")
 	end
 	end
 	end)
