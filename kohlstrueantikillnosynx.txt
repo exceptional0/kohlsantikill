@@ -1,8 +1,3 @@
-	--[[
-	More Cmds (OofKohls v2) prefix: ":"
-	--]]
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
-	
 	print([[script:
 		1: Anti Spam Kill (First Execute)
 		2: Anti Spam Kill (On Death Restart)
@@ -227,33 +222,7 @@ end
 	end
 	end)
 	
-	--// Get Admin (Chat Command, //requestadmin)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:lower() == "//requestadmin" then
-	    local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
-    for i,v in pairs(path:GetChildren()) do
-        if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
-            for x,y in pairs(path:GetDescendants()) do
-                if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
-                    wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
-                end
-            end
-        elseif not v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
-            fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector)
-            wait()
-            for x,y in pairs(path:GetDescendants()) do
-                if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
-                    wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
-                end
-            end
-            end
-    end
-	end
-	end)
+
 	
 	
 	--// Loopkill (on)
