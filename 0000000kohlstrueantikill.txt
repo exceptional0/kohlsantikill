@@ -496,14 +496,14 @@ end
 	
 	chatted:Connect(function(msg)
 	if msg:match("//shiftcrash") then
+	local prefix = ":"
+	
 	players:Chat("gear all 4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
-	if lplayer.Character:FindFirstChild("AR") then
 	lplayer.Character.AR.Parent = lplayer.Backpack
-	end
-	wait(1)
+	wait(0.5)
 	for i=1,3 do
 	game.Players:Chat(prefix.. "size all 0.3")
 	wait(0.2)
