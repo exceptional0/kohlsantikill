@@ -464,6 +464,8 @@ end
 	players:Chat("size " ..person.. " 2")
 	players:Chat("size " ..person.. " 2")
 	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
 	end
 	end
 	end)
