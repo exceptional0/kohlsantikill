@@ -12,15 +12,15 @@
 		6: More Cmds (OofKohls v2) prefix: ":"
 		7: findname (reviz admin/timeless/xfunnieuss/oofkohlsv2) used in gear pack
 		8: Get Admin (Chat Command, //requestadmin)
-		9: Loopkill (on,off)
-		10: Loopexplode (on,off and respawn)
+		9: Loopkill (on,off, lkill)
+		10: Loopexplode (on,off and respawn, lexplode)
 		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure [player])
 		12: Weldthing (Chat Command, //weldthing [player]) (broken will probably not fix and remove later)
 		13: Improve Day (Chat Command, //improveday, visual improvement, looks best with everything default colors (house ect))
 		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
-		17: Loopfling (Chat Command, //loopfling, on,off)
+		17: Loopfling (Chat Command, //lfling, on,off)
 		18: b o x
 	--
 
