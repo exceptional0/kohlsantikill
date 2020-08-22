@@ -12,15 +12,15 @@
 		6: More Cmds (OofKohls v2) prefix: ":"
 		7: findname (reviz admin/timeless/xfunnieuss/oofkohlsv2) used in gear pack
 		8: Get Admin (Chat Command, //requestadmin)
-		9: Loopkill (on,off)
-		10: Loopexplode (on,off and respawn)
+		9: Loopkill (on,off, lkill)
+		10: Loopexplode (on,off and respawn, lexplode)
 		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure [player])
 		12: Weldthing (Chat Command, //weldthing [player]) (broken will probably not fix and remove later)
 		13: Improve Day (Chat Command, //improveday, visual improvement, looks best with everything default colors (house ect))
 		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
-		17: Loopfling (Chat Command, //loopfling, on,off)
+		17: Loopfling (Chat Command, //lfling, on,off)
 		18: b o x
 	--
 
@@ -42,16 +42,16 @@
 	"mshiftcrash" (gives everyone shiftlock and then says "meanie!" in ":h" and crashes the server)
 	"gearpack" (gives you incredibly overpowered gears)
 	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
-	"loopkill [player]" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
+	"lkill [player]" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
 	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
-	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
+	"lexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
 	"loopexplodeoff" (disables loopexplode for all players, no i will not make it disable for one player)
 	"weldthing [player]" [BROKEN] (attempt at automating a weld glitch, complete fail.)
 	"improveday" (visual improvement, looks best with default everything colors)
 	"shiftlock" (broken shiftlock for all, read #14 for more info)
 	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
 	deleted, deleted command: protection, protects you from exploiters
-	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
+	"lfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
 	"box [player]"
@@ -259,7 +259,7 @@ end
             end
             end
 	end
-	elseif msg:match("//loopkill") then
+	elseif msg:match("//lkill") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -290,7 +290,7 @@ end
 	wait(2)
 	chicken:Chat("explode " ..person.. "")
 	end
-	elseif msg:match("//loopexplode") then
+	elseif msg:lower("//lexplode") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -304,9 +304,6 @@ end
 	end
 	end
 	elseif msg:match("//loopexplodeoff") then
-	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local person = splitstring[2]
 	_G.loopexplode = false
 	elseif msg:match("//improveday") then
 	local splitstring = string.split(msg, " ")
@@ -431,7 +428,7 @@ end
 	end
 	game.Players:Chat(prefix.. "clone all")
 	wait(0.2)
-	elseif msg:match("//loopfling") then
+	elseif msg:match("//lfling") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
