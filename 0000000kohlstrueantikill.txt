@@ -21,7 +21,6 @@
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
 		17: Loopfling (Chat Command, //loopfling, on,off)
-		18: AntiFreeze (Chat Command, Possibly Broken, //antifreeze, //antifreezeoff)
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
@@ -53,7 +52,6 @@
 	deleted, deleted command: protection, protects you from exploiters
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
-	"antifreeze" (stops you from being frozen by thawing *everyone* once you are frozen)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
 	
 	Gamepass Commands:
@@ -104,9 +102,6 @@
 	
 	--// locals setup 
 	local trueantikill = true
-	local protection = false
-	local protectionalreadyrunning = false
-	local monkeice = false
 	
 	--//findname
 function getplr(String) -- Credit to Timeless/xFunnieuss/reviz admin/oofkohls v2
@@ -538,34 +533,4 @@ end
 	if msg:match("//loopflingoff") then
 	_G.loopfling = false
 	end
-	end)
-	
-	--// AntiFreeze (Chat Command, //antifreeze)
-	chatted:Connect(function(msg)
-	if msg:match("//antifreeze") then
-	local splitstring = string.split(msg, " ")
-	local person = splitstring[2]
-	if monkeice == true then
-	monkeice = false
-	else
-	monkeice = true
-	end
-	end
-	end)
-	
-	--// AntiFreeze (Chat Command, //antifreeze)
-	lplayer.Character.ChildAdded:Connect(function(monke)
-	if monke.Name == "ice" and monkeice == true then
-	players:Chat("thaw all")
-	end
-	end)
-	
-	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
-	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
-	lplayer.Character.ChildAdded:Connect(function(monke)
-	if monke.Name == "ice" and monkeice == true then
-	players:Chat("thaw all")
-	end
-	end)
-	end)
 	end)
