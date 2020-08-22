@@ -434,7 +434,7 @@ end
 	local person = v.Name
 	_G.loopexplode = true
 	while wait() and _G.loopexplode do
-	chicken:Chat("fling " ..person.. "")
+	chicken:Chat("explode " ..person.. "")
 	end
 	end
 	elseif msg:match("//loopkill") then
@@ -445,7 +445,7 @@ end
 	local person = v.Name
 	_G.loopkill = true
 	while wait() and _G.loopkill do
-	chicken:Chat("fling " ..person.. "")
+	chicken:Chat("kill " ..person.. "")
 	end
 	end
 	elseif msg:match("//loopfling") then
