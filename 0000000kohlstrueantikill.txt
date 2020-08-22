@@ -342,6 +342,7 @@ end
 	end
 	end)
 	
+	wait(1)
 	
 	--// loopexplode (off)
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
@@ -366,6 +367,7 @@ end
 	end
 	end)
 
+	wait(0.3)
 	
 	--// Break Server (broken permanent shiftlock //shiftlock)
 	chatted:Connect(function(msg)
@@ -534,3 +536,5 @@ end
 	_G.loopfling = false
 	end
 	end)
+	
+	print("admin ready!")
