@@ -21,7 +21,7 @@
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
 		17: Loopfling (Chat Command, //loopfling, on,off)
-		18: AntiFreeze (Chat Command, Possibly Broken, //antifreeze, //antifreezeoff)
+		18: b o x
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
@@ -53,8 +53,8 @@
 	deleted, deleted command: protection, protects you from exploiters
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
-	"antifreeze" (stops you from being frozen by thawing *everyone* once you are frozen)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
+	"box [player]"
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -104,9 +104,6 @@
 	
 	--// locals setup 
 	local trueantikill = true
-	local protection = false
-	local protectionalreadyrunning = false
-	local monkeice = false
 	
 	--//findname
 function getplr(String) -- Credit to Timeless/xFunnieuss/reviz admin/oofkohls v2
@@ -194,13 +191,7 @@ end
 	else
 	trueantikill = false
 	end
-	end
-	end)
-	
-	
-	--// Crash Server (Chat Command, //crashserver)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:lower() == "//crashserver" then
+	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
 
 	for i=1,3 do
@@ -215,12 +206,7 @@ end
 	end
 	game.Players:Chat(prefix.. "clone all")
 	wait(0.2)
-	end
-	end)
-	
-	--// Gear Pack (Chat Command, //gearpack)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//gearpack") then
+	elseif msg:match("//gearpack") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -250,13 +236,8 @@ end
 	chicken:Chat("gear " ..person.. " 77443461")
 	chicken:Chat("gear " ..person.. " 80576967")
 	end
-	end
-	end)
-	
-	--// Get Admin (Chat Command, //requestadmin)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:lower() == "//requestadmin" then
-	    local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
+	elseif msg:match("//requestadmin") then
+	   local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
             for x,y in pairs(path:GetDescendants()) do
@@ -277,14 +258,8 @@ end
                 end
             end
             end
-    end
 	end
-	end)
-	
-	
-	--// Loopkill (on)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//loopkill") then
+	elseif msg:match("//loopkill") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -295,23 +270,13 @@ end
 	chicken:Chat("kill " ..person.. "")
 	end
 	end
-	end
-	end)
-	
-	
-	--// Loopkill (off)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//loopkilloff") then
+	elseif msg:match("//loopkilloff") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	_G.loopkill = false
-	end
-	end)
 	
-	--// rocket failure (prisoner299's admin gamepass needed)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//rocketfailure") then
+	elseif msg:match("//rocketfailure") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -325,13 +290,7 @@ end
 	wait(2)
 	chicken:Chat("explode " ..person.. "")
 	end
-	end
-	end)
-
-
-	--//loopexplode (and respawn)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//loopexplode") then
+	elseif msg:match("//loopexplode") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -344,23 +303,9 @@ end
 	chicken:Chat("respawn " ..person.. "")
 	end
 	end
-	end
-	end)
-	
-	
-	--// loopexplode (off)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//loopexplodeoff") then
-	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local person = splitstring[2]
+	elseif msg:match("//loopexplodeoff") then
 	_G.loopexplode = false
-	end
-	end)
-	
-	--// Improve Day (visual improvement)
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
-	if msg:match("//improveday") then
+	elseif msg:match("//improveday") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -368,13 +313,7 @@ end
 	wait()
 	chicken:Chat("colorshifttop 600 400 0")
 	chicken:Chat("colorshiftbottom 600 400 0")
-	end
-	end)
-
-	
-	--// Break Server (broken permanent shiftlock //shiftlock)
-	chatted:Connect(function(msg)
-	if msg:match("//shiftlock") then
+	elseif msg:match("//shiftlock") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
 	players:Chat("gear all 4842207161")
@@ -384,12 +323,7 @@ end
 	if lplayer.Character:FindFirstChild("AR") then
 	lplayer.Character.AR.Parent = lplayer.Backpack
 	end
-	end
-	end)
-	
-	--// paint all red (looks well with black colored baseplate and purple colored grass under house, someone commented this looks like hell)
-	chatted:Connect(function(msg)
-	if msg:match("//everythingisred") then
+	elseif msg:match("//everythingisred") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
 	game.Players:Chat("gear me 18474459")
@@ -412,12 +346,7 @@ end
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	end
-	end)
-	
-	--// EverythingIsMagenta (chat command, //everythingismagenta)
-	chatted:Connect(function(msg)
-	if msg:match("//everythingismagenta") then
+	elseif msg:match("//everythingismagenta") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
 	game.Players:Chat("gear me 18474459")
@@ -440,14 +369,7 @@ end
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	end
-	end)
-	
-
-	
-	
-	chatted:Connect(function(msg)
-	if msg:match("//mcrashserver") then
+	elseif msg:match("//mcrashserver") then
 	local prefix = ":"
 	
 	players:Chat("h meanie!")
@@ -463,13 +385,7 @@ end
 	end
 	game.Players:Chat(prefix.. "clone all")
 	wait(0.2)
-	end
-	end)
-	
-	wait(0.5)
-	
-	chatted:Connect(function(msg)
-	if msg:match("//mshiftcrash") then
+	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
 	players:Chat("gear all 4842207161")
@@ -491,19 +407,15 @@ end
 	end
 	game.Players:Chat(prefix.. "clone all")
 	wait(0.2)
-	end
-	end)
+	elseif msg:match("//shiftcrash") then
+	local prefix = ":"
 	
-	chatted:Connect(function(msg)
-	if msg:match("//shiftcrash") then
 	players:Chat("gear all 4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
-	if lplayer.Character:FindFirstChild("AR") then
 	lplayer.Character.AR.Parent = lplayer.Backpack
-	end
-	wait(1)
+	wait(0.5)
 	for i=1,3 do
 	game.Players:Chat(prefix.. "size all 0.3")
 	wait(0.2)
@@ -516,11 +428,7 @@ end
 	end
 	game.Players:Chat(prefix.. "clone all")
 	wait(0.2)
-	end
-	end)
-	
-	chatted:Connect(function(msg)
-	if msg:match("//loopfling") then
+	elseif msg:match("//loopfling") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
@@ -531,41 +439,32 @@ end
 	chicken:Chat("fling " ..person.. "")
 	end
 	end
-	end
-	end)
-	
-	chatted:Connect(function(msg)
-	if msg:match("//loopflingoff") then
+	elseif msg:match("//loopflingoff") then
 	_G.loopfling = false
-	end
-	end)
-	
-	--// AntiFreeze (Chat Command, //antifreeze)
-	chatted:Connect(function(msg)
-	if msg:match("//antifreeze") then
+	elseif msg:match("//box") then
 	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
 	local person = splitstring[2]
-	if monkeice == true then
-	monkeice = false
-	else
-	monkeice = true
+	for i,v in pairs(getplr(person)) do
+	local person = v.Name
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 1.5")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
 	end
 	end
 	end)
 	
-	--// AntiFreeze (Chat Command, //antifreeze)
-	lplayer.Character.ChildAdded:Connect(function(monke)
-	if monke.Name == "ice" and monkeice == true then
-	players:Chat("thaw all")
-	end
-	end)
-	
-	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
-	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
-	lplayer.Character.ChildAdded:Connect(function(monke)
-	if monke.Name == "ice" and monkeice == true then
-	players:Chat("thaw all")
-	end
-	end)
-	end)
-	end)
+	print("admin ready!")
