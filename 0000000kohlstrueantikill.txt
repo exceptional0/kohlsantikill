@@ -422,7 +422,7 @@ end
 	end
 	end
 	end)
-	wait(0.4)
+	wait(2)
 	
 	--// loop commands (enable)
 	chatted:Connect(function(msg)
@@ -462,6 +462,8 @@ end
 	end
 	end)
 	
+	wait(1)
+	
 	--// loop commands (disable)
 	chatted:Connect(function(msg)
 	if msg:match("//loopexplodeoff") then
@@ -472,4 +474,5 @@ end
 	_G.loopfling = false
 	end
 	end)
+	
 	print("admin ready!")
