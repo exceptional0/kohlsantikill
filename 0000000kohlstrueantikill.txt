@@ -22,6 +22,7 @@
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
 		17: Loopfling (Chat Command, //loopfling, on,off)
+		18: b o x
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
@@ -54,6 +55,7 @@
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
+	"box [player]"
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
