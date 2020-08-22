@@ -2,7 +2,6 @@
 	More Cmds (OofKohls v2) prefix: ":"
 	--]]
 	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
-	wait(0.3)
 	
 	print([[script:
 		1: Anti Spam Kill (First Execute)
