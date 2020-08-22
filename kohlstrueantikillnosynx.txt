@@ -6,7 +6,7 @@
 		5: Gear Pack ([UPDATED], Chat Command, //gearpack [player]) 
 		6: More Cmds (OofKohls v2) prefix: ":"
 		7: findname (reviz admin/timeless/xfunnieuss/oofkohlsv2) used in gear pack
-		8: Get Admin (Chat Command, //requestadmin)
+		deleted since no synapse
 		9: Loopkill (on,off)
 		10: Loopexplode (on,off and respawn)
 		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure [player])
@@ -36,7 +36,7 @@
 	"shiftcrash" (gives everyone shiftlock and then crashes the server)
 	"mshiftcrash" (gives everyone shiftlock and then says "meanie!" in ":h" and crashes the server)
 	"gearpack" (gives you incredibly overpowered gears)
-	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
+	deleted since no synapse
 	"loopkill [player]" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
 	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
 	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
