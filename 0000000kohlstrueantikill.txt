@@ -1,4 +1,10 @@
-	print([[script:
+	--[[
+	More Cmds (OofKohls v2) prefix: ":"
+	--]]
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
+
+		print([[
+		script:
 		1: Anti Spam Kill (First Execute)
 		2: Anti Spam Kill (On Death Restart)
 		3: Toggle Anti Spam Kill (Chat Command, //trueantikill)
@@ -20,7 +26,7 @@
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
-	--"crashserver","tlag","loopexplode","partspam"
+	--["crashserver","tlag","loopexplode","partspam"]
 	--requestadmin will always work as long as you are alive and these parts exist: regen button, admin pads.
 
 	--
@@ -470,9 +476,6 @@ end
 	end
 	end)
 	
-	--[[
-	More Cmds (OofKohls v2) prefix: ":"
-	--]]
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
+
 	
 	print("admin ready!")
