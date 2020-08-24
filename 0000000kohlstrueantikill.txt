@@ -1,8 +1,3 @@
-	--[[
-	More Cmds (OofKohls v2) prefix: ":"
-	--]]
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
-	
 	print([[script:
 		1: Anti Spam Kill (First Execute)
 		2: Anti Spam Kill (On Death Restart)
@@ -73,8 +68,9 @@
 	local lplayer = players.LocalPlayer
 	local chatted = lplayer.Chatted
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
+	local market = game:GetService("MarketplaceService")
 	
-	if not game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
+	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
@@ -435,6 +431,7 @@ end
 	_G.loopexplode = true
 	while wait() and _G.loopexplode do
 	chicken:Chat("explode " ..person.. "")
+	chicken:Chat("respawn " ..person.. "")
 	end
 	end
 	elseif msg:match("//loopkill") then
@@ -475,4 +472,7 @@ end
 	end
 	end)
 	
+	--oofkohls v2 by stefanuk12
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
+
 	print("admin ready!")
