@@ -3,16 +3,16 @@
 		2: Anti Spam Kill (On Death Restart)
 		3: Toggle Anti Spam Kill (Chat Command, //trueantikill)
 		4: Crash Server (Chat Command, //crashserver)
-		5: Gear Pack ([UPDATED], Chat Command, //gearpack [player]) 
+		5: Gear Pack (UPDATED, Chat Command, //gearpack player) 
 		6: More Cmds (OofKohls v2) prefix: ":"
 		7: findname (reviz admin/timeless/xfunnieuss/oofkohlsv2) used in gear pack
 		8: Get Admin (Chat Command, //requestadmin)
 		9: Loopkill (on,off)
 		10: Loopexplode (on,off and respawn)
-		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure [player])
-		12: Weldthing (Chat Command, //weldthing [player]) (broken will probably not fix and remove later)
+		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure player)
+		12: Weldthing (Chat Command, //weldthing player) (broken will probably not fix and remove later)
 		13: Improve Day (Chat Command, //improveday, visual improvement, looks best with everything default colors (house ect))
-		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
+		14: Break Server (Chat Command, NOT CRASH, //shiftlock, gives people a broken camera on some condition(?) or on execute)
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
 		16: deleted
 		17: Loopfling (Chat Command, //loopfling, on,off)
@@ -20,7 +20,7 @@
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
-	--["crashserver","tlag","loopexplode","partspam"]
+	--"crashserver","tlag","loopexplode","partspam"
 	--requestadmin will always work as long as you are alive and these parts exist: regen button, admin pads.
 
 	--
@@ -37,11 +37,11 @@
 	"mshiftcrash" (gives everyone shiftlock and then says "meanie!" in ":h" and crashes the server)
 	"gearpack" (gives you incredibly overpowered gears)
 	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
-	"loopkill [player]" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
+	"loopkill player" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
 	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
-	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
+	"loopexplode player" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
 	"loopexplodeoff" (disables loopexplode for all players, no i will not make it disable for one player)
-	"weldthing [player]" [BROKEN] (attempt at automating a weld glitch, complete fail.)
+	"weldthing player" BROKEN (attempt at automating a weld glitch, complete fail.)
 	"improveday" (visual improvement, looks best with default everything colors)
 	"shiftlock" (broken shiftlock for all, read #14 for more info)
 	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
@@ -49,17 +49,17 @@
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
-	"box [player]"
+	"box player"
 	
 	Gamepass Commands:
-	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
+	"rocketfailure player" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
 	
 	OofKohls v2 Some-Of-Its-Cmds:
 	"antipunish" (obviously, keeps you from being punished)
 	"antiblind" (obviously, keeps you from being blinded)
 	"antikill" (obviously unneeded, keeps you from being killed via reset, script automatically does something better)
 	"antijail" (obviously, stops you from being jailed, removes all jails not just yours when you are jailed)
-	"tlag [player]" (attempts to crash the player via private message)
+	"tlag player" (attempts to crash the player via private message)
 	"partspam" (prisoner299's admin gamepass needed, will spam parts sized 10)
 	"xcmds" (for more info on OofKohls v2's Commands)
 	--]])
