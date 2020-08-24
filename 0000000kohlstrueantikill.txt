@@ -1,8 +1,3 @@
-	--[[
-	More Cmds (OofKohls v2) prefix: ":"
-	--]]
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
-	
 	print([[script:
 		1: Anti Spam Kill (First Execute)
 		2: Anti Spam Kill (On Death Restart)
@@ -474,5 +469,10 @@ end
 	_G.loopfling = false
 	end
 	end)
+	
+	--[[
+	More Cmds (OofKohls v2) prefix: ":"
+	--]]
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
 	
 	print("admin ready!")
