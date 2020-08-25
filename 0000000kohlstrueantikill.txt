@@ -460,11 +460,7 @@ end
 	end
 	end
 	elseif msg:match("//crowdcontrol") then
-	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
-	local person = splitstring[2]
-	for i,v in pairs(getplr(person)) do
-	local person = v.Name
 	_G.crowdcontrol = true
 	while wait() and _G.crowdcontrol do
 	chicken:Chat("reset others")
