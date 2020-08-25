@@ -467,7 +467,6 @@ end
 	chicken:Chat("tp others me")
 	end
 	end
-	end
 	end)
 	
 	wait(1)
