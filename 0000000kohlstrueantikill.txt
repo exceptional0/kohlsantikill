@@ -470,6 +470,8 @@ end
 	chicken:Chat("reset others")
 	chicken:Chat("tp others me")
 	end
+	end
+	end
 	end)
 	
 	wait(1)
