@@ -470,8 +470,8 @@ end
 	end
 	elseif msg:match("//protection") then
 	local chicken = game:GetService("Players")
-	_G.exploiterprotec = true
-	while wait(1) and _G.exploiterprotec do
+	_G.exploiterprotection = true
+	while wait(1) and _G.exploiterprotection do
 	chicken:Chat("reset me")
 	end
 	end
@@ -489,8 +489,8 @@ end
 	_G.loopfling = false
 	elseif msg:match("//freedom") then
 	_G.crowdcontrol = false
-	elseif msg:match("//protectionoff") then
-	_G.exploiterprotec = false
+	elseif msg:match("//protectoff") then
+	_G.exploiterprotection = false
 	end
 	end)
 	
