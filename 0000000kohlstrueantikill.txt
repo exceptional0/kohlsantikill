@@ -49,7 +49,7 @@
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
 	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
 	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
-	"box [player]" B E C O M E O N E W I T H T H E B O X G O D S J O I N U S.
+	"box [player]" (it turns you into a box what else did you expect? medium chance of not working when you do all or others)
 	"crowdcontrol" (automatically resets everyone and tps them to you)
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
 	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
