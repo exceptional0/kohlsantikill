@@ -14,7 +14,7 @@
 		13: Improve Day (Chat Command, //improveday, visual improvement, looks best with everything default colors (house ect))
 		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
 		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
-		16: deleted
+		16: Exploiter Protection (Chat Command, //protection, //protectionoff, stops you from being lagged)
 		17: Loopfling (Chat Command, //loopfling, on,off)
 		18: b o x
 	--
@@ -52,6 +52,8 @@
 	"box [player]" B E C O M E O N E W I T H T H E B O X G O D S J O I N U S.
 	"crowdcontrol" (automatically resets everyone and tps them to you)
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
+	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
+	"protectionoff" (disables exploiter protection, see command above this for more info)
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -466,6 +468,12 @@ end
 	chicken:Chat("reset others")
 	chicken:Chat("tp others me")
 	end
+	elseif msg:match("//protection") then
+	local chicken = game:GetService("Players")
+	_G.exploiterprotec = true
+	while wait(1) and _G.exploiterprotec do
+	chicken:Chat("reset me")
+	end
 	end
 	end)
 	
@@ -481,6 +489,8 @@ end
 	_G.loopfling = false
 	elseif msg:match("//freedom") then
 	_G.crowdcontrol = false
+	elseif msg:match("//protectionoff") then
+	_G.exploiterprotec = false
 	end
 	end)
 	
