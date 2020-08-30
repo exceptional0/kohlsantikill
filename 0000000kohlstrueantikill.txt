@@ -237,6 +237,16 @@ end
 	chicken:Chat("gear " ..person.. " 77443461")
 	chicken:Chat("gear " ..person.. " 80576967")
 	chicken:Chat("gear " ..person.. " 60357972")
+	chicken:Chat("gear " ..person.. " 61459706")
+	wait(0.3)
+	chicken:Chat("gear " ..person.. " 61459706")
+	chicken:Chat("gear " ..person.. " 61459706")
+	chicken:Chat("gear " ..person.. " 61459706")
+	wait(0.2)
+	chicken:Chat("gear " ..person.. " 188644771")
+	chicken:Chat("gear " ..person.. " 188644771")
+	chicken:Chat("gear " ..person.. " 188644771")
+	chicken:Chat("gear " ..person.. " 188644771")
 	end
 	elseif msg:match("//requestadmin") then
 	   local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
