@@ -55,10 +55,14 @@
 	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
 	"protectionoff" (disables exploiter protection, see command above this for more info)
 	"nlag" (lags a player using pm)
-	
+	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
+
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
 	"pmlag [player]" (does //nlag but better prisoners299 admin needed)
+	
+	Untested:
+	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
 	--]])
 	
 	local players = game:GetService("Players")
@@ -67,8 +71,14 @@
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
 	local market = game:GetService("MarketplaceService")
 	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
-	--from oofkohlsv2 ^
+	--lagtext and anti lava blocks is from oofkohlsv2
 	
+	-- // Anti Lava Blocks from oofkohlsv2
+	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
+    if v:IsA("TouchTransmitter") then
+    v:Destroy()
+    end
+	end
 	
 	--// gamepass autogive admin
 	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
