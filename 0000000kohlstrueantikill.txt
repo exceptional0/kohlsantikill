@@ -53,7 +53,7 @@
 	"crowdcontrol" (automatically resets everyone and tps them to you)
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
 	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
-	"protectionoff" (disables exploiter protection, see command above this for more info)
+	"protectoff" (disables exploiter protection, see command above this for more info)
 	"nlag" (lags a player using pm)
 	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
 
