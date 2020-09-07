@@ -160,7 +160,31 @@ end
 	game:GetService("Players"):Chat("ff me")
 	end
 	end)
-
+	
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+    if trueantikill == true then 
+	
+	game:GetService("Players"):Chat("reset me")
+	
+	wait(0.2)
+	
+	game:GetService("Players"):Chat("god me")
+	game:GetService("Players"):Chat("ff me")
+	
+	
+	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	if egg == "Health" and trueantikill == true then
+	game:GetService("Players"):Chat("god me")
+	end
+	end)
+	
+	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	if Object:IsA("ForceField") and trueantikill == true then
+	game:GetService("Players"):Chat("ff me")
+	end
+	end)
+	end
+	end)
 
 	--// Anti Spam Kill (On Death Restart)
 	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
