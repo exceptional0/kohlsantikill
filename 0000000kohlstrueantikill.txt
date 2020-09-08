@@ -1,5 +1,8 @@
 	print([[
 	Changelog:
+	9/8/2020
+	edited gearpack and removed some of the bad gears and replaced it with good ones
+	
 	9/7/2020
 	added "//giveantikill [player]" and "//removeantikill [player]", added a changelog
 	
@@ -266,13 +269,9 @@ end
 	chicken:Chat("gear " ..person.. " 61459706")
 	wait(0.3)
 	chicken:Chat("gear " ..person.. " 61459706")
-	chicken:Chat("gear " ..person.. " 61459706")
-	chicken:Chat("gear " ..person.. " 61459706")
-	wait(0.2)
-	chicken:Chat("gear " ..person.. " 188644771")
-	chicken:Chat("gear " ..person.. " 188644771")
-	chicken:Chat("gear " ..person.. " 188644771")
-	chicken:Chat("gear " ..person.. " 188644771")
+	chicken:Chat("gear " ..person.. " 82357101")
+	chicken:Chat("gear " ..person.. " 82357123")
+	chicken:Chat("gear " ..person.. " 139577901")
 	end
 	elseif msg:match("//requestadmin") then
 	   local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
