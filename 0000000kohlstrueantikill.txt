@@ -1,70 +1,63 @@
-	print([[script:
-		1: Anti Spam Kill (First Execute)
-		2: Anti Spam Kill (On Death Restart)
-		3: Toggle Anti Spam Kill (Chat Command, //trueantikill)
-		4: Crash Server (Chat Command, //crashserver)
-		5: Gear Pack ([UPDATED], Chat Command, //gearpack [player]) 
-		6: More Cmds (OofKohls v2) prefix: ":"
-		7: findname (reviz admin/timeless/xfunnieuss/oofkohlsv2) used in gear pack
-		8: Get Admin (Chat Command, //requestadmin)
-		9: Loopkill (on,off)
-		10: Loopexplode (on,off and respawn)
-		11: Rocket Failure (Chat Command, Prisoners299 Admin Gamepass Needed, //rocketfailure [player])
-		12: Weldthing (Chat Command, //weldthing [player]) (broken will probably not fix and remove later)
-		13: Improve Day (Chat Command, //improveday, visual improvement, looks best with everything default colors (house ect))
-		14: Break Server (Chat Command, [NOT CRASH], //shiftlock, gives people a broken camera on some condition(?) or on execute)
-		15: EverythingIsRed (Chat Command, //everythingisred, paints everything red)
-		16: Exploiter Protection (Chat Command, //protection, //protectionoff, stops you from being lagged)
-		17: Loopfling (Chat Command, //loopfling, on,off)
-		18: b o x
+	print([[
+	Changelog:
+	9/7/2020
+	added "//giveantikill [player]" and "//removeantikill [player]", added a changelog
+	
+	9/6/2020
+	removed oofkohls v2 and added "nlag [player]" (no gamepass) and "pmlag [player]" (better, gamepass needed)
 	--
 
 	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
 	--["crashserver","tlag","loopexplode","partspam"]
 	--requestadmin will always work as long as you are alive and these parts exist: regen button, admin pads.
-
 	--
+	--
+	
+	
 	
 	Help:
 	Prefix: "//"
-	OofPrefix: ":"
+	
+	dm exceptional#8287 if there are any problems or suggestions
 	
 	Cmds:
-	"trueantikill" (enabled by default, disables on first use, dm exceptional#8287 if trueantikill does not work for you)
+	"trueantikill" (enabled by default, disables on first use)
 	"crashserver" (sometimes the server won't crash, but it'll still freeze for long enough for some or all people to leave)
 	"mcrashserver" (does what crashserver does but says "meanie!" in ":h" before crashing)
-	"shiftcrash" (gives everyone shiftlock and then crashes the server)
-	"mshiftcrash" (gives everyone shiftlock and then says "meanie!" in ":h" and crashes the server)
+	"shiftcrash" (gives everyone a broken camera and then crashes the server)
+	"mshiftcrash" (gives everyone a broken camera and then says "meanie!" in ":h" and crashes the server)
 	"gearpack" (gives you incredibly overpowered gears)
 	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
-	"loopkill [player]" (automatically kills the specified player every "wait(1)", good for using when you don't want to break antikill but want to punish a player)
+	"loopkill [player]" (automatically kills the specified player every wait(1))
 	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
-	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices mix with tlag for intense punishment but they're better separate, also ignore the target or make fun of them)
+	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices)
 	"loopexplodeoff" (disables loopexplode for all players, no i will not make it disable for one player)
-	"weldthing [player]" [BROKEN] (attempt at automating a weld glitch, complete fail.)
 	"improveday" (visual improvement, looks best with default everything colors)
-	"shiftlock" (broken shiftlock for all, read #14 for more info)
+	"shiftlock" (broken shiftlock for all, camera won't move, might only work if they equip it)
+	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said)
+	"loopflingoff" (disables loopfling for all players)
 	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
-	deleted, deleted command: protection, protects you from exploiters
-	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said by this admin's user)
-	"loopflingoff" (disables loopfling for all players, no i will not make it disable for one player since i would have to add a player manager or something)
-	"everythingismagenta" (paints everything magenta, i like red better, keep paint bucket held or it'll break obviously)
-	"box [player]" (it turns you into a box what else did you expect? medium chance of not working when you do all or others)
+	"everythingismagenta" (paints everything magenta, keep paint bucket held or it'll break obviously)
+	"box [player]" (it turns you into a box what else did you expect? might not work when you do all or others)
 	"crowdcontrol" (automatically resets everyone and tps them to you)
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
 	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
 	"protectoff" (disables exploiter protection, see command above this for more info)
 	"nlag" (lags a player using pm)
 	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
-	"giveantikill [player]" (gives antikill)
-	"removeantikill [player]" (removes antikill)
-
+	"giveantikill [player]" (gives another player antikill)
+	"removeantikill [player]" (removes antikill from another player)
+	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
 	"pmlag [player]" (does //nlag but better prisoners299 admin needed)
 	
-	Untested:
-	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
+	mini person tutorial:
+	1. //box [player]
+	2. dog [player]
+	3. creeper [player]
+	4. undog [player]
+	don't think this is good enough for a command
 	--]])
 	
 	local players = game:GetService("Players")
