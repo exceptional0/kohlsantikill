@@ -20,7 +20,7 @@
 	
 	dm exceptional#8287 if there are any problems or suggestions
 	
-	Cmds:
+	Commands:
 	"trueantikill" (enabled by default, disables on first use)
 	"crashserver" (sometimes the server won't crash, but it'll still freeze for long enough for some or all people to leave)
 	"mcrashserver" (does what crashserver does but says "meanie!" in ":h" before crashing)
