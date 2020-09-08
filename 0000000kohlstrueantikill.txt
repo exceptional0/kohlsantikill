@@ -1,7 +1,7 @@
 	print([[
 	Changelog:
 	9/8/2020
-	edited gearpack and removed some of the bad gears and replaced it with good ones
+	edited gearpack and removed some of the bad gears and replaced them with good ones
 	
 	9/7/2020
 	added "//giveantikill [player]" and "//removeantikill [player]", added a changelog
