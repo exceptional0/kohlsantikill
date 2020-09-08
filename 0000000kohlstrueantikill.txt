@@ -18,7 +18,7 @@
 	Help:
 	Prefix: "//"
 	
-	dm exceptional#8287 if there are any problems or suggestions
+	dm exceptional#8287 if there are any problems or suggestions, i heard this mostly works on synapse
 	
 	Cmds:
 	"trueantikill" (enabled by default, disables on first use)
