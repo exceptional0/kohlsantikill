@@ -56,6 +56,8 @@
 	"protectoff" (disables exploiter protection, see command above this for more info)
 	"nlag" (lags a player using pm)
 	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
+	"giveantikill [player]" (gives antikill)
+	"removeantikill [player]" (removes antikill)
 
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -114,7 +116,7 @@
 	local loopexplode = false
 	
 	--//findname
-function getplr(String) -- Credit to Timeless/xFunnieuss/reviz admin/oofkohls v2
+function getplr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
     if Target == "all" then
@@ -570,5 +572,6 @@ end
 	end
 	end)
 	
-
+	--give antikill
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/giveantikill.lua",true))()
 	print("admin ready!")
