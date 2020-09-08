@@ -7,10 +7,10 @@
 	removed oofkohls v2 and added "nlag [player]" (no gamepass) and "pmlag [player]" (better, gamepass needed)
 	--
 
-	--NOTE: trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
-	--["crashserver","tlag","loopexplode","partspam"]
+	--trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
+	--["crashserver","pmlag","nlag","loopexplode","partspam"]
 	--requestadmin will always work as long as you are alive and these parts exist: regen button, admin pads.
-	--
+
 	--
 	
 	
