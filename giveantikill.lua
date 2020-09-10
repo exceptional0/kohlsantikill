@@ -1,8 +1,8 @@
-
-
 local whohasantikill = {
 antikillon = {}
 }
+
+
 
 --get player
 function getplrr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
@@ -36,6 +36,14 @@ end
 --basic locals
 local lPlPlPl = game.Players.LocalPlayer
 local PlPlPl = lPlPlPl.Chatted
+local plrimp = game:GetService("Players")
+
+--remove from table
+plrimp.PlayerRemoving:Connect(function(deltable)
+	if table.find(whohasantikill.antikillon, deltable.Name) then 
+	removeantikill(whohasantikill.antikillon, deltable.Name)
+	end
+	end)
 
 --remove antikill
 function removeantikill(Table,playername)
@@ -57,15 +65,9 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	local whomst = v
 	local giveantikill = v.Character
 	local giveantikillstring = v.Name
-	local plrimp = game:GetService("Players")
 	
 	table.insert(whohasantikill.antikillon, giveantikillstring)
 	
-	plrimp.PlayerRemoving:Connect(function(deltable)
-	if table.find(whohasantikill.antikillon, deltable.Name) then 
-	removeantikill(whohasantikill.antikillon, deltable.Name)
-	end
-	end)
 	
 	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
 	giveantikill.Humanoid.Changed:Connect(function(egg)
