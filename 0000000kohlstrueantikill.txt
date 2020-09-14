@@ -614,6 +614,7 @@ end
 	IREALLYNEEDATSOMEONE:Chat("fogend " ..fogarg.. "")
 	IREALLYNEEDATSOMEONE:Chat("disco")
 	end
+	end
 	end)
 	
 	wait(1)
