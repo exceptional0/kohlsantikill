@@ -51,6 +51,9 @@
 	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
 	"giveantikill [player]" (gives another player antikill)
 	"removeantikill [player]" (removes antikill from another player)
+	"gearplr [player] [gear]" paint,timestop,radio,treehouse,airstrike
+	"ineed@someone" Welcome to the Marketing video! HELP I'VE FALLEN AND I CANT GET UP I NEED @someone!
+	"igot@someone" Discord now has @someone! I'm someone! type @someone do it do it do it
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -475,6 +478,47 @@ end
 	players:Chat("size " ..person.. " 2")
 	players:Chat("size " ..person.. " 2")
 	end
+		elseif msg:match("//gearplr") then
+	local splitstring = string.split(msg, " ")
+	local bird = game:GetService("Players")
+	local person = splitstring[2]
+	local gearimp = splitstring[3]
+	local gearstr = gearimp:lower()
+	if gearstr == "paint" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 18474459")
+	end
+	end
+	if gearstr == "radio" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 212641536")
+	end
+	end
+	if gearstr == "timestop" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 71037101")
+	end
+	end
+	if gearstr == "airstrike" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 88885539")
+	end
+	end
+	
+	if gearstr == "treehouse" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 119917513")
+	end
+	end
+	
+	elseif msg:match("//gearprint") then
+	print([[
+	paint - paintbucket
+	radio - golden boombox
+	timestop - stop time
+	airstrike - airstrike
+	treehouse - instant treehouse
+	]])
 	end
 	end)
 	wait(2)
@@ -556,6 +600,19 @@ end
 	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
 	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
 	end
+	
+	elseif msg:match("//ineed@someone") then
+	_G.ineedatsomeone = true
+	local IREALLYNEEDATSOMEONE = game.Players
+	while wait(0.4) and _G.ineedatsomeone do
+	local firstarg = math.random(0,10)
+	local secondarg = math.random(0,10)
+	local thirdarg = math.random(0,10)
+	local fogarg = math.random(70,150)
+	IREALLYNEEDATSOMEONE:Chat("part/" ..firstarg.. "/" ..secondarg.. "/" ..thirdarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("time 0")
+	IREALLYNEEDATSOMEONE:Chat("fogend " ..fogarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("disco")
 	end
 	end)
 	
@@ -580,6 +637,9 @@ end
 	if _G.lag then
 	_G.lag = false
 	end
+	elseif msg:match("//igot@someone") then
+	_G.ineedatsomeone = false
+	--DISCORD NOW HAS @SOMEONE! HELP I'VE FALLEN AND I CANT GET UP I NEED @SOMEONE!
 	end
 	end)
 	
