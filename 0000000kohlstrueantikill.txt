@@ -52,8 +52,8 @@
 	"giveantikill [player]" (gives another player antikill)
 	"removeantikill [player]" (removes antikill from another player)
 	"gearplr [player] [gear]" paint,timestop,radio,treehouse,airstrike
-	"ineed@someone" Welcome to the Marketing video! HELP I'VE FALLEN AND I CANT GET UP I NEED @someone! (works better with persons or prisoners gamepass)
-	"igot@someone" Discord now has @someone! I'm someone! type @someone do it do it do it
+	"ineed@someone" @someone (works better with persons or prisoners gamepass)
+	"igot@someone" Discord now has @someone!
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
