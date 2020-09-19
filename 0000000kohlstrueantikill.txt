@@ -521,8 +521,7 @@ end
 	airstrike - airstrike
 	treehouse - instant treehouse
 	]])
-	elseif msg:match("//giveadmin") then
-	local imppos = CFrame.new(-21.6365566, 8.22999954, 80.6845474, -0.999767303, -1.10183906e-08, -0.0215707794, -1.11896643e-08, 1, 7.81939846e-09, 0.0215707794, 8.05894906e-09, -0.999767303)
+	elseif msg:match("//giveadmin") then 
 	local imppart = game.Players.LocalPlayer.Character.HumanoidRootPart
 	local oldpos = imppart.CFrame
 	local splitstring = string.split(msg, " ")
@@ -530,8 +529,9 @@ end
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
-	imppart.CFrame = imppos
+	imppart.CFrame = CFrame.new(-21.6365566, 8.22999954, 80.6845474, -0.999767303, -1.10183906e-08, -0.0215707794, -1.11896643e-08, 1, 7.81939846e-09, 0.0215707794, 8.05894906e-09, -0.999767303)
 	chicken:Chat("tp " ..person.. " me")
+	wait(0.4)
 	imppart.CFrame = oldpos
 	end
 	end
