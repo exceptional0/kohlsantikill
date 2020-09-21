@@ -58,8 +58,10 @@ function uuucreate(parentpath,color,transval,howhigh,text)
 	local clownfish = Instance.new("TextLabel")
 	clownfish.Parent = eggheadedclown
 	clownfish.Name = tostring(randomnum3)
+	clownfish.Size = UDim2.new(1,0,1,0)
 	clownfish.Text = textstr
 	clownfish.TextSize = 18
 	clownfish.TextColor3 = textcolor
+	clownfish.TextScaled = true
 	clownfish.BackgroundTransparency = 1
 end
