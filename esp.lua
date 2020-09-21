@@ -56,7 +56,7 @@ function uuucreate(parentpath,color,transval,howhigh,text)
 	eggheadedclown.BackgroundColor3 = theimportantcolor1
 	eggheadedclown.BackgroundTransparency = 0.3
 	local clownfish = Instance.new("TextLabel")
-	clownfish.Text == textstr
+	clownfish.Text = textstr
 	clownfish.TextSize = 18
 	clownfish.TextColor3 = textcolor
 	clownfish.BackgroundTransparency = 1
