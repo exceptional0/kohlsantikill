@@ -2,7 +2,7 @@
 --uuucreate(parentpath,color,transval,howhigh)
 local randomnum = math.random(1,999999)
 local randomnum2 = math.random(1,999999)
-
+local randomnum3 = math.random(1,999999)
 
 function uuucreate(parentpath,color,transval,howhigh,text)
 	--witchesbrew = string color, 
@@ -56,6 +56,8 @@ function uuucreate(parentpath,color,transval,howhigh,text)
 	eggheadedclown.BackgroundColor3 = theimportantcolor1
 	eggheadedclown.BackgroundTransparency = 0.3
 	local clownfish = Instance.new("TextLabel")
+	clownfish.Parent = eggheadedclown
+	clownfish.Name = tostring(randomnum3)
 	clownfish.Text = textstr
 	clownfish.TextSize = 18
 	clownfish.TextColor3 = textcolor
