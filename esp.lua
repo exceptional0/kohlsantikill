@@ -1,3 +1,5 @@
+--exceptionals esp creation function (exceptional#8287)
+--uuucreate(parentpath,color,transval,howhigh)
 local randomnum = math.random(1,999999)
 local randomnum2 = math.random(1,999999)
 function uuucreate(parentpath,color,transval,howhigh)
@@ -33,9 +35,11 @@ function uuucreate(parentpath,color,transval,howhigh)
 	theimportante.StudsOffset = Vector3.new(0,howhigh,0)
 	theimportante.Size = UDim2.new(2,0,2,0)
 	theimportante.Name = tostring(randomnum)
+	theimportante.AlwaysOnTop = true
 	local eggheadedclown = Instance.new("Frame")
 	eggheadedclown.Parent = theimportante
 	eggheadedclown.Size = UDim2.new(1,0,1,0)
+	eggheadedclown.Name = tostring(randomnum2)
 	eggheadedclown.BackgroundColor3 = theimportantcolor1
-	eggheadedclown.BackgroundTransparency = transval
+	eggheadedclown.BackgroundTransparency = 0.3
 end
