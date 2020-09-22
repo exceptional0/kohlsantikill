@@ -537,8 +537,8 @@ end
 	zombiestaff - zombie staff obviously :|
 	bodyswap - body swap potion
 	ultimateyellowcar - Ultimate Drive Speedster (car go vroom vroom)
-	megaphone - untested
-	snowballcannon - untested
+	megaphone - megaphone
+	snowballcannon - not working but still funny
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
