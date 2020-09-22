@@ -523,7 +523,7 @@ end
 	bird:Chat("gear " ..person.. " 44116233")
 	end
 	elseif gearstr == "snowballcannon" then
-	for i,v in pairs(gearplr(person)) do
+	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 67755182")
 	end
 	end
