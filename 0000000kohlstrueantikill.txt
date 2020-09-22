@@ -54,7 +54,7 @@
 	"gearplr [player] [gear]" paint,timestop,radio,treehouse,airstrike
 	"ineed@someone" @someone is needed (works better with persons or prisoners gamepass)
 	"igot@someone" Discord now has @someone! (disables ineed@someone)
-	
+	"rejoinserver" rejoins the server
 
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
