@@ -540,6 +540,8 @@ end
 	megaphone - untested
 	snowballcannon - untested
 	]])
+	elseif msg:lower() == "//rejoinserver" then
+	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 	end
 	end)
 	wait(2)
