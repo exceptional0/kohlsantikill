@@ -361,7 +361,7 @@ end
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
 	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.Remotes:WaitForChild("ServerControls")
+	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	wait(0.6)
 	local a = workspace:GetDescendants()
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
@@ -386,7 +386,7 @@ end
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
 	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.Remotes:WaitForChild("ServerControls")
+	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	wait(0.6)
 	local a = workspace:GetDescendants()
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
