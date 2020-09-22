@@ -277,6 +277,7 @@ end
 	chicken:Chat("gear " ..person.. " 82357101")
 	chicken:Chat("gear " ..person.. " 82357123")
 	chicken:Chat("gear " ..person.. " 1208300505")
+	chicken:Chat("gear " ..person.. " 26421972")
 	end
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
