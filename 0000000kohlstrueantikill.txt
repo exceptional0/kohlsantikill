@@ -259,6 +259,7 @@ end
 	else
 	ChosenPlayer = "me"
 	end
+	end
 	local bees = tostring(gpname)
 	print(bees)
 	if gearpacks[bees] ~= nil then
