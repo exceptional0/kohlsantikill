@@ -540,6 +540,7 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 59190534")
 	end
+	end
 	elseif msg:match("//gearprint") then
 	print([[
 	paint - paintbucket
@@ -556,7 +557,6 @@ end
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
-	end
 	end
 	end)
 	wait(2)
