@@ -266,7 +266,7 @@ end
 	print("gearpack has been found!")
 	local minn = 1
 	repeat
-	wait(0.4)
+	wait(0.2)
 	local maxn = #gearpacks[bees]
 	players:Chat("gear " ..ChosenPlayer.. " " ..unpack(gearpacks[bees],minn,minn).. "")
 	minn = minn + 1
@@ -276,9 +276,8 @@ end
 	print(bees)
 	end
 	end
-	if gearpacks["medusa"] ~= nil then
-	print(unpack(gearpacks["medusa"]))
-	end
+
+
 	--// commands
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	if msg:lower() == "//trueantikill" then
