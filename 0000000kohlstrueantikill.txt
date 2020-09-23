@@ -86,7 +86,7 @@
 	
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
 	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
-	wait(0.2)
+	wait(0.1)
 	messagedeleter:Destroy()
 	end
 	end)
