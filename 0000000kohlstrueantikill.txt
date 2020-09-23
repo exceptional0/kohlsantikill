@@ -541,6 +541,22 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 59190534")
 	end
+	elseif gearstr == "rmagiccarpet" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 225921000")
+	end
+	elseif gearstr == "deluxecarpet" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 477910063")
+	end
+	elseif gearstr == "procket" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 298085284")
+	end
+	elseif gearstr == "subtripmine" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 11999247")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -555,6 +571,10 @@ end
 	megaphone - megaphone
 	medusasword - sword that turns things to stone
 	snowballcannon - not working but still funny
+	rmagiccarpet - rainbow magic carpet
+	deluxecarpet - deluxe rainbow magic carpet
+	procket - personal rocketship
+	subtripmine - subspace tripmine
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
