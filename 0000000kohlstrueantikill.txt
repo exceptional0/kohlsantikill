@@ -255,7 +255,7 @@ end
 	local ChosenPlayer
 	for i,v in pairs(getplr(plrname)) do
 	if v ~= nil then
-	ChosenPlayer = v
+	ChosenPlayer = v.Name
 	else
 	ChosenPlayer = "me"
 	end
