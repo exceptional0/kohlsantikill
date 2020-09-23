@@ -252,6 +252,13 @@ end
 	
 	--broken and i've tried to fix it for hours
 	local function loadgearpack(plrname, gpname)
+	local ChosenPlayer
+	for i,v in pairs(getplr(plrname)) do
+	if v ~= nil then
+	ChosenPlayer = v
+	else
+	ChosenPlayer = "me"
+	end
 	local bees = tostring(gpname)
 	print(bees)
 	if gearpacks[bees] ~= nil then
@@ -260,7 +267,7 @@ end
 	repeat
 	wait(0.4)
 	local maxn = #gearpacks[bees]
-	players:Chat("gear " ..plrname.. " " ..unpack(gearpacks[bees],minn,minn).. "")
+	players:Chat("gear " ..ChosenPlayer.. " " ..unpack(gearpacks[bees],minn,minn).. "")
 	minn = minn + 1
 	until minn == maxn + 1
 	else
