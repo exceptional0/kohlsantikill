@@ -668,12 +668,12 @@ end
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
-	local person = v.Name
+	person = v.Name
+	end
 	_G.loopexplode = true
 	while wait() and _G.loopexplode do
 	chicken:Chat("explode " ..person.. "")
 	chicken:Chat("respawn " ..person.. "")
-	end
 	end
 	elseif msg:match("//loopkill") then
 	local splitstring = string.split(msg, " ")
