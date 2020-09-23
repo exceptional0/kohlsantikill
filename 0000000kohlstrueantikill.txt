@@ -55,6 +55,7 @@
 	"ineed@someone" @someone is needed (works better with persons or prisoners gamepass)
 	"igot@someone" Discord now has @someone! (disables ineed@someone)
 	"rejoinserver" rejoins the server
+	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off)
 
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -82,6 +83,12 @@
     v:Destroy()
     end
 	end
+	
+	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
+	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
+	messagedeleter:Destroy()
+	end
+	end)
 	
 	--// gamepass autogive admin
 	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
@@ -362,7 +369,6 @@ end
 	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
 	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
-	wait(0.6)
 	local a = workspace:GetDescendants()
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Really red").Color
@@ -530,6 +536,9 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 67755182")
 	end
+	elseif gearstr == "medusasword" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 59190534")
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -542,6 +551,7 @@ end
 	bodyswap - body swap potion
 	ultimateyellowcar - Ultimate Drive Speedster (car go vroom vroom)
 	megaphone - megaphone
+	medusasword - sword that turns things to stone
 	snowballcannon - not working but still funny
 	]])
 	elseif msg:lower() == "//rejoinserver" then
@@ -641,6 +651,12 @@ end
 	IREALLYNEEDATSOMEONE:Chat("fogend " ..fogarg.. "")
 	IREALLYNEEDATSOMEONE:Chat("disco")
 	IREALLYNEEDATSOMEONE:Chat("clone all")
+	end
+	elseif msg:match("//messagedeleter") then
+	if not _G.messagedeleter then
+	_G.messagedeleter = true
+	else
+	_G.messagedeleter = false
 	end
 	end
 	end)
