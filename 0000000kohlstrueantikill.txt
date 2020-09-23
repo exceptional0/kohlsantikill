@@ -56,7 +56,9 @@
 	"igot@someone" Discord now has @someone! (disables ineed@someone)
 	"rejoinserver" rejoins the server
 	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off)
-
+	"savetools [packname] [ids]" make your own gearpacks
+	"loadtools [playername] [ids]" load your own gearpacks
+	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
 	"pmlag [player]" (does //nlag but better prisoners299 admin needed)
@@ -224,9 +226,52 @@ end
 	end
 	end)
 	end)
+	
+	
+	local Name = "gearpacks.txt"
+	local idtable = {}
+
+	if not pcall(function() readfile(Name) end) then writefile(Name, game:service'HttpService':JSONEncode(idtable)) end
+
+	local gearpacks = game:service'HttpService':JSONDecode(readfile(Name))
+
+	local function Save()
+	writefile(Name,game:service'HttpService':JSONEncode(gearpacks))
+	end
 
 
-	--// Toggleable Anti Spam Kill (Chat Command, //trueantikill)
+
+	local function savegearpack(name, ...)
+	local ids = {...}
+	gearpacks[name] = ids
+	print("saving..")
+	print("saved in " ..name.. ":", unpack(ids))
+	print("say //loadtools " ..name.. " to use it!")
+	Save()
+	end
+	
+	--broken and i've tried to fix it for hours
+	local function loadgearpack(plrname, gpname)
+	local bees = tostring(gpname)
+	print(bees)
+	if gearpacks[bees] ~= nil then
+	print("gearpack has been found!")
+	local minn = 1
+	repeat
+	wait(0.4)
+	local maxn = #gearpacks[bees]
+	players:Chat("gear " ..plrname.. " " ..unpack(gearpacks[bees],minn,minn).. "")
+	minn = minn + 1
+	until minn == maxn + 1
+	else
+	print("gearpack is nil please check if you made any errors if not dm exceptional#8287!")
+	print(bees)
+	end
+	end
+	if gearpacks["medusa"] ~= nil then
+	print(unpack(gearpacks["medusa"]))
+	end
+	--// commands
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	if msg:lower() == "//trueantikill" then
 	if trueantikill == false then
@@ -557,6 +602,18 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 11999247")
 	end
+	elseif gearstr == "bombotable" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 243788010")
+	end
+	elseif gearstr == "cameraglitch" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 987032734")
+	end
+	elseif gearstr == "sensglitch" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 68354832")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -578,6 +635,21 @@ end
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+	elseif msg:match("//savetools") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local gearpackname = splitstring[2]
+	table.remove(splitstring,1)
+	table.remove(splitstring,1)
+	savegearpack(gearpackname,unpack(splitstring))
+	elseif msg:match("//loadtools") then
+	local splitstring = string.split(msg, " ")
+	local bird1 = game:GetService("Players")
+	local person = splitstring[2]
+	local impname = splitstring[3]
+	loadgearpack(person,impname)
+	elseif msg:lower() == "//printpacks" then
+	print(unpack(gearpacks))
 	end
 	end)
 	wait(2)
