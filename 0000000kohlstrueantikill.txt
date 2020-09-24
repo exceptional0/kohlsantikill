@@ -667,6 +667,14 @@ end
 	end)
 	wait(2)
 	
+	local function lagishthefoolish(foolishfish)
+	local speakish = game:GetService("Players")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	end
+	
 	--// loop commands (enable)
 	chatted:Connect(function(msg)
 	if msg:match("//loopexplode") then
@@ -738,10 +746,9 @@ end
 	local loser = v.Name
 	_G.lag = true
 	repeat
-	wait(0.2)
-	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
-	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
-	chicken:Chat("pm/" ..loser.. " " ..lagtext.. "")
+	wait(0.3)
+	lagishthefoolish(loser)
+	lagishthefoolish(loser)
 	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
 	end
 	
