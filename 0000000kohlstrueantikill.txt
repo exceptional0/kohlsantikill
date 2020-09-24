@@ -248,7 +248,7 @@ end
 	Save()
 	end
 	
-	--broken and i've tried to fix it for hours
+	--fixed somehow
 	local function loadgearpack(plrname, gpname)
 	local ChosenPlayer
 	for i,v in pairs(getplr(plrname)) do
