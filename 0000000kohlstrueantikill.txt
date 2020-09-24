@@ -789,6 +789,7 @@ end
 	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. ",")
 	until players:FindFirstChild("foolishfool") == nil or _G.loopres == false
 	end
+	end
 	end)
 	
 	--// loop commands (disable)
@@ -814,7 +815,6 @@ end
 	_G.ineedatsomeone = false
 	elseif msg:lower() == "//loopresoff" then
 	_G.loopres = false
-	end
 	end
 	end)
 	
