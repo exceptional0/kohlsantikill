@@ -746,8 +746,7 @@ end
 	local loser = v.Name
 	_G.lag = true
 	repeat
-	wait(0.3)
-	lagishthefoolish(loser)
+	wait(0.4)
 	lagishthefoolish(loser)
 	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
 	end
