@@ -57,7 +57,7 @@
 	"rejoinserver" rejoins the server
 	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off)
 	"savetools [packname] [ids]" make your own gearpacks
-	"loadtools [playername] [packname]" load your own gearpacks, somewhat unstable
+	"loadtools [playername] [packname]" load your own gearpacks, somewhat unstable if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
