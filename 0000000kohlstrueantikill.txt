@@ -743,13 +743,14 @@ end
 	local chicken = game:GetService("Players")
 	local loser = splitstring[2]
 	for i,v in pairs(getplr(loser)) do
-	local loser = v.Name
+	loser = v.Name
+	end
 	_G.lag = true
 	repeat
 	wait(0.4)
 	lagishthefoolish(loser)
 	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
-	end
+	
 	
 	elseif msg:match("//ineed@someone") then
 	_G.ineedatsomeone = true
