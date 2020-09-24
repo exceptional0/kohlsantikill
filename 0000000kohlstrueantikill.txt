@@ -1,5 +1,8 @@
 	print([[
 	Changelog:
+	9/24/2020
+	added loopres [plr] loops respawns a player and loopresoff, trying out a new format to not error everytime you disable loop commands but still disable them
+	testing it out with loopres then ill add it to the other loop commands if it works
 	9/23/2020
 	added savetools [packname] [ids] and loadtools [playername] [packname]
 	9/22/2020
