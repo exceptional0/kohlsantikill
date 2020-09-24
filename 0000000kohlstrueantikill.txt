@@ -782,6 +782,9 @@ end
 	local splitstring = string.split(msg, " ")
 	local TALKTALKTALKTALK = game:GetService("Players")
 	local foolishfool = splitstring[2]
+	for i,v in pairs(getplr(foolishfool)) do
+	foolishfool = v.Name
+	end
 	if splitstring[1]:lower() == "//loopres" then
 	_G.loopres = true
 	repeat
