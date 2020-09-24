@@ -679,87 +679,67 @@ end
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	end
-	
-	--// loop commands (enable)
+
+
+	wait(1)
+	--loop commands (enable)
 	chatted:Connect(function(msg)
-	if msg:match("//loopexplode") then
+	if msg:match(" ") then
 	local splitstring = string.split(msg, " ")
+	local TALKTALKTALKTALK = game:GetService("Players")
 	local chicken = game:GetService("Players")
-	local person = splitstring[2]
-	for i,v in pairs(getplr(person)) do
-	person = v.Name
+	local foolishfool = splitstring[2]
+	for i,v in pairs(getplr(foolishfool)) do
+	foolishfool = v.Name
 	end
-	_G.loopexplode = true
-	while wait() and _G.loopexplode do
-	chicken:Chat("explode " ..person.. "")
-	chicken:Chat("respawn " ..person.. "")
-	end
-	elseif msg:match("//loopkill") then
+	
+	if splitstring[1]:lower() == "//loopres" then
+	_G.loopres = true
+	repeat
+	wait(0.2)
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	until players:FindFirstChild(foolishfool) == nil or _G.loopres == false
+	elseif splitstring[1]:lower() == "//nlag" then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local person = splitstring[2]
-	for i,v in pairs(getplr(person)) do
-	local person = v.Name
-	_G.loopkill = true
-	while wait() and _G.loopkill do
-	chicken:Chat("kill " ..person.. "")
-	end
-	end
-	elseif msg:match("//loopfling") then
-	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local person = splitstring[2]
-	for i,v in pairs(getplr(person)) do
-	local person = v.Name
-	_G.loopfling = true
-	while wait() and _G.loopfling do
-	chicken:Chat("fling " ..person.. "")
-	end
-	end
-	elseif msg:match("//crowdcontrol") then
-	local chicken = game:GetService("Players")
-	_G.crowdcontrol = true
-	while wait() and _G.crowdcontrol do
-	chicken:Chat("reset others")
-	chicken:Chat("tp others me")
-	end
-	elseif msg:match("//protection") then
-	local chicken = game:GetService("Players")
-	_G.exploiterprotection = true
-	while wait(1) and _G.exploiterprotection do
-	chicken:Chat("reset me")
-	end
-	elseif msg:match("//nlag") then
-	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local loser = splitstring[2]
-	for i,v in pairs(getplr(loser)) do
-	local loser = v.Name
 	_G.nlag = true
 	repeat
 	wait(0.2)
-	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
-	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
-	chicken:Chat("pm " ..loser.. " " ..lagtext.. "")
-	until game.Players:FindFirstChild(loser) == nil or _G.nlag == false
-	end
-	elseif msg:match("//pmlag") then
-	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
-	local loser = splitstring[2]
-	for i,v in pairs(getplr(loser)) do
-	loser = v.Name
-	end
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.nlag == false
+	elseif splitstring[1]:lower() == "//pmlag" then
 	_G.lag = true
 	repeat
 	wait(0.4)
-	lagishthefoolish(loser)
-	until game.Players:FindFirstChild(loser) == nil or _G.lag == false
+	lagishthefoolish(foolishfool)
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.lag == false
+	elseif splitstring[1]:lower() == "//loopexplode" then
+	_G.loopexplode = true
+	while wait() and _G.loopexplode do
+	TALKTALKTALKTALK:Chat("explode " ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "")
+	end
+	elseif splitstring[1]:lower() == "//protection" then
+	_G.exploiterprotection = true
+	while wait(1) and _G.exploiterprotection do
+	TALKTALKTALKTALK:Chat("reset me")
+	end
 	
+	elseif splitstring[1]:lower() == "//crowdcontrol" then
+	_G.crowdcontrol = true
+	while wait() and _G.crowdcontrol do
+	TALKTALKTALKTALK:Chat("reset others")
+	TALKTALKTALKTALK:Chat("tp others me")
+	end
 	
-	elseif msg:match("//ineed@someone") then
+	elseif splitstring[1]:lower() == "//ineed@someone" then
 	_G.ineedatsomeone = true
-	local IREALLYNEEDATSOMEONE = game.Players
+	local IREALLYNEEDATSOMEONE = game:GetService("Players")
 	while wait(0.4) and _G.ineedatsomeone do
 	local firstarg = math.random(0,10)
 	local secondarg = math.random(0,10)
@@ -771,35 +751,26 @@ end
 	IREALLYNEEDATSOMEONE:Chat("disco")
 	IREALLYNEEDATSOMEONE:Chat("clone all")
 	end
-	elseif msg:match("//messagedeleter") then
+	
+	elseif splitstring[1]:lower() == "//messagedeleter" then
 	if not _G.messagedeleter then
 	_G.messagedeleter = true
 	else
 	_G.messagedeleter = false
 	end
 	
+	elseif splitstring[1]:lower() == "//loopfling" then
+	_G.loopfling = true
+	while wait() and _G.loopfling do
+	chicken:Chat("fling " ..foolishfool.. "")
 	end
-	end)
 	
-	wait(1)
-	chatted:Connect(function(msg)
-	if msg:match(" ") then
-	local splitstring = string.split(msg, " ")
-	local TALKTALKTALKTALK = game:GetService("Players")
-	local foolishfool = splitstring[2]
-	for i,v in pairs(getplr(foolishfool)) do
-	foolishfool = v.Name
+	elseif splitstring[1]:lower() == "//loopkill" then
+	_G.loopkill = true
+	while wait(4) and _G.loopkill do
+	chicken:Chat("kill " ..foolishfool.. "")
 	end
-	if splitstring[1]:lower() == "//loopres" then
-	_G.loopres = true
-	repeat
-	wait(0.2)
-	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
-	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
-	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
-	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
-	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
-	until players:FindFirstChild(foolishfool) == nil or _G.loopres == false
+	--end if loopres
 	end
 	end
 	end)
