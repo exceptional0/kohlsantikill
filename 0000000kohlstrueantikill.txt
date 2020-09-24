@@ -641,6 +641,10 @@ end
 	deluxecarpet - deluxe rainbow magic carpet
 	procket - personal rocketship
 	subtripmine - subspace tripmine
+	bombotable - table that goes boom boom on hit
+	cameraglitch - part of a camera glitch
+	sensglitch - part of a sensitivity glitch
+	arshiftlick - shiftlocks all and breaks camera
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
