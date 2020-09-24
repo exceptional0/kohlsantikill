@@ -57,7 +57,7 @@
 	"rejoinserver" rejoins the server
 	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off)
 	"savetools [packname] [ids]" make your own gearpacks
-	"loadtools [playername] [ids]" load your own gearpacks
+	"loadtools [playername] [packname]" load your own gearpacks, somewhat unstable
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -620,6 +620,10 @@ end
 	elseif gearstr == "sensglitch" then
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 68354832")
+	end
+	elseif gearstr == "arshiftlock" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 4842207161")
 	end
 	end
 	elseif msg:match("//gearprint") then
