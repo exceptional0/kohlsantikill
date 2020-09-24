@@ -1,4 +1,6 @@
 	print([[
+	Version: exceptional is exceptionally dumb!
+	(version added for dev reasons)
 	Changelog:
 	9/24/2020
 	added loopres [plr] loops respawns a player and loopresoff, trying out a new format to not error everytime you disable loop commands but still disable them
