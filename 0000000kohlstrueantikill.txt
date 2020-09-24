@@ -772,32 +772,48 @@ end
 	else
 	_G.messagedeleter = false
 	end
+	
 	end
 	end)
 	
 	wait(1)
+	chatted:Connect(function(msg)
+	if msg:match(" ") then
+	local splitstring = string.split(msg, " ")
+	local TALKTALKTALKTALK = game:GetService("Players")
+	local foolishfool = splitstring[2]
+	if splitstring[1]:lower() == "//loopres" then
+	_G.loopres = true
+	repeat
+	while wait(0.4) do
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," "")
+	end
+	end)
 	
 	--// loop commands (disable)
 	chatted:Connect(function(msg)
-	if msg:match("//loopexplodeoff") then
+	if msg:lower() == "//loopexplodeoff" then
 	_G.loopexplode = false
-	elseif msg:match("//loopkilloff") then
+	elseif msg:lower() == "//loopkilloff" then
 	_G.loopkill = false
-	elseif msg:match("//loopflingoff") then
+	elseif msg:lower() == "//loopflingoff" then
 	_G.loopfling = false
-	elseif msg:match("//freedom") then
+	elseif msg:lower() == "//freedom" then
 	_G.crowdcontrol = false
-	elseif msg:match("//protectoff") then
+	elseif msg:lower() == "//protectoff" then
 	_G.exploiterprotection = false
-	elseif msg:match("//lagoff") then
+	elseif msg:lower() == "//lagoff" then
 	if _G.nlag then
 	_G.nlag = false
 	end
 	if _G.lag then
 	_G.lag = false
 	end
-	elseif msg:match("//igot@someone") then
+	elseif msg:lower() == "//igot@someone" then
 	_G.ineedatsomeone = false
+	elseif msg:lower() == "//loopresoff" then
+	_G.loopres = false
+	end
 	end
 	end)
 	
