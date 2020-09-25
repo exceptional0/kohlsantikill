@@ -120,6 +120,8 @@ if talking:match(" ") and thornstoggle == true then
 	inflictthornsdamage:Chat("noobify " ..victimname.. "")
 	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("spin " ..victimname.. "")
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
 	end
 	end
@@ -195,6 +197,8 @@ if talking:match(" ") and thornstoggle == true then
 	inflictthornsdamage:Chat("noobify " ..victimname.. "")
 	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("spin " ..victimname.. "")
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
 	end
 	end
