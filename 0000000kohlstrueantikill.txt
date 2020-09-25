@@ -652,6 +652,10 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 16895215")
 	end
+	elseif gearstr == "rcwand" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 75550883")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -662,7 +666,7 @@ end
 	treehouse - instant treehouse
 	zombiestaff - zombie staff obviously :|
 	bodyswap - body swap potion
-	ultimateyellowcar - Ultimate Drive Speedster (car go vroom vroom)
+	ultimateyellowcar - ultimate drive speedster (car go vroom vroom)
 	megaphone - megaphone
 	medusasword - sword that turns things to stone
 	snowballcannon - not working but still funny
@@ -675,6 +679,7 @@ end
 	sensglitch - part of a sensitivity glitch
 	arshiftlick - shiftlocks all and breaks camera
 	darkheart - darkheart
+	rcwand - rubber chicken wand
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
