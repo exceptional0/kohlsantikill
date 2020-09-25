@@ -1,10 +1,152 @@
-local thornstable = {}
-local thornsvictims = game:GetService("Players")
-local inflictthornsdamage = game:GetService("Players")
-local thornsuser = thornsvictims.LocalPlayer
-local thornsusername = thornsuser.Name
-local thornstoggle = false
-function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
+	print([[
+	Version: thorns (version 2)
+	(version added for dev reasons on 9/23/2020)
+	Changelog:
+	9/25/2020
+	added command toggle "thorns" reflect almost any command done to you back to the attacker not currently supported for persons admin and something else
+	9/24/2020
+	fixed erroring whenever you disable a loop command but still disabling (remade the format)
+	9/24/2020
+	added loopres [plr] loops respawns a player and loopresoff, trying out a new format to not error everytime you disable loop commands but still disable them
+	testing it out with loopres then ill add it to the other loop commands if it works
+	9/23/2020
+	added savetools [packname] [ids] and loadtools [playername] [packname]
+	
+	--
+
+	--trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
+	--["crashserver","pmlag","nlag","loopexplode","partspam"]
+	--requestadmin will always work as long as you are alive and these parts exist: regen button, admin pads.
+
+	--
+	
+	
+	
+	Help:
+	Prefix: "//"
+	
+	dm exceptional#8287 if there are any problems or suggestions
+	
+	Commands:
+	"trueantikill" (enabled by default, disables on first use)
+	"crashserver" (sometimes the server won't crash, but it'll still freeze for long enough for some or all people to leave)
+	"mcrashserver" (does what crashserver does but says "meanie!" in ":h" before crashing)
+	"shiftcrash" (gives everyone a broken camera and then crashes the server)
+	"mshiftcrash" (gives everyone a broken camera and then says "meanie!" in ":h" and crashes the server)
+	"gearpack" (gives you incredibly overpowered gears)
+	"rangedpack" (gives you meh gears)
+	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
+	"loopkill [player]" (automatically kills the specified player every wait(1))
+	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
+	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices)
+	"loopexplodeoff" (disables loopexplode for all players, no i will not make it disable for one player)
+	"improveday" (visual improvement, looks best with default everything colors)
+	"shiftlock" (broken shiftlock for all, camera won't move, might only work if they equip it)
+	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said)
+	"loopflingoff" (disables loopfling for all players)
+	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
+	"everythingismagenta" (paints everything magenta, keep paint bucket held or it'll break obviously)
+	"box [player]" (it turns you into a box what else did you expect? might not work when you do all or others)
+	"crowdcontrol" (automatically resets everyone and tps them to you)
+	"freedom" (stops controlling the crowd, stops //crowdcontrol)
+	"protection" (remade, stops other exploiters from being able to lag you by resetting you every wait(1) )
+	"protectionoff" (disables exploiter protection, see command above this for more info)
+	"nlag" (lags a player using pm)
+	"lagoff" (stops lag if it wasn't automatic, lag commands should automatically disable)
+	"giveantikill [player]" (gives another player antikill)
+	"removeantikill [player]" (removes antikill from another player)
+	"gearplr [player] [gear]" paint,timestop,radio,treehouse,airstrike
+	"gearprint" prints all the gears you can use in gearplr in the console (f9)
+	"ineed@someone" @someone is needed (works better with persons or prisoners gamepass)
+	"igot@someone" Discord now has @someone! (disables ineed@someone)
+	"rejoinserver" rejoins the server
+	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off) can stop exploiters from lagging you
+	"savetools [packname] [ids]" make your own gearpacks
+	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
+	"loopres [plr]" loop respawns a player
+	"thorns" reflects almost any commands back to the attacker not currently supported for persons admin and something else
+	
+	Gamepass Commands:
+	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
+	"pmlag [player]" (does //nlag but better prisoners299 admin needed)
+	"antimusic" disables music whenever its added
+	
+	mini person tutorial:
+	1. //box [player]
+	2. dog [player]
+	3. creeper [player]
+	4. undog [player]
+	don't think this is good enough for a command
+	--]])
+	
+	local players = game:GetService("Players")
+	local lplayer = players.LocalPlayer
+	local chatted = lplayer.Chatted
+	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
+	local market = game:GetService("MarketplaceService")
+	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
+	local removesong = false
+	--lagtext and anti lava blocks is from oofkohlsv2
+	
+	-- // Anti Lava Blocks from oofkohlsv2
+	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
+    if v:IsA("TouchTransmitter") then
+    v:Destroy()
+    end
+	end
+
+	local SfolderS = game.Workspace.Terrain["_Game"].Folder
+	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
+	if NOMOOSICPLS.Name == "Sound" and removesong == true then
+	players:Chat("music")
+	end
+	end)
+	
+	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
+	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
+	wait(0)
+	messagedeleter:Destroy()
+	end
+	end)
+	
+
+
+	
+	--// gamepass autogive admin
+	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
+    local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
+    for i,v in pairs(path:GetChildren()) do
+        if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
+            for x,y in pairs(path:GetDescendants()) do
+                if y:IsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    wait()
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                end
+            end
+        else
+            fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector)
+            wait()
+            for x,y in pairs(path:GetDescendants()) do
+                if y:IsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    wait()
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                end
+            end
+            end
+    end
+	end
+	wait(2.5)
+	
+	
+	
+	--// locals setup 
+	local trueantikill = true
+	local loopexplode = false
+	
+	--//findname
+function getplr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
     if Target == "all" then
@@ -33,173 +175,657 @@ function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls 
     return Found    
 end
 
-thornsuser.Chatted:Connect(function(message)
-if message:lower() == "//thorns" then
-if thornstoggle == false then
-thornstoggle = true
-print("thorns on!")
-else
-thornstoggle = false
-print("thorns off.")
-end
-elseif message:match(" ") then
-local splitstring = string.split(message, " ")
-if splitstring[1]:lower() == "thornswl" then
-	local victim = splitstring[2]
-	for i,v in pairs(checkif(victim)) do
-	victim = v.Name
-	end
-	table.insert(thornstable, v.Name)
-	end
-end
-end)
-
-for i,v in pairs(thornsvictims:GetPlayers()) do
-if v.Name ~= thornsusername then
-victimhasjoined.Chatted:Connect(function(talking)
-if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(message, " ")
-	local chicken = game:GetService("Players")
-	local victims = splitstring[2]
-	local victim = splitstring[2]
-	for i,v in pairs(checkif(victim)) do
-	victim = v.Name
-	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("kill " ..victimname.. "")	
-	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("explode " ..victimname.. "")
-	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and victims:lower() == "all" or splitstring[1]:lower() == "respawn" and victims:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and victims:lower() == "all" or splitstring[1]:lower() == ":respawn" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("respawn " ..victimname.. "")
-	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and victims:lower() == "all" or splitstring[1]:lower() == "unff" and victims:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and victims:lower() == "all" or splitstring[1]:lower() == ":unff" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("unff " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and victims:lower() == "all" or splitstring[1]:lower() == "fling" and victims:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and victims:lower() == "all" or splitstring[1]:lower() == ":fling" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("fling " ..victimname.. "")
-	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("stun " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and victims:lower() == "all" or splitstring[1]:lower() == "fire" and victims:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and victims:lower() == "all" or splitstring[1]:lower() == ":fire" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("fire " ..victimname.. "")
-	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and victims:lower() == "all" or splitstring[1]:lower() == "bonfire" and victims:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and victims:lower() == "all" or splitstring[1]:lower() == ":bonfire" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("bonfire " ..victimname.. "")
-	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and victims:lower() == "all" or splitstring[1]:lower() == "reset" and victims:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and victims:lower() == "all" or splitstring[1]:lower() == ":reset" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("reset " ..victimname.. "")
-	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and victims:lower() == "all" or splitstring[1]:lower() == "jail" and victims:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and victims:lower() == "all" or splitstring[1]:lower() == ":jail" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("jail " ..victimname.. "")
-	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and victims:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and victims:lower() == "all" or splitstring[1]:lower() == ":punish" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("punish " ..victimname.. "")
-	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and victims:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and victims:lower() == "all" or splitstring[1]:lower() == ":ungod" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("ungod " ..victimname.. "")
-	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and victims:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and victims:lower() == "all" or splitstring[1]:lower() == ":damage" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("damage " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and victims:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and victims:lower() == "all" or splitstring[1]:lower() == ":setgrav" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("setgrav " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and victims:lower() == "all" or splitstring[1]:lower() == "speed" and victims:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and victims:lower() == "all" or splitstring[1]:lower() == ":speed" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("speed " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and victims:lower() == "all" or splitstring[1]:lower() == "name" and victims:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and victims:lower() == "all" or splitstring[1]:lower() == ":name" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("name " ..victimname.. " " ..thornsusername.. "'s")
-	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and victims:lower() == "all" or splitstring[1]:lower() == "blind" and victims:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and victims:lower() == "all" or splitstring[1]:lower() == ":blind" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("blind " ..victimname.. "")
-	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
-	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("creeper " ..victimname.. "")
-	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and victims:lower() == "all" or splitstring[1]:lower() == "health" and victims:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and victims:lower() == "all" or splitstring[1]:lower() == ":health" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("health " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and victims:lower() == "all" or splitstring[1]:lower() == "noclip" and victims:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and victims:lower() == "all" or splitstring[1]:lower() == ":noclip" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("noclip " ..victimname.. "")
-	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and victims:lower() == "all" or splitstring[1]:lower() == "char" and victims:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and victims:lower() == "all" or splitstring[1]:lower() == ":char" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("char " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and victims:lower() == "all" or splitstring[1]:lower() == "seizure" and victims:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and victims:lower() == "all" or splitstring[1]:lower() == ":seizure" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("seizure " ..victimname.. "")
-	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and victims:lower() == "all" or splitstring[1]:lower() == "infect" and victims:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and victims:lower() == "all" or splitstring[1]:lower() == ":infect" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("infect " ..victimname.. "")
-	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and victims:lower() == "all" or splitstring[1]:lower() == "freeze" and victims:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and victims:lower() == "all" or splitstring[1]:lower() == ":freeze" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("freeze " ..victimname.. "")
-	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and victims:lower() == "all" or splitstring[1]:lower() == "clone" and victims:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and victims:lower() == "all" or splitstring[1]:lower() == ":clone" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("clone " ..victimname.. "")
-	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and victims:lower() == "all" or splitstring[1]:lower() == "noobify" and victims:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and victims:lower() == "all" or splitstring[1]:lower() == ":noobify" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("noobify " ..victimname.. "")
-	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("spin " ..victimname.. "")
-	--end if string == "kill" then
-	end
-	end
-	end
-	end)
-	end
-	end
-
-thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined ~= thornsuser then
-local victimname = victimhasjoined.Name
-victimhasjoined.Chatted:Connect(function(talking)
-if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(message, " ")
-	local chicken = game:GetService("Players")
-	local victims = splitstring[2]
-	local victim = splitstring[2]
-	for i,v in pairs(checkif(victim)) do
-	victim = v.Name
-	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("kill " ..victimname.. "")	
-	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("explode " ..victimname.. "")
-	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and victims:lower() == "all" or splitstring[1]:lower() == "respawn" and victims:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and victims:lower() == "all" or splitstring[1]:lower() == ":respawn" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("respawn " ..victimname.. "")
-	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and victims:lower() == "all" or splitstring[1]:lower() == "unff" and victims:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and victims:lower() == "all" or splitstring[1]:lower() == ":unff" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("unff " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and victims:lower() == "all" or splitstring[1]:lower() == "fling" and victims:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and victims:lower() == "all" or splitstring[1]:lower() == ":fling" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("fling " ..victimname.. "")
-	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("stun " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and victims:lower() == "all" or splitstring[1]:lower() == "fire" and victims:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and victims:lower() == "all" or splitstring[1]:lower() == ":fire" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("fire " ..victimname.. "")
-	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and victims:lower() == "all" or splitstring[1]:lower() == "bonfire" and victims:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and victims:lower() == "all" or splitstring[1]:lower() == ":bonfire" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("bonfire " ..victimname.. "")
-	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and victims:lower() == "all" or splitstring[1]:lower() == "reset" and victims:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and victims:lower() == "all" or splitstring[1]:lower() == ":reset" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("reset " ..victimname.. "")
-	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and victims:lower() == "all" or splitstring[1]:lower() == "jail" and victims:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and victims:lower() == "all" or splitstring[1]:lower() == ":jail" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("jail " ..victimname.. "")
-	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and victims:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and victims:lower() == "all" or splitstring[1]:lower() == ":punish" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("punish " ..victimname.. "")
-	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and victims:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and victims:lower() == "all" or splitstring[1]:lower() == ":ungod" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("ungod " ..victimname.. "")
-	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and victims:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and victims:lower() == "all" or splitstring[1]:lower() == ":damage" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("damage " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and victims:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and victims:lower() == "all" or splitstring[1]:lower() == ":setgrav" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("setgrav " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and victims:lower() == "all" or splitstring[1]:lower() == "speed" and victims:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and victims:lower() == "all" or splitstring[1]:lower() == ":speed" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("speed " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and victims:lower() == "all" or splitstring[1]:lower() == "name" and victims:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and victims:lower() == "all" or splitstring[1]:lower() == ":name" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("name " ..victimname.. " " ..thornsusername.. "'s")
-	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and victims:lower() == "all" or splitstring[1]:lower() == "blind" and victims:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and victims:lower() == "all" or splitstring[1]:lower() == ":blind" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("blind " ..victimname.. "")
-	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
-	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("creeper " ..victimname.. "")
-	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and victims:lower() == "all" or splitstring[1]:lower() == "health" and victims:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and victims:lower() == "all" or splitstring[1]:lower() == ":health" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("health " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and victims:lower() == "all" or splitstring[1]:lower() == "noclip" and victims:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and victims:lower() == "all" or splitstring[1]:lower() == ":noclip" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("noclip " ..victimname.. "")
-	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and victims:lower() == "all" or splitstring[1]:lower() == "char" and victims:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and victims:lower() == "all" or splitstring[1]:lower() == ":char" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("char " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and victims:lower() == "all" or splitstring[1]:lower() == "seizure" and victims:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and victims:lower() == "all" or splitstring[1]:lower() == ":seizure" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("seizure " ..victimname.. "")
-	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and victims:lower() == "all" or splitstring[1]:lower() == "infect" and victims:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and victims:lower() == "all" or splitstring[1]:lower() == ":infect" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("infect " ..victimname.. "")
-	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and victims:lower() == "all" or splitstring[1]:lower() == "freeze" and victims:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and victims:lower() == "all" or splitstring[1]:lower() == ":freeze" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("freeze " ..victimname.. "")
-	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and victims:lower() == "all" or splitstring[1]:lower() == "clone" and victims:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and victims:lower() == "all" or splitstring[1]:lower() == ":clone" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("clone " ..victimname.. "")
-	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and victims:lower() == "all" or splitstring[1]:lower() == "noobify" and victims:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and victims:lower() == "all" or splitstring[1]:lower() == ":noobify" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("noobify " ..victimname.. "")
-	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
-	inflictthornsdamage:Chat("spin " ..victimname.. "")
-	--end if string == "kill" then
-	end
-	end
-	end
-	end)
+	
+	
+	
+	--// Anti Spam Kill (first execute)
+	game:GetService'Players':Chat("god me")
+	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	if egg == "Health" and trueantikill == true then
+	game:GetService'Players':Chat("god me")
 	end
 	end)
 	
+	game:GetService("Players"):Chat(":ff me")
+	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	if Object:IsA("ForceField") and trueantikill == true then
+	game:GetService("Players"):Chat("ff me")
+	end
+	end)
+	
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+    if trueantikill == true then 
+	
+	game:GetService("Players"):Chat("reset me")
+	
+	wait(0.2)
+	
+	game:GetService("Players"):Chat("god me")
+	game:GetService("Players"):Chat("ff me")
+	
+	
+	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	if egg == "Health" and trueantikill == true then
+	game:GetService("Players"):Chat("god me")
+	end
+	end)
+	
+	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	if Object:IsA("ForceField") and trueantikill == true then
+	game:GetService("Players"):Chat("ff me")
+	end
+	end)
+	end
+	end)
+
+	--// Anti Spam Kill (On Death Restart)
+	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+    if trueantikill == true then 
+	
+	game:GetService("Players"):Chat("reset me")
+	
+	wait(0.2)
+	
+	game:GetService("Players"):Chat("god me")
+	game:GetService("Players"):Chat("ff me")
+	
+	
+	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	if egg == "Health" and trueantikill == true then
+	game:GetService("Players"):Chat("god me")
+	end
+	end)
+	
+	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	if Object:IsA("ForceField") and trueantikill == true then
+	game:GetService("Players"):Chat("ff me")
+	end
+	end)
+	end
+	end)
+	end)
+	
+	
+	local Name = "gearpacks.txt"
+	local idtable = {}
+
+	if not pcall(function() readfile(Name) end) then writefile(Name, game:service'HttpService':JSONEncode(idtable)) end
+
+	local gearpacks = game:service'HttpService':JSONDecode(readfile(Name))
+
+	local function Save()
+	writefile(Name,game:service'HttpService':JSONEncode(gearpacks))
+	end
+
+
+
+	local function savegearpack(name, ...)
+	local ids = {...}
+	gearpacks[name] = ids
+	print("saving..")
+	print("saved in " ..name.. ":", unpack(ids))
+	print("say //loadtools " ..name.. " to use it!")
+	Save()
+	end
+	
+	--fixed somehow
+	local function loadgearpack(plrname, gpname)
+	local ChosenPlayer
+	for i,v in pairs(getplr(plrname)) do
+	if v ~= nil then
+	ChosenPlayer = v.Name
+	else
+	ChosenPlayer = "me"
+	end
+	end
+	local bees = tostring(gpname)
+	print(bees)
+	if gearpacks[bees] ~= nil then
+	print("gearpack has been found!")
+	local minn = 1
+	repeat
+	wait(0.2)
+	local maxn = #gearpacks[bees]
+	players:Chat("gear " ..ChosenPlayer.. " " ..unpack(gearpacks[bees],minn,minn).. "")
+	minn = minn + 1
+	until minn == maxn + 1
+	else
+	print("gearpack is nil please check if you made any errors if not dm exceptional#8287!")
+	print(bees)
+	end
+	end
+
+
+	--// commands
+	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+	if msg:lower() == "//trueantikill" then
+	if trueantikill == false then
+	trueantikill = true
+	else
+	trueantikill = false
+	end
+	elseif msg:lower() == "//crashserver" then
+	local prefix = ":"
+
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 0.3")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "freeze all")
+	wait(0.2)
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 10")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "clone all")
+	wait(0.2)
+	elseif msg:match("//gearpack") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	for i,v in pairs(getplr(person)) do
+	local person = v.Name
+	chicken:Chat("gear " ..person.. " 92142829")
+	chicken:Chat("gear " ..person.. " 94233344")
+	chicken:Chat("gear " ..person.. " 117544573")
+	chicken:Chat("gear " ..person.. " 268586231")
+	chicken:Chat("gear " ..person.. " 68539623")
+	chicken:Chat("gear " ..person.. " 45177979")
+	chicken:Chat("gear " ..person.. " 233520257")
+	chicken:Chat("gear " ..person.. " 87361662")
+	chicken:Chat("gear " ..person.. " 233520257")
+	chicken:Chat("gear " ..person.. " 71037101")
+	chicken:Chat("gear " ..person.. " 212641536")
+	wait(0.1)
+	chicken:Chat("gear " ..person.. " 99119240")
+	chicken:Chat("gear " ..person.. " 212296936")
+	chicken:Chat("gear " ..person.. " 292969139")
+	chicken:Chat("gear " ..person.. " 79446473")
+	chicken:Chat("gear " ..person.. " 127506257")
+	wait()
+	chicken:Chat("gear " ..person.. " 97885508")
+	chicken:Chat("gear " ..person.. " 16924676")
+	chicken:Chat("gear " ..person.. " 106064315")
+	chicken:Chat("gear " ..person.. " 77443461")
+	chicken:Chat("gear " ..person.. " 80576967")
+	chicken:Chat("gear " ..person.. " 60357972")
+	chicken:Chat("gear " ..person.. " 61459706")
+	wait(0.3)
+	chicken:Chat("gear " ..person.. " 61459706")
+	chicken:Chat("gear " ..person.. " 82357101")
+	chicken:Chat("gear " ..person.. " 82357123")
+	chicken:Chat("gear " ..person.. " 1208300505")
+	chicken:Chat("gear " ..person.. " 26421972")
+	end
+	elseif msg:match("//rangedpack") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	for i,v in pairs(getplr(person)) do
+	chicken:Chat("gear " ..person.. " 139577901")
+	chicken:Chat("gear " ..person.. " 94233286")
+	chicken:Chat("gear " ..person.. " 115377964")
+	wait()
+	chicken:Chat("gear " ..person.. " 116693764")
+	chicken:Chat("gear " ..person.. " 1145358579")
+	chicken:Chat("gear " ..person.. " 243788599")
+	chicken:Chat("gear " ..person.. " 21420014")
+	chicken:Chat("gear " ..person.. " 30847685")
+	chicken:Chat("gear " ..person.. " 85879456")
+	wait(0.1)
+	chicken:Chat("gear " ..person.. " 34898883")
+	end
+	elseif msg:match("//requestadmin") then
+	   local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
+    for i,v in pairs(path:GetChildren()) do
+        if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
+            for x,y in pairs(path:GetDescendants()) do
+                if y:IsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    wait()
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                end
+            end
+        elseif not v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
+            fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector)
+            wait()
+            for x,y in pairs(path:GetDescendants()) do
+                if y:IsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    wait()
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                end
+            end
+            end
+	end
+	elseif msg:match("//rocketfailure") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	for i,v in pairs(getplr(person)) do
+	local person = v.Name
+	chicken:Chat("rocket/" ..person.. "")
+	wait()
+	chicken:Chat("spin " ..person.. "")
+	wait(0.2)
+	chicken:Chat("jump " ..person.. "")
+	wait(2)
+	chicken:Chat("explode " ..person.. "")
+	end
+	elseif msg:match("//improveday") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	chicken:Chat("time 7")
+	wait()
+	chicken:Chat("colorshifttop 600 400 0")
+	chicken:Chat("colorshiftbottom 600 400 0")
+	elseif msg:match("//shiftlock") then
+	local splitstring = string.split(msg, " ")
+	local person = splitstring[2]
+	players:Chat("gear all 4842207161")
+	lplayer.Backpack:WaitForChild("AR")
+	lplayer.Backpack.AR.Parent = lplayer.Character
+	wait(0.3)
+	if lplayer.Character:FindFirstChild("AR") then
+	lplayer.Character.AR.Parent = lplayer.Backpack
+	end
+	elseif msg:match("//everythingisred") then
+	local splitstring = string.split(msg, " ")
+	local person = splitstring[2]
+	game.Players:Chat("gear me 18474459")
+	wait(0.1)
+	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
+	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
+	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
+	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	local a = workspace:GetDescendants()
+	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local ColorSelection = BrickColor.new("Really red").Color
+	for i, v in pairs(a) do
+	if v:IsA("BasePart") then
+	local Data = {}
+	Data.Part = v
+	Data.Color = ColorSelection
+	local A_1 = "PaintPart"
+	local A_2 = Data
+	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	event:InvokeServer(A_1, A_2)
+	end
+	end
+	elseif msg:match("//everythingismagenta") then
+	local splitstring = string.split(msg, " ")
+	local person = splitstring[2]
+	game.Players:Chat("gear me 18474459")
+	wait(0.1)
+	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
+	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
+	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
+	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	wait(0.6)
+	local a = workspace:GetDescendants()
+	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local ColorSelection = BrickColor.new("Magenta").Color
+	for i, v in pairs(a) do
+	if v:IsA("BasePart") then
+	local Data = {}
+	Data.Part = v
+	Data.Color = ColorSelection
+	local A_1 = "PaintPart"
+	local A_2 = Data
+	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	event:InvokeServer(A_1, A_2)
+	end
+	end
+	elseif msg:match("//mcrashserver") then
+	local prefix = ":"
+	
+	players:Chat("h meanie!")
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 0.3")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "freeze all")
+	wait(0.2)
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 10")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "clone all")
+	wait(0.2)
+	elseif msg:match("//mshiftcrash") then
+	local prefix = ":"
+	
+	players:Chat("gear all 4842207161")
+	lplayer.Backpack:WaitForChild("AR")
+	lplayer.Backpack.AR.Parent = lplayer.Character
+	wait(0.3)
+	lplayer.Character.AR.Parent = lplayer.Backpack
+	wait(0.5)
+	players:Chat("h meanie!")
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 0.3")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "freeze all")
+	wait(0.2)
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 10")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "clone all")
+	wait(0.2)
+	elseif msg:match("//shiftcrash") then
+	local prefix = ":"
+	
+	players:Chat("gear all 4842207161")
+	lplayer.Backpack:WaitForChild("AR")
+	lplayer.Backpack.AR.Parent = lplayer.Character
+	wait(0.3)
+	lplayer.Character.AR.Parent = lplayer.Backpack
+	wait(0.5)
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 0.3")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "freeze all")
+	wait(0.2)
+	for i=1,3 do
+	game.Players:Chat(prefix.. "size all 10")
+	wait(0.2)
+	end
+	game.Players:Chat(prefix.. "clone all")
+	wait(0.2)
+	elseif msg:match("//box") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local person = splitstring[2]
+	for i,v in pairs(getplr(person)) do
+	local person = v.Name
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 0.3")
+	wait(0.1)
+	players:Chat("size " ..person.. " 1.5")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	players:Chat("size " ..person.. " 2")
+	end
+	elseif msg:match("//gearplr") then
+	local splitstring = string.split(msg, " ")
+	local bird = game:GetService("Players")
+	local person = splitstring[2]
+	local gearimp = splitstring[3]
+	local gearstr = gearimp:lower()
+	if gearstr == "paint" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 18474459")
+	end
+	elseif gearstr == "radio" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 212641536")
+	end
+	elseif gearstr == "timestop" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 71037101")
+	end
+	elseif gearstr == "airstrike" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 88885539")
+	end
+	elseif gearstr == "treehouse" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 119917513")
+	end
+	elseif gearstr == "zombiestaff" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 26421972")
+	end
+	elseif gearstr == "bodyswap" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 78730532")
+	end
+	elseif gearstr == "ultimateyellowcar" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 253519495")
+	end
+	elseif gearstr == "megaphone" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 44116233")
+	end
+	elseif gearstr == "snowballcannon" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 67755182")
+	end
+	elseif gearstr == "medusasword" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 59190534")
+	end
+	elseif gearstr == "rmagiccarpet" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 225921000")
+	end
+	elseif gearstr == "deluxecarpet" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 477910063")
+	end
+	elseif gearstr == "procket" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 298085284")
+	end
+	elseif gearstr == "subtripmine" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 11999247")
+	end
+	elseif gearstr == "bombotable" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 243788010")
+	end
+	elseif gearstr == "cameraglitch" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 987032734")
+	end
+	elseif gearstr == "sensglitch" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 68354832")
+	end
+	elseif gearstr == "arshiftlock" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 4842207161")
+	end
+	end
+	elseif msg:match("//gearprint") then
+	print([[
+	paint - paintbucket
+	radio - golden boombox
+	timestop - stop time
+	airstrike - airstrike
+	treehouse - instant treehouse
+	zombiestaff - zombie staff obviously :|
+	bodyswap - body swap potion
+	ultimateyellowcar - Ultimate Drive Speedster (car go vroom vroom)
+	megaphone - megaphone
+	medusasword - sword that turns things to stone
+	snowballcannon - not working but still funny
+	rmagiccarpet - rainbow magic carpet
+	deluxecarpet - deluxe rainbow magic carpet
+	procket - personal rocketship
+	subtripmine - subspace tripmine
+	bombotable - table that goes boom boom on hit
+	cameraglitch - part of a camera glitch
+	sensglitch - part of a sensitivity glitch
+	arshiftlick - shiftlocks all and breaks camera
+	]])
+	elseif msg:lower() == "//rejoinserver" then
+	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+	elseif msg:match("//savetools") then
+	local splitstring = string.split(msg, " ")
+	local chicken = game:GetService("Players")
+	local gearpackname = splitstring[2]
+	table.remove(splitstring,1)
+	table.remove(splitstring,1)
+	savegearpack(gearpackname,unpack(splitstring))
+	elseif msg:match("//loadtools") then
+	local splitstring = string.split(msg, " ")
+	local bird1 = game:GetService("Players")
+	local person = splitstring[2]
+	local impname = splitstring[3]
+	loadgearpack(person,impname)
+	elseif msg:lower() == "//printpacks" then
+	print(unpack(gearpacks))
+	elseif msg:lower() == "//antimusic" then
+	if removesong == true then
+	removesong = false
+	else
+	removesong = true
+	players:Chat("music")
+	end
+	elseif msg:lower() == "//messagedeleter" then
+	if not _G.messagedeleter then
+	_G.messagedeleter = true
+	else
+	_G.messagedeleter = false
+	end
+	end
+	end)
+	wait(2)
+	
+	local function lagishthefoolish(foolishfish)
+	local speakish = game:GetService("Players")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
+	end
+
+
+	wait(1)
+	--loop commands (enable)
+	chatted:Connect(function(msg)
+	if msg:match(" ") then
+	local splitstring = string.split(msg, " ")
+	local TALKTALKTALKTALK = game:GetService("Players")
+	local chicken = game:GetService("Players")
+	local foolishfool = splitstring[2]
+	for i,v in pairs(getplr(foolishfool)) do
+	foolishfool = v.Name
+	end
+	
+	if splitstring[1]:lower() == "//loopres" then
+	_G.loopres = true
+	repeat
+	wait(0.2)
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "," ..foolishfool.. "")
+	until players:FindFirstChild(foolishfool) == nil or _G.loopres == false
+	elseif splitstring[1]:lower() == "//nlag" then
+	local splitstring = string.split(msg, " ")
+	_G.nlag = true
+	repeat
+	wait(0.2)
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	TALKTALKTALKTALK:Chat("pm " ..foolishfool.. " " ..lagtext.. "")
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.nlag == false
+	elseif splitstring[1]:lower() == "//pmlag" then
+	_G.lag = true
+	repeat
+	wait(0.4)
+	lagishthefoolish(foolishfool)
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.lag == false
+	elseif splitstring[1]:lower() == "//loopexplode" then
+	_G.loopexplode = true
+	while wait() and _G.loopexplode do
+	TALKTALKTALKTALK:Chat("explode " ..foolishfool.. "")
+	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "")
+	end
+	elseif splitstring[1]:lower() == "//protection" then
+	_G.exploiterprotection = true
+	while wait(1) and _G.exploiterprotection do
+	TALKTALKTALKTALK:Chat("reset me")
+	end
+	
+	elseif splitstring[1]:lower() == "//crowdcontrol" then
+	_G.crowdcontrol = true
+	while wait() and _G.crowdcontrol do
+	TALKTALKTALKTALK:Chat("reset others")
+	TALKTALKTALKTALK:Chat("tp others me")
+	end
+	
+	elseif splitstring[1]:lower() == "//ineed@someone" then
+	_G.ineedatsomeone = true
+	local IREALLYNEEDATSOMEONE = game:GetService("Players")
+	while wait(0.4) and _G.ineedatsomeone do
+	local firstarg = math.random(0,10)
+	local secondarg = math.random(0,10)
+	local thirdarg = math.random(0,10)
+	local fogarg = math.random(70,150)
+	IREALLYNEEDATSOMEONE:Chat("part/" ..firstarg.. "/" ..secondarg.. "/" ..thirdarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("time 0")
+	IREALLYNEEDATSOMEONE:Chat("fogend " ..fogarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("disco")
+	IREALLYNEEDATSOMEONE:Chat("clone all")
+	end
+	
+	
+	elseif splitstring[1]:lower() == "//loopfling" then
+	_G.loopfling = true
+	while wait() and _G.loopfling do
+	chicken:Chat("fling " ..foolishfool.. "")
+	end
+	
+	elseif splitstring[1]:lower() == "//loopkill" then
+	_G.loopkill = true
+	while wait(4) and _G.loopkill do
+	chicken:Chat("kill " ..foolishfool.. "")
+	end
+	--end if loopres
+	end
+	end
+	end)
+	
+	--// loop commands (disable)
+	chatted:Connect(function(msg)
+	if msg:lower() == "//loopexplodeoff" then
+	_G.loopexplode = false
+	elseif msg:lower() == "//loopkilloff" then
+	_G.loopkill = false
+	elseif msg:lower() == "//loopflingoff" then
+	_G.loopfling = false
+	elseif msg:lower() == "//freedom" then
+	_G.crowdcontrol = false
+	elseif msg:lower() == "//protectionoff" then
+	_G.exploiterprotection = false
+	elseif msg:lower() == "//lagoff" then
+	if _G.nlag then
+	_G.nlag = false
+	end
+	if _G.lag then
+	_G.lag = false
+	end
+	elseif msg:lower() == "//igot@someone" then
+	_G.ineedatsomeone = false
+	elseif msg:lower() == "//loopresoff" then
+	_G.loopres = false
+	end
+	end)
+	
+	--thorns
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/kohlsthorns.lua",true))()
+	--give antikill
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/giveantikill.lua",true))()
+	print("admin ready!")
