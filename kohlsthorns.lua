@@ -37,8 +37,10 @@ thornsuser.Chatted:Connect(function(message)
 if message:lower() == "//thorns" then
 if thornstoggle == false then
 thornstoggle = true
+print("thorns on!")
 else
 thornstoggle = false
+print("thorns off.")
 end
 elseif message:match(" ") then
 local splitstring = string.split(msg, " ")
