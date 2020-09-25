@@ -60,7 +60,7 @@
 	"rejoinserver" rejoins the server
 	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off) stops all exploiters who haven't bought persons admin from lagging you
 	"savetools [packname] [ids]" make your own gearpacks
-	"loadtools [playername] [packname]" load your own gearpacks, somewhat unstable if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
+	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
 	
 	Gamepass Commands:
@@ -683,6 +683,13 @@ end
 	removesong = false
 	else
 	removesong = true
+	players:Chat("music")
+	end
+	elseif msg:lower() == "//messagedeleter" then
+	if not _G.messagedeleter then
+	_G.messagedeleter = true
+	else
+	_G.messagedeleter = false
 	end
 	end
 	end)
@@ -768,12 +775,6 @@ end
 	IREALLYNEEDATSOMEONE:Chat("clone all")
 	end
 	
-	elseif splitstring[1]:lower() == "//messagedeleter" then
-	if not _G.messagedeleter then
-	_G.messagedeleter = true
-	else
-	_G.messagedeleter = false
-	end
 	
 	elseif splitstring[1]:lower() == "//loopfling" then
 	_G.loopfling = true
