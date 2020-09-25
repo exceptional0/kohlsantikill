@@ -64,6 +64,7 @@
 	"savetools [packname] [ids]" make your own gearpacks
 	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
+	"thorns" reflects almost any commands back to the attacker not currently supported for persons admin and something else
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
