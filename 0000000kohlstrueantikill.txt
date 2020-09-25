@@ -684,6 +684,7 @@ end
 	else
 	removesong = true
 	end
+	end
 	end)
 	wait(2)
 	
