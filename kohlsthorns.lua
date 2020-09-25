@@ -43,7 +43,7 @@ thornstoggle = false
 print("thorns off.")
 end
 elseif message:match(" ") then
-local splitstring = string.split(msg, " ")
+local splitstring = string.split(message, " ")
 if splitstring[1]:lower() == "thornswl" then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
@@ -58,7 +58,7 @@ for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 victimhasjoined.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(msg, " ")
+	local splitstring = string.split(message, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
@@ -133,7 +133,7 @@ if victimhasjoined ~= thornsuser then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(msg, " ")
+	local splitstring = string.split(message, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
