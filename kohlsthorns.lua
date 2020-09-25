@@ -203,22 +203,24 @@ print("thorns off.")
 end
 elseif message:match(" ") then
 local splitstring = string.split(message, " ")
-if splitstring[1]:lower() == "thornswl" then
+if splitstring[1]:lower() == "//thornswl" and splitstring[2] ~= nil then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
 	victim = v
 	end
 	if victim ~= nil then
 	givethorns(victim)
+	print("gave thorns to " ..victim.Name.. "!")
 	end
 	end
-	elseif splitstring[1]:lower() == "rthorns" then
+	elseif splitstring[1]:lower() == "//rthorns" and splitstring[2] ~= nil then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
 	victim = v.Name
 	end
 	if victim ~= nil then
 	clearthorns(thornstable,victim)
+	print("cleared away the thorns surrounding " ..victim.Name.. ".")
 	end
 end
 end)
