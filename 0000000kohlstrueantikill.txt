@@ -656,6 +656,10 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 75550883")
 	end
+	elseif gearstr == "exceptionalsfavorite" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 75941738")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
