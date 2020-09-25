@@ -1,6 +1,6 @@
 	print([[
-	Version: earth to user? hello yes version is earth to user.
-	(version added for dev reasons)
+	Version: 1 eggs
+	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
 	fixed and improved //messagedeleter will now delete all :ms and :pms including persons admin, 99-100% antilag
@@ -110,7 +110,6 @@
 	
 	SfolderS.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
-	wait(0)
 	messagedeleter2:Destroy()
 	end
 	end)
