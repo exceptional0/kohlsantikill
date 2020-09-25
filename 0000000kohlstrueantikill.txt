@@ -1,9 +1,9 @@
 	print([[
-	Version: 1 eggs
+	Version: thorns (version 2)
 	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
-	
+	added command toggle "thorns" reflect almost any command done to you back to the attacker not currently supported for persons admin and something else
 	9/24/2020
 	fixed erroring whenever you disable a loop command but still disabling (remade the format)
 	9/24/2020
@@ -108,12 +108,7 @@
 	end
 	end)
 	
-	SfolderS.ChildAdded:Connect(function(messagedeleter2)
-	if messagedeleter2:IsA("Message") and _G.messagedeleter then
-	wait(0)
-	messagedeleter2:Destroy()
-	end
-	end)
+
 
 	
 	--// gamepass autogive admin
@@ -828,6 +823,8 @@ end
 	end
 	end)
 	
+	--thorns
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/kohlsthorns.lua",true))()
 	--give antikill
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/giveantikill.lua",true))()
 	print("admin ready!")
