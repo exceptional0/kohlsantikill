@@ -1,5 +1,5 @@
 	print([[
-	Version: testing testing testing?
+	Version: earth to user? hello yes version is earth to user.
 	(version added for dev reasons)
 	Changelog:
 	9/25/2020
