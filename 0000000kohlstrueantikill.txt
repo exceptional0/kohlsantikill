@@ -1,5 +1,5 @@
 	print([[
-	Version: thorns (version 2.0.1)
+	Version: Command Reflection (version 3)
 	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
@@ -64,7 +64,9 @@
 	"savetools [packname] [ids]" make your own gearpacks
 	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
-	"thorns" reflects almost any commands back to the attacker not currently supported for persons admin and something else
+	"thorns" command reflection, persons admin and something else is not supported.
+	"thornswl" give thorns
+	"rthorns" remove thorns
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
