@@ -56,7 +56,7 @@ end)
 
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
-victimhasjoined.Chatted:Connect(function(talking)
+v.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
 	local splitstring = string.split(message, " ")
 	local chicken = game:GetService("Players")
