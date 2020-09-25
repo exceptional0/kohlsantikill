@@ -103,7 +103,7 @@ thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsuser then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
-if talking:match(" ") and table.find(thornstable,thornsusername2) then
+if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	local splitstring = string.split(talking2, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
@@ -203,7 +203,8 @@ print("thorns off.")
 end
 elseif message:match(" ") then
 local splitstring = string.split(message, " ")
-if splitstring[1]:lower() == "//thornswl" and splitstring[2] ~= nil then
+if splitstring[1] ~= nil and splitstring[2] ~= nil then
+if splitstring[1]:lower() == "//thornswl" then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
 	victim = v
@@ -213,7 +214,7 @@ if splitstring[1]:lower() == "//thornswl" and splitstring[2] ~= nil then
 	print("gave thorns to " ..victim.Name.. "!")
 	end
 	end
-	elseif splitstring[1]:lower() == "//rthorns" and splitstring[2] ~= nil then
+	elseif splitstring[1]:lower() == "//rthorns" then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
 	victim = v.Name
@@ -221,6 +222,7 @@ if splitstring[1]:lower() == "//thornswl" and splitstring[2] ~= nil then
 	if victim ~= nil then
 	clearthorns(thornstable,victim)
 	print("cleared away the thorns surrounding " ..victim.Name.. ".")
+	end
 	end
 end
 end)
@@ -306,7 +308,7 @@ thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsuser then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
-if talking:match(" ") and thornstoggle == true then
+if talking2:match(" ") and thornstoggle == true then
 	local splitstring = string.split(talking2, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
