@@ -7,29 +7,11 @@ local thornstoggle = false
 function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
-    if Target == "all" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            table.insert(Found,v)
-        end
-    elseif Target == "others" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name ~= game.Players.LocalPlayer.Name then
-                table.insert(Found,v)
-            end
-        end   
-	elseif Target == "me" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name == game.Players.LocalPlayer.Name then
-                table.insert(Found,v)
-            end
-        end  
-    else
         for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1, #String) == String:lower() then
                 table.insert(Found,v)
             end
         end    
-    end
     return Found    
 end
 
@@ -58,7 +40,7 @@ for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(message, " ")
+	local splitstring = string.split(talking, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
@@ -133,9 +115,9 @@ if talking:match(" ") and thornstoggle == true then
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsuser then
 local victimname = victimhasjoined.Name
-victimhasjoined.Chatted:Connect(function(talking)
+victimhasjoined.Chatted:Connect(function(talking2)
 if talking:match(" ") and thornstoggle == true then
-	local splitstring = string.split(message, " ")
+	local splitstring = string.split(talking2, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
