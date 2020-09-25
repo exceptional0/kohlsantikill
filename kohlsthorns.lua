@@ -44,8 +44,9 @@ if talking:match(" ") and thornstoggle == true then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
-	for i,v in pairs(checkif(victim)) do
-	victim = v.Name
+	local victimname = v.Name
+	for i,z in pairs(checkif(victim)) do
+	victim = z.Name
 	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("kill " ..victimname.. "")	
 	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
