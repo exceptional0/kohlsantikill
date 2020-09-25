@@ -2,6 +2,8 @@
 	Version: testing testing testing?
 	(version added for dev reasons)
 	Changelog:
+	9/25/2020
+	fixed and improved //messagedeleter will now delete all :ms and :pms including persons admin, 99-100% antilag
 	9/24/2020
 	fixed erroring whenever you disable a loop command but still disabling (remade the format)
 	9/24/2020
