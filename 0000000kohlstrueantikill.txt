@@ -108,13 +108,6 @@
 	end
 	end)
 	
-	lplayer.PlayerGui.BubbleChildAdded:Connect(function(messagedeleter)
-	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
-	wait(0)
-	messagedeleter:Destroy()
-	end
-	end)
-	
 	SfolderS.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
 	wait(0)
