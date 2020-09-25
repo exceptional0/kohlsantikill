@@ -58,7 +58,7 @@
 	"ineed@someone" @someone is needed (works better with persons or prisoners gamepass)
 	"igot@someone" Discord now has @someone! (disables ineed@someone)
 	"rejoinserver" rejoins the server
-	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off) stops all exploiters who haven't bought persons admin from lagging you
+	"messagedeleter" deletes pms and maybe :m(s) (command turns it on/off) can stop exploiters from lagging you
 	"savetools [packname] [ids]" make your own gearpacks
 	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
@@ -91,7 +91,7 @@
     v:Destroy()
     end
 	end
-	
+
 	local SfolderS = game.Workspace.Terrain["_Game"].Folder
 	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
 	if NOMOOSICPLS.Name == "Sound" and removesong == true then
@@ -103,6 +103,13 @@
 	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
 	wait(0)
 	messagedeleter:Destroy()
+	end
+	end)
+	
+	SfolderS.ChildAdded:Connect(function(messagedeleter2)
+	if v:IsA("Message") and _G.messagedeleter then
+	wait(0)
+	messagedeleter2:Destroy()
 	end
 	end)
 	
