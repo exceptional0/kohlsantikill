@@ -1,9 +1,9 @@
 	print([[
-	Version: Command Reflection (version 3.0.2)
+	Version: Karma (version 3.1)
 	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
-	added command toggle "thorns" reflect almost any command done to you back to the attacker not currently supported for persons admin and something else
+	added command toggle "thorns" karma for almost any command done to you not currently supported for persons admin and something else
 	9/24/2020
 	fixed erroring whenever you disable a loop command but still disabling (remade the format)
 	9/24/2020
@@ -64,9 +64,11 @@
 	"savetools [packname] [ids]" make your own gearpacks
 	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
-	"thorns" command reflection, persons admin and something else is not supported.
+	"thorns" karma for every command someone uses against you, persons admin and something else is not supported.
 	"thornswl" give thorns
 	"rthorns" remove thorns
+	
+	antikill + thorns = semi-immortality
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
@@ -646,6 +648,10 @@ end
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 4842207161")
 	end
+	elseif gearstr == "darkheart" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 16895215")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -668,6 +674,7 @@ end
 	cameraglitch - part of a camera glitch
 	sensglitch - part of a sensitivity glitch
 	arshiftlick - shiftlocks all and breaks camera
+	darkheart - darkheart
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
