@@ -1,5 +1,5 @@
 	print([[
-	Version: thorns (version 2.2)
+	Version: thorns (version 2.0.1)
 	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
