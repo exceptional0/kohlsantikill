@@ -1,5 +1,5 @@
 	print([[
-	Version: Command Reflection (version 3.0.1)
+	Version: Command Reflection (version 3.0.2)
 	(version added for dev reasons on 9/23/2020)
 	Changelog:
 	9/25/2020
