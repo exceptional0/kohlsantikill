@@ -1,5 +1,5 @@
 	print([[
-	Version: Defending Users Since A Month Ago (version 4.0.3)
+	Version: Defending Users Since A Month Ago (version 4.0.4)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -200,7 +200,7 @@ end
 	
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	
+	print("died")
 	game:GetService("Players"):Chat("reset me")
 	
 	wait(0.2)
@@ -227,7 +227,7 @@ end
 	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	
+	print("died")
 	game:GetService("Players"):Chat("reset me")
 	
 	wait(0.2)
