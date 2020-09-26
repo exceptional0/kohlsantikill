@@ -20,11 +20,12 @@ local lPlPlPl = game.Players.LocalPlayer
 local PlPlPl = lPlPlPl.Chatted
 local plrimp = game:GetService("Players")
 
-plrimp.PlayerRemoving:Connect(function(deltable)
+--[[plrimp.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then 
 	removeantikill(whohasantikill.antikillon, deltable.Name)
 	end
 	end)
+	--]]
 	
 local function removeantikill(Table,playername)
 for i = 1,#Table do
