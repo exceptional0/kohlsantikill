@@ -879,7 +879,7 @@ table.insert(thornstable,thornsusername2)
 wait(0)
 
 for i,v in pairs(thornsvictims:GetPlayers()) do
-if v.Name ~= thornsuser2 and v.Name ~= thornsuser then
+if v.Name ~= thornsusername2 and v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	local splitstring = string.split(talking, " ")
@@ -1022,7 +1022,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined ~= thornsuser then
+if victimhasjoined.Name ~= thornsusername and victimhasjoined ~= thornsusername2 then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and table.find(thornstable,thornsusername2) then
