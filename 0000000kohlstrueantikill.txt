@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal service (version 6)
+	Version: memory removal service (version 6.1)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -889,7 +889,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	local victimname = v.Name
 	for i,z00 in pairs(checkif(victim)) do
 	if z00 ~= thornsuser and z00 ~= thornsuser2 then
-	victim = z.Name
+	victim = z00.Name
 	end
 	print(victim)
 	if splitstring[1]:lower() == "kill" and victim == thornsusername2 or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername2 or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
@@ -1032,7 +1032,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	local victim = splitstring[2]
 	for i,viscool in pairs(checkif(victim)) do
 	if viscool ~= thornsuser and viscool ~= thornsuser2 then
-	victim = v.Name
+	victim = viscool.Name
 	end
 	print(victim)
 	if splitstring[1]:lower() == "kill" and victim == thornsusername2 or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername2 or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
