@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal service (version 5)
+	Version: memory removal service (version 5.0.1)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -1556,14 +1556,14 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	
 	print(unpack(whohasantikill.antikillon))
 	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
-	giveantikill.Humanoid.Changed:Connect(function(egg)
+	giveantikill.Humanoid.Changed:Connect(function(dwnia)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
 	game:GetService("Players"):Chat(":ff " ..giveantikillstring.. "")
-	giveantikill.ChildRemoved:Connect(function(Object)
+	giveantikill.ChildRemoved:Connect(function(squid)
 	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
@@ -1599,7 +1599,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	local whomst = v
 	local giveantikill = v.Character
 	local giveantikillstring = v.Name
-	giveantikill:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+	giveantikill:WaitForChild("Humanoid").Died:Connect(function(what)
 	
     if table.find(whohasantikill.antikillon, giveantikillstring) then 
 	
