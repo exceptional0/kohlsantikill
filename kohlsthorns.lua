@@ -314,11 +314,11 @@ end
 end
 end
 
-thornsvictims.PlayerRemoving:Connect(function(deltable)
+--[[thornsvictims.PlayerRemoving:Connect(function(deltable)
 	if table.find(thornstable, deltable.Name) then 
 	clearthorns(thornstable, deltable.Name)
 	end
-	end)
+	end)--]]
 
 thornsuser.Chatted:Connect(function(message)
 if message:lower() == "//thorns" then
