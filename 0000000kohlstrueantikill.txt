@@ -1,5 +1,5 @@
 	print([[
-	Version: Defending Users Since A Month Ago (version 4.0.1)
+	Version: Defending Users Since A Month Ago (version 4.0.2)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -847,8 +847,7 @@ end
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/kohlsthorns.lua",true))()
 	--give antikill
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/giveantikill.lua",true))()
-	print("admin ready!")
-	
+	wait(0.7)
 	players.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then
 	removeantikill(whohasantikill.antikillon, deltable.Name)
@@ -856,3 +855,4 @@ end
 	clearthorns(thornstable, deltable.Name)
 	end
 	end)
+	print("admin ready!")
