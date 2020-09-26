@@ -1,7 +1,8 @@
 	print([[
-	Version: Karma (version 3.1)
-	(version added for dev reasons on 9/23/2020)
+	Version: Defending Users Since A Month Ago (version 4)
 	Changelog:
+	9/26/2020
+	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
 	9/25/2020
 	added command toggle "thorns" karma for almost any command done to you not currently supported for persons admin and something else
 	9/24/2020
@@ -847,3 +848,11 @@ end
 	--give antikill
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/giveantikill.lua",true))()
 	print("admin ready!")
+	
+	players.PlayerRemoving:Connect(function(deltable)
+	if table.find(whohasantikill.antikillon, deltable.Name)
+	removeantikill(whohasantikill.antikillon, deltable.Name)
+	elseif table.find(thornstable, deltable.Name) then
+	clearthorns(thornstable, deltable.Name)
+	end
+	end)
