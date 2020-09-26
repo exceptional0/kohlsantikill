@@ -1,5 +1,5 @@
 	print([[
-	Version: sssshhh- no more memory (version 4.0.6)
+	Version: memory removal service (version 5)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -68,7 +68,7 @@
 	"thorns" karma for every command someone uses against you, persons admin and something else is not supported.
 	"thornswl" give thorns
 	"rthorns" remove thorns
-	
+	"nowplaying" print the currently playing sound id
 	antikill + thorns = semi-immortality
 	
 	Gamepass Commands:
@@ -715,6 +715,12 @@ end
 	_G.messagedeleter = true
 	else
 	_G.messagedeleter = false
+	end
+	elseif msg:lower() == "//nowplaying" then
+	if SfolderS:FindFirstChild("Sound") then
+	print(tostring(game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId))
+	else
+	print("music isn't playing?")
 	end
 	end
 	end)
@@ -1563,7 +1569,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	end
 	end)
 	
-	giveantikill:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+	giveantikill:WaitForChild("Humanoid").Died:Connect(function(fish)
     if table.find(whohasantikill.antikillon, giveantikillstring) then 
 	
 	game:GetService("Players"):Chat("reset " ..giveantikillstring.. "")
@@ -1574,13 +1580,13 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	
 	
-	giveantikill.Humanoid.Changed:Connect(function(egg)
+	giveantikill.Humanoid.Changed:Connect(function(eeeeeeeeeee)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
-	giveantikill.ChildRemoved:Connect(function(Object)
+	giveantikill.ChildRemoved:Connect(function(waaaa)
 	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
@@ -1589,7 +1595,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	end)
 
 	--// Anti Spam Kill (On Death Restart)
-	whomst.CharacterAdded:connect(function(char)
+	whomst.CharacterAdded:connect(function(zzzzzz)
 	local whomst = v
 	local giveantikill = v.Character
 	local giveantikillstring = v.Name
@@ -1605,13 +1611,13 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	
 	
-	giveantikill.Humanoid.Changed:Connect(function(egg)
+	giveantikill.Humanoid.Changed:Connect(function(waaaahhhhh)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
-	giveantikill.ChildRemoved:Connect(function(Object)
+	giveantikill.ChildRemoved:Connect(function(renamingthismightfixit)
 	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
