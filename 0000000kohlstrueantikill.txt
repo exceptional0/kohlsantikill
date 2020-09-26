@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal service (version 6.1)
+	Version: memory removal service (version 6.2)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
