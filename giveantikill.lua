@@ -45,10 +45,12 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	local whomst = v
 	local giveantikill = v.Character
 	local giveantikillstring = v.Name
-	
+	local debuggiveantikill = tostring(giveantikill)
 	table.insert(whohasantikill.antikillon, giveantikillstring)
 	
-	
+	print("antikillstring is: " ..giveantikillstring.. "")
+	print("debuggiveantikill is: " ..debuggiveantikill.. "")
+	print("added for dev reasons will remove these prints soon!")
 	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
 	giveantikill.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
