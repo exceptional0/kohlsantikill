@@ -8,45 +8,25 @@ antikillon = {}
 function getplrr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
-    if Target == "all" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            table.insert(Found,v)
-        end
-    elseif Target == "others" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name ~= game.Players.LocalPlayer.Name then
-                table.insert(Found,v)
-            end
-        end   
-	elseif Target == "me" then
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name == game.Players.LocalPlayer.Name then
-                table.insert(Found,v)
-            end
-        end  
-    else
         for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1, #String) == String:lower() then
                 table.insert(Found,v)
             end
         end    
-    end
     return Found    
 end
---basic locals
+
 local lPlPlPl = game.Players.LocalPlayer
 local PlPlPl = lPlPlPl.Chatted
 local plrimp = game:GetService("Players")
 
---remove from table
 plrimp.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then 
 	removeantikill(whohasantikill.antikillon, deltable.Name)
 	end
 	end)
-
---remove antikill
-function removeantikill(Table,playername)
+	
+local function removeantikill(Table,playername)
 for i = 1,#Table do
 local zZZ = Table[i]
 if zZZ == playername then
@@ -56,11 +36,11 @@ end
 end
 
 
---antikill for someone?
-function antikill(target,toggle)
+local function antikill(target,toggle)
 if toggle == true then
 local Praisebeetothebubble = tostring(target)
 
+print("gave antikill to: " ..Praisebeetothebubble.. "")
 for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	local whomst = v
 	local giveantikill = v.Character
