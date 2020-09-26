@@ -1661,7 +1661,6 @@ if fReezebRain:match("//removeantikill") then
 	
 end
 end)	
-	wait(0.7)
 	players.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then
 	removeantikill(whohasantikill.antikillon, deltable.Name)
