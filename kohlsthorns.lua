@@ -639,6 +639,7 @@ if talking2:match(" ") and thornstoggle == true then
 	end
 	end
 	end
+	end
 	end)
 	end
 	end)
