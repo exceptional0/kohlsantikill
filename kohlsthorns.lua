@@ -331,10 +331,10 @@ print("thorns off.")
 end
 elseif message:lower() == "//dthorns" then
 if defensivethorns == false then
-defensivethorns == true
+defensivethorns = true
 print("defense on, please make sure you have thorns on too or this won't work.")
 else
-defensivethorns == false
+defensivethorns = false
 print("defense off.")
 end
 elseif message:match(" ") then
