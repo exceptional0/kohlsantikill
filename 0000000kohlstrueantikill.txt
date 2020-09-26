@@ -1,5 +1,5 @@
 	print([[
-	Version: Defending Users Since A Month Ago (version 4)
+	Version: Defending Users Since A Month Ago (version 4.0.1)
 	Changelog:
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -850,7 +850,7 @@ end
 	print("admin ready!")
 	
 	players.PlayerRemoving:Connect(function(deltable)
-	if table.find(whohasantikill.antikillon, deltable.Name)
+	if table.find(whohasantikill.antikillon, deltable.Name) then
 	removeantikill(whohasantikill.antikillon, deltable.Name)
 	elseif table.find(thornstable, deltable.Name) then
 	clearthorns(thornstable, deltable.Name)
