@@ -1564,7 +1564,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	
 	game:GetService("Players"):Chat(":ff " ..giveantikillstring.. "")
 	giveantikill.ChildRemoved:Connect(function(squid)
-	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
+	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
@@ -1587,7 +1587,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	end)
 	
 	giveantikill.ChildRemoved:Connect(function(waaaa)
-	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
+	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
@@ -1618,7 +1618,7 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	end)
 	
 	giveantikill.ChildRemoved:Connect(function(renamingthismightfixit)
-	if Object:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
+	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
 	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
