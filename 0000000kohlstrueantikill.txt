@@ -1,5 +1,5 @@
 	print([[
-	Version: DONALD DUCK LOL: AlRIGHT WHY ISNT MY SCRIPT WORKING (i fixed it i think) (version 7.0.4)
+	Version: AYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY (version 7.0.5)
 	Changelog:
 	9/27/2020
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
@@ -328,7 +328,7 @@ end
 	local whuser = ""
 	local WatchInuXBokuSS = ""
 	for i,v in pairs(getplr(user)) do
-	local whuser = v
+	whuser = v
 	end
 	if whuser ~= nil then
 	local whchatted = whuser.Chatted
