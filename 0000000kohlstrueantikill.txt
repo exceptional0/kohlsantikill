@@ -1804,6 +1804,7 @@ local thornsvictims = game:GetService("Players")
 local inflictthornsdamage = game:GetService("Players")
 local thornsuser = thornsvictims.LocalPlayer
 local thornsusername = thornsuser.Name
+local thornstoggle = true
 function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
