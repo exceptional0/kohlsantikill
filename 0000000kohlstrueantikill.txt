@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 7.4)
+	Version: memory removal (version 7.5)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
