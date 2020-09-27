@@ -1,5 +1,5 @@
 	print([[
-	Version: AYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY (version 7.0.5)
+	Version: AYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY (version 7.0.6)
 	Changelog:
 	9/27/2020
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
@@ -334,6 +334,8 @@ end
 	local whchatted = whuser.Chatted
 	local whname = whuser.Name
 	local whchar = whuser.Character
+	table.insert(whitelistedtable.users, whname)
+	table.insert(whitelistedtable.antikillon, whname)
 	--// Anti Spam Kill (first execute)
 	game:GetService'Players':Chat("god " ..whname.. "")
 	whchar.Humanoid.Changed:Connect(function(egg)
@@ -377,7 +379,6 @@ end
 	whuser.CharacterAdded:connect(function(char)
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
-	print("died")
 	game:GetService("Players"):Chat("reset " ..whname.. "")
 	
 	wait(0.2)
