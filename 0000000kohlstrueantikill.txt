@@ -889,7 +889,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	local victimname = v.Name
-	for i,z00 in pairs(checkif(victim)) do then
+	for i,z00 in pairs(checkif(victim)) do
 	victim = z00.Name
 	end
 	print(victim)
@@ -1031,7 +1031,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
-	for i,viscool in pairs(checkif(victim)) do then
+	for i,viscool in pairs(checkif(victim)) do
 	victim = viscool.Name
 	end
 	print(victim)
