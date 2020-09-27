@@ -1,5 +1,5 @@
-	prssssssssssssssssssssssssint([[
-	Version: memory removal (version 7.1.1)
+	print([[
+	Version: memory removal (version 7.2)
 	Changelog:
 	9/27/2020
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
@@ -1665,8 +1665,9 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
-	local person = v.Name
+	person = v.Name
 	end
+	print(person)
 	unwhitelist(person)
 	end
 	end)
