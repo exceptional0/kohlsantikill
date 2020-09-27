@@ -2,7 +2,7 @@
 	Version: memory removal service (version 6.5)
 	Changelog:
 	9/27/2020
-	fixed thorns entirely 
+	fixed thorns entirely x2
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
 	9/25/2020
