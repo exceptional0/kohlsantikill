@@ -2,7 +2,7 @@
 	Version: memory removal service (version 6.5)
 	Changelog:
 	9/27/2020
-	fixed thorns entirely x2
+	fixed thorns entirely x3
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
 	9/25/2020
@@ -1017,7 +1017,6 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	--end if string == "kill" then
 	end
 	end
-	end
 	end)
 	end
 	end
@@ -1158,7 +1157,6 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
-	end
 	end
 	end
 	end)
