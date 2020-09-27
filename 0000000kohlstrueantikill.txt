@@ -1,7 +1,8 @@
 	print([[
-	Version: memory removal (version 7.2)
+	Version: memory removal (version 7.3)
 	Changelog:
 	9/27/2020
+	for some reason i really broke thorns, it should be fixed
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
 	fixed thorns entirely x3
 	9/26/2020
@@ -1811,6 +1812,16 @@ local thornsusername = thornsuser.Name
 local thornstoggle = false
 local defensivethorns = false
 
+local function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
+    local Found = {}
+    local Target = String:lower()
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                table.insert(Found,v)
+            end
+        end    
+    return Found    
+end
 
 local function givethorns(user)
 local thornsuser2 = user
