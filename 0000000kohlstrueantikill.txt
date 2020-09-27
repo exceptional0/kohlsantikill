@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal service (version 7)
+	Version: DONALD DUCK LOL: AlRIGHT WHY ISNT MY SCRIPT WORKING (i fixed it i think) (version 7.0.2)
 	Changelog:
 	9/27/2020
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
@@ -303,16 +303,16 @@ end
 	end
 	--loopexplodeon,loopkillon,loopflingon,nlagon,pmlagon,loopreson,protectionon
 	local whitelistedtable = {
-	users = {}
-	antikillon = {}
-	thornson = {}
-	defenseon = {}
-	loopexplodeon = {}
-	loopflingon = {}
-	loopkillon = {}
-	nlagon = {}
-	pmlagon = {}
-	loopreson = {}
+	users = {},
+	antikillon = {},
+	thornson = {},
+	defenseon = {},
+	loopexplodeon = {},
+	loopflingon = {},
+	loopkillon = {},
+	nlagon = {},
+	pmlagon = {},
+	loopreson = {},
 	protectionon = {}
 	}
 	local function removefromtable(Table,playername)
@@ -325,7 +325,7 @@ end
 	end
 	
 	local function whitelistplr(user) 
-	local whuser
+	local whuser = ""
 	for i,v in getplr(user) do
 	local whuser = v
 	end
@@ -753,7 +753,6 @@ end
 	end
 	end
 	end
-	end
 	end)
 	wait(2)
 	
@@ -827,14 +826,14 @@ end
 	end
 	
 	elseif splitstring[1]:lower() == "//loopfling" then
-	if not table.find(whitelistedtable.loopflingon, whname)
+	if not table.find(whitelistedtable.loopflingon, whname) then
 	table.insert(whitelistedtable.loopflingon , whname)
 	end
 	while wait() and table.find(whitelistedtable.loopflingon, whname) do
 	chicken:Chat("fling " ..foolishfool.. "")
 	end
 	elseif splitstring[1]:lower() == "//loopkill" then
-	if not table.find(whitelistedtable.loopkillon, whname)
+	if not table.find(whitelistedtable.loopkillon, whname) then
 	table.insert(whitelistedtable.loopkillon, whname)
 	end
 	while wait(2) and table.find(whitelistedtable.loopkillon, whname) do
@@ -1229,6 +1228,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	removefromtable(whitelistedtable.antikillon, user)
 	end
 	end
+	end
+	
 	--// commands
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	if msg:lower() == "//trueantikill" then
@@ -1795,7 +1796,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	--thorns
 	
 	
-	
+local thornstable = {}
 local thornsvictims = game:GetService("Players")
 local inflictthornsdamage = game:GetService("Players")
 local thornsuser = thornsvictims.LocalPlayer
