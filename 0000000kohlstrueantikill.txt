@@ -1,5 +1,5 @@
 	print([[
-	Version: DONALD DUCK LOL: AlRIGHT WHY ISNT MY SCRIPT WORKING (i fixed it i think) (version 7.0.2)
+	Version: DONALD DUCK LOL: AlRIGHT WHY ISNT MY SCRIPT WORKING (i fixed it i think) (version 7.0.3)
 	Changelog:
 	9/27/2020
 	added whitelistuser [player] and unwhitelist [player] because of a friends request
@@ -326,7 +326,8 @@ end
 	
 	local function whitelistplr(user) 
 	local whuser = ""
-	for i,v in getplr(user) do
+	local inuxbokuss = user
+	for i,v in getplr(inuxbokuss) do
 	local whuser = v
 	end
 	if whuser ~= nil then
