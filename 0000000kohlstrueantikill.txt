@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 7.5)
+	Version: memory removal (version 7.6)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -44,7 +44,7 @@
 	"loopfling" (repeatedly flings the specified player until "//loopflingoff" is said)
 	"loopflingoff" (disables loopfling for all players)
 	"everythingisred" (paints everything red, keep paint bucket held and don't lose it or it'll break obviously)
-	"everythingismagenta" (paints everything magenta, keep paint bucket held or it'll break obviously)
+	"==1cs" (paints everything magenta, keep paint bucket held or it'll break obviously)
 	"box [player]" (it turns you into a box what else did you expect? might not work when you do all or others)
 	"crowdcontrol" (automatically resets everyone and tps them to you)
 	"freedom" (stops controlling the crowd, stops //crowdcontrol)
@@ -1395,7 +1395,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	elseif msg:match("//everythingismagenta") then
+	elseif msg:match("==1cs") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
 	game.Players:Chat("gear me 18474459")
@@ -1408,7 +1408,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	wait(0.6)
 	local a = workspace:GetDescendants()
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
-	local ColorSelection = BrickColor.new("Magenta").Color
+	local ColorSelection = BrickColor.new("Dark indigo").Color
 	for i, v in pairs(a) do
 	if v:IsA("BasePart") then
 	local Data = {}
