@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 7.7)
+	Version: memory removal (version 7.8)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -1835,7 +1835,7 @@ table.insert(thornstable,thornsusername2)
 wait(0)
 
 for i,v in pairs(thornsvictims:GetPlayers()) do
-if v.Name ~= thornsusername2 then
+if v.Name ~= thornsusername2 and v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	local splitstring = string.split(talking, " ")
