@@ -1,12 +1,11 @@
 	print([[
-	Version: memory removal (version 8.4)
+	Version: memory removal (version 8.5)
 	Changelog:
 	9/29/2020
 	100% fixed whitelisted
 	added restore [player]
 	added reload to thorns
 	did something else i forgot
-	played with a friend
 	found more songs to add to my list
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
@@ -2494,7 +2493,6 @@ if talking2:match(" ") and thornstoggle == true then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
-	end
 	end
 	end
 	end
