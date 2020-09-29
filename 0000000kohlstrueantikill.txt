@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.2)
+	Version: memory removal (version 8.3)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -342,11 +342,11 @@ end
 	table.insert(whitelistedtable.antikillon, whname)
 	if not table.find(whitelistedtable.previouswhitelistedusers, whname) then
 	table.insert(whitelistedtable.previouswhitelistedusers, whname)
-	--// Anti Spam Kill (first execute)
+		--// Anti Spam Kill (first execute)
 	game:GetService'Players':Chat("god " ..whname.. "")
 	whchar.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService'Players':Chat("god " ..whname.. "")
+	game:GetService'Players':Chat("god me")
 	end
 	end)
 	
@@ -359,6 +359,7 @@ end
 	
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
+	print("died")
 	game:GetService("Players"):Chat("reset " ..whname.. "")
 	
 	wait(0.2)
@@ -382,7 +383,9 @@ end
 	end)
 
 	--// Anti Spam Kill (On Death Restart)
-	whuser.CharacterAdded:connect(function(char)
+	whuser.CharacterAdded:connect(function(charv)
+	whchar = whuser.Character
+	wait(0)
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
 	game:GetService("Players"):Chat("reset " ..whname.. "")
@@ -407,6 +410,7 @@ end
 	end
 	end)
 	end)
+	
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:lower() == "//trueantikill" then
