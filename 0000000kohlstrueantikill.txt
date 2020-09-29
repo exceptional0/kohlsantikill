@@ -37,7 +37,7 @@
 	"requestadmin" (resets admin and gives you all admin pads, good for stopping abusers without the perm admin gamepass)
 	"loopkill [player]" (automatically kills the specified player every wait(1))
 	"loopkilloff" (disables loopkill for all players, no i will not make it disable for one player)
-	"loopexplode [player]" (automatically explodes and respawns the player, good for causing lag to players with low end devices)
+	"loopexplode [player]" (automatically explodes and respawns the player)
 	"loopexplodeoff" (disables loopexplode for all players, no i will not make it disable for one player)
 	"improveday" (visual improvement, looks best with default everything colors)
 	"shiftlock" (broken shiftlock for all, camera won't move, might only work if they equip it)
