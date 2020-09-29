@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 7.8)
+	Version: memory removal (version 7.9)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -63,6 +63,7 @@
 	"savetools [packname] [ids]" make your own gearpacks
 	"loadtools [playername] [packname]" load your own gearpacks, if you want to edit or delete them go to the workspace folder of your magic-thing and open gearpacks.txt
 	"loopres [plr]" loop respawns a player
+	"loopresoff"
 	"thorns" karma for every command someone uses against you, persons admin and something else is not supported.
 	"thornswl" give thorns
 	"rthorns" remove thorns
@@ -339,9 +340,7 @@ end
 	table.insert(whitelistedtable.users, whname)
 	table.insert(whitelistedtable.antikillon, whname)
 	if not table.find(whitelistedtable.previouswhitelistedusers, whname) then
-	if not table.find(whitelistedtable.previouswhitelistedusers, whname) then
 	table.insert(whitelistedtable.previouswhitelistedusers, whname)
-	end
 	--// Anti Spam Kill (first execute)
 	game:GetService'Players':Chat("god " ..whname.. "")
 	whchar.Humanoid.Changed:Connect(function(egg)
@@ -906,7 +905,7 @@ local function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oof
 end
 
 
-
+table.insert(whitelistedtable.thornson, whname)
 
 
 thornsuser.Chatted:Connect(function(message)
@@ -1068,7 +1067,7 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined ~= thornsuser and victimhasjoined.Name ~= impname then
+if victimhasjoined ~= thornsusername and victimhasjoined.Name ~= impname then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
@@ -1975,7 +1974,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined ~= thornsuser then
+if victimhasjoined.Name ~= thornsusername and victimhasjoined.Name ~= thornsusername2 then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and table.find(thornstable,thornsusername2) then
