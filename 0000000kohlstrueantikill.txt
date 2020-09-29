@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.1)
+	Version: memory removal (version 8.2)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -893,7 +893,7 @@ local thornsvictims = game:GetService("Players")
 local inflictthornsdamage = game:GetService("Players")
 local thornsuser = whuser
 local thornsusername = whname
-local impname = thornsvictims.LocalPlayer
+local impname = thornsvictims.LocalPlayer.Name
 local function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
