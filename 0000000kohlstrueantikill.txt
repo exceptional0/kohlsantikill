@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.3)
+	Version: memory removal (version 8.4)
 	Changelog:
 	9/29/2020
 	100% fixed whitelisted
@@ -114,8 +114,10 @@
 	end
 	end)
 	
+	_G.messagedeleter = true
+	print("message deleter is on by default, protects you from being lagged.")
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
-	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
+	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
 	wait(0)
 	messagedeleter:Destroy()
 	end
@@ -2224,129 +2226,129 @@ if talking:match(" ") and thornstoggle == true then
 	local victimname = v.Name
 	for i,z in pairs(checkif(victim)) do
 	victim = z.Name
-	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
+	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "kill" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":kill" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("kill " ..victimname.. "")	
-	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "explode" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":explode" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("explode " ..victimname.. "")
-	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and victims:lower() == "all" or splitstring[1]:lower() == "respawn" and victims:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and victims:lower() == "all" or splitstring[1]:lower() == ":respawn" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "respawn" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":respawn" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("respawn " ..victimname.. "")
-	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and victims:lower() == "all" or splitstring[1]:lower() == "unff" and victims:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and victims:lower() == "all" or splitstring[1]:lower() == ":unff" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "unff" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":unff" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("unff " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and victims:lower() == "all" or splitstring[1]:lower() == "fling" and victims:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and victims:lower() == "all" or splitstring[1]:lower() == ":fling" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "fling" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":fling" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("fling " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
-	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("stun " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unstun " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and victims:lower() == "all" or splitstring[1]:lower() == "fire" and victims:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and victims:lower() == "all" or splitstring[1]:lower() == ":fire" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "fire" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":fire" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("fire " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unfire " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and victims:lower() == "all" or splitstring[1]:lower() == "bonfire" and victims:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and victims:lower() == "all" or splitstring[1]:lower() == ":bonfire" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "bonfire" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":bonfire" and splitstring[2]:lower() == "others" then --victims
 	inflictthornsdamage:Chat("bonfire " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unfire " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and victims:lower() == "all" or splitstring[1]:lower() == "reset" and victims:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and victims:lower() == "all" or splitstring[1]:lower() == ":reset" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reset" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reset" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reset " ..victimname.. "")
-	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and victims:lower() == "all" or splitstring[1]:lower() == "jail" and victims:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and victims:lower() == "all" or splitstring[1]:lower() == ":jail" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "jail" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":jail" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("jail " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unjail " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and victims:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and victims:lower() == "all" or splitstring[1]:lower() == ":punish" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":punish" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("punish " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unpunish " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and victims:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and victims:lower() == "all" or splitstring[1]:lower() == ":ungod" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":ungod" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("ungod " ..victimname.. "")
-	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and victims:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and victims:lower() == "all" or splitstring[1]:lower() == ":damage" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":damage" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("damage " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and victims:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and victims:lower() == "all" or splitstring[1]:lower() == ":setgrav" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":setgrav" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("setgrav " ..victimname.. " " ..splitstring[3].. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("grav " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and victims:lower() == "all" or splitstring[1]:lower() == "speed" and victims:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and victims:lower() == "all" or splitstring[1]:lower() == ":speed" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "speed" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":speed" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("speed " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and victims:lower() == "all" or splitstring[1]:lower() == "name" and victims:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and victims:lower() == "all" or splitstring[1]:lower() == ":name" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "name" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":name" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("name " ..victimname.. " " ..thornsusername.. "'s")
-	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and victims:lower() == "all" or splitstring[1]:lower() == "blind" and victims:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and victims:lower() == "all" or splitstring[1]:lower() == ":blind" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "blind" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":blind" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("blind " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unblind " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "removelimbs" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
-	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "creeper" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":creeper" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("creeper " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("uncreeper " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and victims:lower() == "all" or splitstring[1]:lower() == "health" and victims:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and victims:lower() == "all" or splitstring[1]:lower() == ":health" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "health" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":health" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("health " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and victims:lower() == "all" or splitstring[1]:lower() == "noclip" and victims:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and victims:lower() == "all" or splitstring[1]:lower() == ":noclip" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "noclip" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":noclip" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("noclip " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("clip " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and victims:lower() == "all" or splitstring[1]:lower() == "char" and victims:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and victims:lower() == "all" or splitstring[1]:lower() == ":char" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "char" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":char" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("char " ..victimname.. " " ..splitstring[3].. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unchar " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and victims:lower() == "all" or splitstring[1]:lower() == "seizure" and victims:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and victims:lower() == "all" or splitstring[1]:lower() == ":seizure" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "seizure" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":seizure" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("seizure " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unseizure " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and victims:lower() == "all" or splitstring[1]:lower() == "infect" and victims:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and victims:lower() == "all" or splitstring[1]:lower() == ":infect" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "infect" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":infect" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("infect " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("normal " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and victims:lower() == "all" or splitstring[1]:lower() == "freeze" and victims:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and victims:lower() == "all" or splitstring[1]:lower() == ":freeze" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "freeze" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":freeze" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("freeze " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("thaw " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and victims:lower() == "all" or splitstring[1]:lower() == "clone" and victims:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and victims:lower() == "all" or splitstring[1]:lower() == ":clone" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "clone" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":clone" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("clone " ..victimname.. "")
-	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and victims:lower() == "all" or splitstring[1]:lower() == "noobify" and victims:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and victims:lower() == "all" or splitstring[1]:lower() == ":noobify" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "noobify" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":noobify" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("noobify " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("normal " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "spin" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":spin" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("spin " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unspin " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
 	end
@@ -2367,124 +2369,129 @@ if talking2:match(" ") and thornstoggle == true then
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
 	victim = v.Name
-	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
+	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "kill" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":kill" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("kill " ..victimname.. "")	
-	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "explode" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":explode" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("explode " ..victimname.. "")
-	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and victims:lower() == "all" or splitstring[1]:lower() == "respawn" and victims:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and victims:lower() == "all" or splitstring[1]:lower() == ":respawn" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "respawn" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":respawn" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("respawn " ..victimname.. "")
-	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and victims:lower() == "all" or splitstring[1]:lower() == "unff" and victims:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and victims:lower() == "all" or splitstring[1]:lower() == ":unff" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "unff" and victim == thornsusername or splitstring[1]:lower() == "unff" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "unff" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":unff" and victim == thornsusername or splitstring[1]:lower() == ":unff" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":unff" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("unff " ..victimname.. "")
-	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and victims:lower() == "all" or splitstring[1]:lower() == "fling" and victims:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and victims:lower() == "all" or splitstring[1]:lower() == ":fling" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "fling" and victim == thornsusername or splitstring[1]:lower() == "fling" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "fling" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":fling" and victim == thornsusername or splitstring[1]:lower() == ":fling" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":fling" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("fling " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
+	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("stun " ..victimname.. "")
 	if defensivethorns == true then
+	wait(0.1)
 	inflictthornsdamage:Chat("unstun " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and victims:lower() == "all" or splitstring[1]:lower() == "fire" and victims:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and victims:lower() == "all" or splitstring[1]:lower() == ":fire" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "fire" and victim == thornsusername or splitstring[1]:lower() == "fire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "fire" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":fire" and victim == thornsusername or splitstring[1]:lower() == ":fire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":fire" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("fire " ..victimname.. "")
 	if defensivethorns == true then
+	wait(0.1)
 	inflictthornsdamage:Chat("unfire " ..thornsusername.. "")
-	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and victims:lower() == "all" or splitstring[1]:lower() == "bonfire" and victims:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and victims:lower() == "all" or splitstring[1]:lower() == ":bonfire" and victims:lower() == "others" then
+	end
+	elseif splitstring[1]:lower() == "bonfire" and victim == thornsusername or splitstring[1]:lower() == "bonfire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "bonfire" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":bonfire" and victim == thornsusername or splitstring[1]:lower() == ":bonfire" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":bonfire" and splitstring[2]:lower() == "others" then --victims
 	inflictthornsdamage:Chat("bonfire " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unfire " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and victims:lower() == "all" or splitstring[1]:lower() == "reset" and victims:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and victims:lower() == "all" or splitstring[1]:lower() == ":reset" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reset" and victim == thornsusername or splitstring[1]:lower() == "reset" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reset" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername or splitstring[1]:lower() == ":reset" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reset" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reset " ..victimname.. "")
-	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and victims:lower() == "all" or splitstring[1]:lower() == "jail" and victims:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and victims:lower() == "all" or splitstring[1]:lower() == ":jail" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "jail" and victim == thornsusername or splitstring[1]:lower() == "jail" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "jail" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername or splitstring[1]:lower() == ":jail" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":jail" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("jail " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unjail " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and victims:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and victims:lower() == "all" or splitstring[1]:lower() == ":punish" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "punish" and victim == thornsusername or splitstring[1]:lower() == "punish" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "punish" and victims:lower() == "others" or splitstring[1]:lower() == ":punish" and victim == thornsusername or splitstring[1]:lower() == ":punish" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":punish" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("punish " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unpunish " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and victims:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and victims:lower() == "all" or splitstring[1]:lower() == ":ungod" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "ungod" and victim == thornsusername or splitstring[1]:lower() == "ungod" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "ungod" and victims:lower() == "others" or splitstring[1]:lower() == ":ungod" and victim == thornsusername or splitstring[1]:lower() == ":ungod" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":ungod" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("ungod " ..victimname.. "")
-	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and victims:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and victims:lower() == "all" or splitstring[1]:lower() == ":damage" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "damage" and victim == thornsusername or splitstring[1]:lower() == "damage" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "damage" and victims:lower() == "others" or splitstring[1]:lower() == ":damage" and victim == thornsusername or splitstring[1]:lower() == ":damage" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":damage" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("damage " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and victims:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and victims:lower() == "all" or splitstring[1]:lower() == ":setgrav" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "setgrav" and victim == thornsusername or splitstring[1]:lower() == "setgrav" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "setgrav" and victims:lower() == "others" or splitstring[1]:lower() == ":setgrav" and victim == thornsusername or splitstring[1]:lower() == ":setgrav" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":setgrav" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("setgrav " ..victimname.. " " ..splitstring[3].. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("grav " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and victims:lower() == "all" or splitstring[1]:lower() == "speed" and victims:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and victims:lower() == "all" or splitstring[1]:lower() == ":speed" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "speed" and victim == thornsusername or splitstring[1]:lower() == "speed" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "speed" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":speed" and victim == thornsusername or splitstring[1]:lower() == ":speed" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":speed" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("speed " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and victims:lower() == "all" or splitstring[1]:lower() == "name" and victims:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and victims:lower() == "all" or splitstring[1]:lower() == ":name" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "name" and victim == thornsusername or splitstring[1]:lower() == "name" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "name" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":name" and victim == thornsusername or splitstring[1]:lower() == ":name" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":name" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("name " ..victimname.. " " ..thornsusername.. "'s")
-	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and victims:lower() == "all" or splitstring[1]:lower() == "blind" and victims:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and victims:lower() == "all" or splitstring[1]:lower() == ":blind" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "blind" and victim == thornsusername or splitstring[1]:lower() == "blind" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "blind" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":blind" and victim == thornsusername or splitstring[1]:lower() == ":blind" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":blind" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("blind " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unblind " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername or splitstring[1]:lower() == "removelimbs" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "removelimbs" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername or splitstring[1]:lower() == ":removelimbs" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
-	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername or splitstring[1]:lower() == "creeper" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "creeper" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername or splitstring[1]:lower() == ":creeper" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":creeper" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("creeper " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("uncreeper " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and victims:lower() == "all" or splitstring[1]:lower() == "health" and victims:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and victims:lower() == "all" or splitstring[1]:lower() == ":health" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "health" and victim == thornsusername or splitstring[1]:lower() == "health" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "health" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":health" and victim == thornsusername or splitstring[1]:lower() == ":health" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":health" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("health " ..victimname.. " " ..splitstring[3].. "")
-	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and victims:lower() == "all" or splitstring[1]:lower() == "noclip" and victims:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and victims:lower() == "all" or splitstring[1]:lower() == ":noclip" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "noclip" and victim == thornsusername or splitstring[1]:lower() == "noclip" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "noclip" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":noclip" and victim == thornsusername or splitstring[1]:lower() == ":noclip" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":noclip" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("noclip " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("clip " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and victims:lower() == "all" or splitstring[1]:lower() == "char" and victims:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and victims:lower() == "all" or splitstring[1]:lower() == ":char" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "char" and victim == thornsusername or splitstring[1]:lower() == "char" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "char" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":char" and victim == thornsusername or splitstring[1]:lower() == ":char" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":char" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("char " ..victimname.. " " ..splitstring[3].. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unchar " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and victims:lower() == "all" or splitstring[1]:lower() == "seizure" and victims:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and victims:lower() == "all" or splitstring[1]:lower() == ":seizure" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername or splitstring[1]:lower() == "seizure" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "seizure" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername or splitstring[1]:lower() == ":seizure" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":seizure" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("seizure " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unseizure " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and victims:lower() == "all" or splitstring[1]:lower() == "infect" and victims:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and victims:lower() == "all" or splitstring[1]:lower() == ":infect" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "infect" and victim == thornsusername or splitstring[1]:lower() == "infect" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "infect" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":infect" and victim == thornsusername or splitstring[1]:lower() == ":infect" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":infect" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("infect " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("normal " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and victims:lower() == "all" or splitstring[1]:lower() == "freeze" and victims:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and victims:lower() == "all" or splitstring[1]:lower() == ":freeze" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "freeze" and victim == thornsusername or splitstring[1]:lower() == "freeze" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "freeze" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":freeze" and victim == thornsusername or splitstring[1]:lower() == ":freeze" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":freeze" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("freeze " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("thaw " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and victims:lower() == "all" or splitstring[1]:lower() == "clone" and victims:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and victims:lower() == "all" or splitstring[1]:lower() == ":clone" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "clone" and victim == thornsusername or splitstring[1]:lower() == "clone" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "clone" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":clone" and victim == thornsusername or splitstring[1]:lower() == ":clone" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":clone" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("clone " ..victimname.. "")
-	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and victims:lower() == "all" or splitstring[1]:lower() == "noobify" and victims:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and victims:lower() == "all" or splitstring[1]:lower() == ":noobify" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "noobify" and victim == thornsusername or splitstring[1]:lower() == "noobify" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "noobify" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":noobify" and victim == thornsusername or splitstring[1]:lower() == ":noobify" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":noobify" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("noobify " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("normal " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and victims:lower() == "all" or splitstring[1]:lower() == "spin" and victims:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and victims:lower() == "all" or splitstring[1]:lower() == ":spin" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "spin" and victim == thornsusername or splitstring[1]:lower() == "spin" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "spin" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":spin" and victim == thornsusername or splitstring[1]:lower() == ":spin" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":spin" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("spin " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("unspin " ..thornsusername.. "")
 	end
-	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	--end if string == "kill" then
 	end
