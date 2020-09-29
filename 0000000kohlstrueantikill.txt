@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 7.9)
+	Version: mr. givethorns is funny man i fix him cause he bad bad (version 7.9.2)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -1809,12 +1809,14 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	
 local thornstable = {}
+local previouskarmatable = {}
 local thornsvictims = game:GetService("Players")
 local inflictthornsdamage = game:GetService("Players")
 local thornsuser = thornsvictims.LocalPlayer
 local thornsusername = thornsuser.Name
-local thornstoggle = false
-local defensivethorns = false
+local thornstoggle = true
+local defensivethorns = true
+local test = false
 function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
@@ -1832,7 +1834,8 @@ local thornsusername2 = thornsuser2.Name
 
 table.insert(thornstable,thornsusername2)
 wait(0)
-
+if not table.find(previouskarmatable,thornsusername2) then
+table.insert(previouskarmatable,thornsusername2)
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername2 and v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
@@ -1911,6 +1914,8 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername2 or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername2 or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername2 or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername2 or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("creeper " ..victimname.. "")
 	if defensivethorns == true then
@@ -1929,7 +1934,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	inflictthornsdamage:Chat("char " ..victimname.. " " ..splitstring[3].. "")
 	if defensivethorns == true then
 	wait(0.1)
-	inflictthornsdamage:Chat("unchar " ..thornsusername.. "")
+	inflictthornsdamage:Chat("unchar " ..thornsusername2.. "")
 	end
 	elseif splitstring[1]:lower() == "seizure" and victim == thornsusername2 or splitstring[1]:lower() == "seizure" and victims:lower() == "all" or splitstring[1]:lower() == "seizure" and victims:lower() == "others" or splitstring[1]:lower() == ":seizure" and victim == thornsusername2 or splitstring[1]:lower() == ":seizure" and victims:lower() == "all" or splitstring[1]:lower() == ":seizure" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("seizure " ..victimname.. "")
@@ -2016,6 +2021,8 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	wait(0.1)
 	inflictthornsdamage:Chat("unfire " ..thornsusername2 "")
 	end
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "reset" and victim == thornsusername2 or splitstring[1]:lower() == "reset" and victims:lower() == "all" or splitstring[1]:lower() == "reset" and victims:lower() == "others" or splitstring[1]:lower() == ":reset" and victim == thornsusername2 or splitstring[1]:lower() == ":reset" and victims:lower() == "all" or splitstring[1]:lower() == ":reset" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reset " ..victimname.. "")
 	elseif splitstring[1]:lower() == "jail" and victim == thornsusername2 or splitstring[1]:lower() == "jail" and victims:lower() == "all" or splitstring[1]:lower() == "jail" and victims:lower() == "others" or splitstring[1]:lower() == ":jail" and victim == thornsusername2 or splitstring[1]:lower() == ":jail" and victims:lower() == "all" or splitstring[1]:lower() == ":jail" and victims:lower() == "others" then
@@ -2050,6 +2057,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	wait(0.1)
 	inflictthornsdamage:Chat("unblind " ..thornsusername2.. "")
 	end
+	
 	elseif splitstring[1]:lower() == "removelimbs" and victim == thornsusername2 or splitstring[1]:lower() == "removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == "removelimbs" and victims:lower() == "others" or splitstring[1]:lower() == ":removelimbs" and victim == thornsusername2 or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "all" or splitstring[1]:lower() == ":removelimbs" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("removelimbs " ..victimname.. "")
 	elseif splitstring[1]:lower() == "creeper" and victim == thornsusername2 or splitstring[1]:lower() == "creeper" and victims:lower() == "all" or splitstring[1]:lower() == "creeper" and victims:lower() == "others" or splitstring[1]:lower() == ":creeper" and victim == thornsusername2 or splitstring[1]:lower() == ":creeper" and victims:lower() == "all" or splitstring[1]:lower() == ":creeper" and victims:lower() == "others" then
@@ -2113,6 +2121,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	end)
 	end
 	end)
+	end
 end
 
 local function clearthorns(Table,playername)
@@ -2146,6 +2155,14 @@ print("defense on, please make sure you have thorns on too or this won't work.")
 else
 defensivethorns = false
 print("defense off.")
+end
+elseif message:lower() == "//testhorns" then
+if test == false then
+test = true
+print("test mode on!")
+else
+test = false
+print("test mode off!")
 end
 elseif message:match(" ") then
 local splitstring = string.split(message, " ")
@@ -2199,6 +2216,8 @@ if talking:match(" ") and thornstoggle == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
 	end
+	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("stun " ..victimname.. "")
 	if defensivethorns == true then
