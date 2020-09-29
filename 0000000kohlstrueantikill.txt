@@ -1,10 +1,13 @@
 	print([[
 	Version: memory removal (version 8.3)
 	Changelog:
-	9/27/2020
-	for some reason i really broke thorns, it should be fixed
-	added whitelistuser [player] and unwhitelist [player] because of a friends request
-	fixed thorns entirely x3
+	9/29/2020
+	100% fixed whitelisted
+	added restore [player]
+	added reload to thorns
+	did something else i forgot
+	played with a friend
+	found more songs to add to my list
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
 	9/25/2020
