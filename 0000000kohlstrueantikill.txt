@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8)
+	Version: memory removal (version 8.1)
 	Changelog:
 	9/27/2020
 	for some reason i really broke thorns, it should be fixed
@@ -1679,7 +1679,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	print(person)
 	unwhitelist(person)
-	elseif msg:match() == "//restore" then
+	elseif msg:match("//restore") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
