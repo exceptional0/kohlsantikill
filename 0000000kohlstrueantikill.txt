@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.7)
+	Version: memory removal (version 8.8)
 	Changelog:
 	9/29/2020
 	100% fixed whitelisted
@@ -1087,6 +1087,7 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	end
 	end
+	end
 	end)
 	end
 	end
@@ -1225,7 +1226,6 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	if table.find(whitelistedtable.gearstealeron, thornsusername) and splitstring[3] then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
-	end
 	end
 	end
 	end
@@ -2025,6 +2025,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	end
 	end
+	end
 	end)
 	end
 	end
@@ -2165,18 +2166,17 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
-	elseif splitstring[1]:lower() == "gear" victim ~= thornsusername2 and splitstring[2]:lower() ~= "others" then
+	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername2 and splitstring[2] ~= "others" then
 	if gearstealertoggle == true and splitstring[3] then
 	inflictthornsdamage:Chat("gear " ..thornsusername2.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
 	end
 	end
 	end
-	end)
 	end
 	end)
 	end
-end
+end)
 end
 end
 
@@ -2398,8 +2398,8 @@ if talking:match(" ") and thornstoggle == true then
 	end
 	end
 	end
-	end
 	end)
+	end
 	end
 
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
@@ -2541,7 +2541,6 @@ if talking2:match(" ") and thornstoggle == true then
 	if gearstealertoggle == true and splitstring[3] then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
-	end
 	end
 	end
 	end
