@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.6)
+	Version: memory removal (version 8.7)
 	Changelog:
 	added "//gearstealer"
 	9/29/2020
@@ -1080,9 +1080,7 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and table.find(whitelistedtable.gearstealeron,whname) and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and table.find(whitelistedtable.gearstealeron,whname) and victim ~= thornsusername and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
@@ -1226,9 +1224,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and table.find(whitelistedtable.gearstealeron,whname) and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and table.find(whitelistedtable.gearstealeron,whname) and victim ~= thornsusername and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
@@ -2023,9 +2019,7 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername2 and gearstealertoggle == true and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and gearstealertoggle == true and victim ~= thornsusername2 and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil and gearstealertoggle == true then
 	inflictthornsdamage:Chat("gear " ..thornsusername2.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
@@ -2175,9 +2169,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername2 and gearstealertoggle == true and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and gearstealertoggle == true and victim ~= thornsusername2 and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil and gearstealertoggle == true then
 	inflictthornsdamage:Chat("gear " ..thornsusername2.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
@@ -2403,9 +2395,7 @@ if talking:match(" ") and thornstoggle == true then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and gearstealertoggle == true and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and gearstealertoggle == true and victim ~= thornsusername and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
@@ -2554,9 +2544,7 @@ if talking2:match(" ") and thornstoggle == true then
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and gearstealertoggle == true and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and gearstealertoggle == true and victim ~= thornsusername and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
-	if splitstring[3] ~= nil then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
-	end
 	--end if string == "kill" then
 	end
 	end
