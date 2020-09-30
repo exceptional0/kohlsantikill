@@ -1,5 +1,5 @@
 	print([[
-	Version: memory removal (version 8.5)
+	Version: memory removal (version 8.6)
 	Changelog:
 	9/29/2020
 	100% fixed whitelisted
@@ -1840,6 +1840,7 @@ local thornsusername = thornsuser.Name
 local thornstoggle = true
 local defensivethorns = true
 local test = false
+local gearstealertoggle = false
 function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
@@ -1993,6 +1994,9 @@ if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
+	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername2 and splitstring[2] ~= "others" then
+	if gearstealertoggle == true and splitstring[3] then
+	inflictthornsdamage:Chat("gear " ..thornsusername2.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
 	end
 	end
@@ -2137,6 +2141,9 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
+	elseif splitstring[1]:lower() == "gear" victim ~= thornsusername2 and splitstring[2]:lower() ~= "others" then
+	if gearstealertoggle == true and splitstring[3] then
+	inflictthornsdamage:Chat("gear " ..thornsusername2.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
 	end
 	end
@@ -2145,6 +2152,8 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	end
 	end)
 	end
+end
+end
 end
 
 local function clearthorns(Table,playername)
@@ -2186,6 +2195,14 @@ print("test mode on!")
 else
 test = false
 print("test mode off!")
+end
+elseif message:lower() == "//gearstealer" then
+if gearstealertoggle == false then
+gearstealertoggle = true
+print("gear stealer is on!")
+else
+gearstealertoggle = false
+print("gear stealer is off!")
 end
 elseif message:match(" ") then
 local splitstring = string.split(message, " ")
@@ -2349,6 +2366,9 @@ if talking:match(" ") and thornstoggle == true then
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
+	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and splitstring[2] ~= "others" then
+	if gearstealertoggle == true and splitstring[3] then
+	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
 	end
 	end
@@ -2492,6 +2512,9 @@ if talking2:match(" ") and thornstoggle == true then
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
+	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and splitstring[2] ~= "others" then
+	if gearstealertoggle == true and splitstring[3] then
+	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
 	end
 	end
