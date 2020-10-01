@@ -1,7 +1,7 @@
 	print([[
-	Version: memory removal (version 8.7)
+	Version: updoot (version 8.7)
 	Changelog:
-	added "//gearstealer"
+	added "//gearstealer" (broken, not removing)
 	9/29/2020
 	100% fixed whitelisted
 	added restore [player]
@@ -1864,11 +1864,15 @@ local gearstealertoggle = false
 function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
+	 if Target == "others" then
+		table.insert(Found,"hisothetargetisotherspleaserunonce")
+        else
         for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1, #String) == String:lower() then
                 table.insert(Found,v)
             end
-        end    
+        end 
+	end
     return Found    
 end
 
