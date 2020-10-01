@@ -1,7 +1,7 @@
 	print([[
-	Version: updoot (version 8.7)
+	Version: updoot (version 8.8)
 	Changelog:
-	added "//gearstealer" (broken, not removing)
+	added "//gearstealer" (broken?)
 	9/29/2020
 	100% fixed whitelisted
 	added restore [player]
@@ -1865,8 +1865,12 @@ function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls 
     local Found = {}
     local Target = String:lower()
 	 if Target == "others" then
-		table.insert(Found,"hisothetargetisotherspleaserunonce")
-        else
+		table.insert(Found,"pleaserunonce")
+        elseif Target == "me" then
+		table.insert(Found,"pleaserunonce")
+		elseif Target == "all" then
+		table.insert(Found,"pleaserunonce")
+		else
         for i,v in pairs(game.Players:GetPlayers()) do
             if v.Name:lower():sub(1, #String) == String:lower() then
                 table.insert(Found,v)
