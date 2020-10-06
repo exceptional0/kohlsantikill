@@ -1755,7 +1755,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	toolremover:WaitForChild("MouseClick")
 	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
 	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
-	channel6:Chat("unff " ..personiwanttobrutallymurder.Name "")
+	channel6:Chat("unff " ..personiwanttobrutallymurder.Name.. "")
 	wait(0)
 	wait(0.1)
 	local arg1 = personiwanttobrutallymurder.Character
