@@ -1,5 +1,5 @@
 	print([[
-	Version: 9th version? (version 9)
+	Version: 9th version? (version 9.1)
 	Changelog:
 	10/6/2020
 	added disabletools
@@ -1739,7 +1739,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local splitstring = string.split(msg, " ")
 	local personiwanttobrutallymurder = splitstring[2]
 	for i,v in pairs(getplr(personiwanttobrutallymurder)) do
-	personiwanttobrutallymurder = v.Name
+	personiwanttobrutallymurder = v
 	end
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
