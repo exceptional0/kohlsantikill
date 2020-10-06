@@ -1,7 +1,8 @@
 	print([[
-	Version: 8.9th version? (version 8.9)
+	Version: 9th version? (version 9)
 	Changelog:
 	10/6/2020
+	added disabletools
 	added more gears to //gearplr 
 	//gearstealer will only work when the id isn't tags
 	changed ==1cs's color and ill change it every once in a while because i want to
@@ -76,6 +77,8 @@
 	"unwhitelist [player]" unwhitelists the user
 	"antimusic" disables music whenever its added
 	"restore [player]"
+	"disabletools [player]"
+	
 	antikill + thorns + dthorns = semi-immortality
 	
 	Gamepass Commands:
@@ -1440,10 +1443,10 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
 	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	wait(0.6)
-	local a = workspace:GetDescendants()
+	local workspacefolder = game:GetService("Workspace").Terrain["_Game"].Workspace
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Maroon").Color
-	for i, v in pairs(a) do
+	for i, v in pairs(workspacefolder:GetDescendants()) do
 	if v:IsA("BasePart") then
 	local Data = {}
 	Data.Part = v
@@ -1732,9 +1735,36 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	wait(0.3)
 	players:Chat("ff " ..person.. "")
 	players:Chat("god " ..person.. "")
+	elseif msg:match("//disabletools") then
+	local splitstring = string.split(msg, " ")
+	local personiwanttobrutallymurder = splitstring[2]
+	for i,v in pairs(getplr(personiwanttobrutallymurder)) do
+	personiwanttobrutallymurder = v.Name
+	end
+	local channel6 = game:GetService("Players")
+	local lplayerisimportant = channel6.LocalPlayer
+	local backpack = lplayerisimportant.Backpack
+	channel6:Chat("gear me 82357101")
+	backpack:WaitForChild("PortableJustice")
+	local toolremover = backpack.PortableJustice
+	if channel6.LocalPlayer.Character ~= nil then
+	toolremover.Parent = channel6.LocalPlayer.Character
+	toolremover = channel6.LocalPlayer.Character.PortableJustice
+	end
+	if personiwanttobrutallymurder.Character ~= nil and toolremover ~= nil then
+	toolremover:WaitForChild("MouseClick")
+	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
+	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
+	wait(0)
+	wait(0.1)
+	local arg1 = personiwanttobrutallymurder.Character
+	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
+	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	end
 	end
 	end)
-	wait(2)
+	wait(0.04)
 	
 	local function lagishthefoolish(foolishfish)
 	local speakish = game:GetService("Players")
@@ -1745,7 +1775,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 
 
-	wait(1)
+	wait(0.04)
 	--loop commands (enable)
 	chatted:Connect(function(msg)
 	if msg:match(" ") then
