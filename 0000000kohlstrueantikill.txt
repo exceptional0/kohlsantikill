@@ -1,13 +1,14 @@
 	print([[
-	Version: updoot (version 8.8)
+	Version: 8.9th version? (version 8.9)
 	Changelog:
-	added "//gearstealer" (broken?)
+	10/6/2020
+	added more gears to //gearplr 
+	//gearstealer will only work when the id isn't tags
+	changed ==1cs's color and ill change it every once in a while because i want to
 	9/29/2020
 	100% fixed whitelisted
 	added restore [player]
 	added reload to thorns
-	did something else i forgot
-	found more songs to add to my list
 	9/26/2020
 	update took a day because i fell asleep but the command "dthorns" should enable defense against almost any command
 	9/25/2020
@@ -1441,7 +1442,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	wait(0.6)
 	local a = workspace:GetDescendants()
 	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
-	local ColorSelection = BrickColor.new("Dark indigo").Color
+	local ColorSelection = BrickColor.new("Maroon").Color
 	for i, v in pairs(a) do
 	if v:IsA("BasePart") then
 	local Data = {}
@@ -1629,6 +1630,14 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 75941738")
 	end
+	elseif gearstr == "rocketjump" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 169602103")
+	end
+	elseif gearstr == "fans" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 124126528")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -1653,6 +1662,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	arshiftlick - shiftlocks all and breaks camera
 	darkheart - darkheart
 	rcwand - rubber chicken wand
+	rocketjump - Seranok's Rocket Jumper
+	fans - Seranok's Golden Chalice Of Fame
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
@@ -1869,6 +1880,8 @@ function checkif(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls 
         elseif Target == "me" then
 		table.insert(Found,"pleaserunonce")
 		elseif Target == "all" then
+		table.insert(Found,"pleaserunonce")
+		elseif Target == "admins" then
 		table.insert(Found,"pleaserunonce")
 		else
         for i,v in pairs(game.Players:GetPlayers()) do
