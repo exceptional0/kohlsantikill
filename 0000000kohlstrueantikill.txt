@@ -1,5 +1,5 @@
 	print([[
-	Version: 9th version? (version 9.1)
+	Version: 9th version? (version 9.2)
 	Changelog:
 	10/6/2020
 	added disabletools
@@ -1761,6 +1761,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
 	notarg:FireServer(arg1)
 	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
 	end
 	end
 	end)
