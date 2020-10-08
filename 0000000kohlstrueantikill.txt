@@ -1,5 +1,5 @@
 	print([[
-	Version: 9th version? (version 9.3)
+	Version: 9th version? (version 9.4)
 	Changelog:
 	10/6/2020
 	added disabletools
@@ -1641,6 +1641,14 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	for i,v in pairs(getplr(person)) do
 	bird:Chat("gear " ..person.. " 124126528")
 	end
+	elseif gearstr == "badbunny" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 24839406")
+	end
+	elseif gearstr == "ltrap" then
+	for i,v in pairs(getplr(person)) do
+	bird:Chat("gear " ..person.. " 80576913")
+	end
 	end
 	elseif msg:match("//gearprint") then
 	print([[
@@ -1667,6 +1675,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	rcwand - rubber chicken wand
 	rocketjump - Seranok's Rocket Jumper
 	fans - Seranok's Golden Chalice Of Fame
+	badbunny - fake eggs
+	ltrap - a good trap
 	]])
 	elseif msg:lower() == "//rejoinserver" then
 	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
@@ -1761,6 +1771,9 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local arg1 = personiwanttobrutallymurder.Character
 	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
 	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	elseif toolremover ~= nil then
 	toolremover:Destroy()
 	lplayerisimportant.PlayerGui.HelpGui:Destroy()
 	end
