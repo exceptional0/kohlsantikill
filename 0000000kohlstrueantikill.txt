@@ -79,7 +79,7 @@
 	"restore [player]"
 	"disabletools [player]"
 	
-	antikill + thorns + dthorns = semi-immortality
+	antikill + thorns + dthorns = semi-immortality (all 3 are enabled by default)
 	
 	Gamepass Commands:
 	"rocketfailure [player]" (sends player on a space mission via a fast moving untested rocket, spoiler: BOOM!)
