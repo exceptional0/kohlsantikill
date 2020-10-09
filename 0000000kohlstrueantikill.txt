@@ -1793,7 +1793,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("//explode") then
 	local splitstring = string.split(msg, " ")
 	if splitstring[2] ~= nil then
-	local personiwanttobrutallymurder = splitstring[2]
+	local person = splitstring[2]
 	if splitstring[2] ~= "me" and splitstring[2] ~= "all" and splitstring[2] ~= "others" then
 	for i,v in pairs(getplr(person)) do
 	person = v.Name
