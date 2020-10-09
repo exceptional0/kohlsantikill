@@ -1,5 +1,5 @@
 	print([[
-	Version: 9th version? (version 9.5)
+	Version: 10th version? (version 10)
 	Changelog:
 	10/8/2020
 	i added gears to //gearplr
@@ -72,6 +72,16 @@
 	"antimusic" disables music whenever its added
 	"restore [player]"
 	"disabletools [player]"
+	
+	
+	autopunish commands:
+	"autopunish" automatically punishes players, doesn't have defense against every unpunish command this took a long time because i was stupid so ill do it later (char ect)
+	
+	"autopunish wl [player]" stops a user from getting punished by autopunish
+	"autopunish unwl [player]" unwhitelists a player
+	
+	"autopunish whitelist [player]" stops a user from getting punished by autopunish
+	"autopunish unwhitelist [player]" unwhitelists a player
 	
 	antikill + thorns + dthorns = semi-immortality
 	
@@ -2794,4 +2804,5 @@ end)
 	unwhitelist(deltable.Name)
 	end
 	end)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/autopunish.lua",true))()
 	print("admin ready!")
