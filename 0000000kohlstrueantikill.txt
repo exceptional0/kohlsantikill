@@ -207,7 +207,6 @@ end
 	
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	print("died")
 	game:GetService("Players"):Chat("reset me")
 	
 	wait(0.2)
@@ -234,7 +233,6 @@ end
 	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
 	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	print("died")
 	game:GetService("Players"):Chat("reset me")
 	
 	wait(0.2)
@@ -242,6 +240,7 @@ end
 	game:GetService("Players"):Chat("god me")
 	game:GetService("Players"):Chat("ff me")
 	
+	wait(0)
 	
 	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and trueantikill == true then
@@ -251,6 +250,7 @@ end
 	
 	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and trueantikill == true then
+	wait(0)
 	game:GetService("Players"):Chat("ff me")
 	end
 	end)
