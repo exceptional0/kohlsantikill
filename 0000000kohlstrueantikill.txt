@@ -1,7 +1,8 @@
 	print([[
-	Version: 10th version? (version 10.3)
+	Version: 11th version? (version 11)
 	Changelog:
 	10/9/2020
+	added //autopunish player playername 
 	added //autopunish (see below for info ect theres also autopunish wl ect)
 	added //explode it just explodes alot
 	10/8/2020
@@ -80,6 +81,8 @@
 	
 	autopunish commands:
 	"autopunish" automatically punishes players, doesn't have defense against every unpunish command this took a long time because i was stupid so ill do it later (char ect)
+	
+	"autopunish player [playername]" automatically punishes a certain player
 	
 	"autopunish wl [player]" stops a user from getting punished by autopunish
 	"autopunish unwl [player]" unwhitelists a player
