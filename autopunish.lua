@@ -101,7 +101,7 @@ PLAYERS:Chat("punish " ..NOUNPUNISHING.Name.. "")
 end
 end
 end
-if splitstring[2]:lower() == "all" or splitstring[2]:lower() == "others" or splitstring[2]:lower() == "admins" then
+if impstring[2]:lower() == "all" or impstring[2]:lower() == "others" or impstring[2]:lower() == "admins" then
 PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 wait(0.2)
 PLAYERS:Chat("punish " ..NOUNPUNISHING.Name "")
@@ -128,7 +128,7 @@ PLAYERS:Chat("punish " ..NOUNPUNISHING2.Name.. "")
 end
 end
 end
-if splitstring[2]:lower() == "all" or splitstring[2]:lower() == "others" or splitstring[2]:lower() == "admins" then
+if impstring[2]:lower() == "all" or impstring[2]:lower() == "others" or impstring[2]:lower() == "admins" then
 PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 wait(0.2)
 PLAYERS:Chat("punish " ..NOUNPUNISHING2.Name "")
