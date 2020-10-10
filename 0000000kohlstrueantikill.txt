@@ -1,5 +1,5 @@
 	print([[
-	Version: 11th version? (version 11.2)
+	Version: 11th version? (version 11.3)
 	Changelog:
 	10/10/2020
 	made messagedeleter/antilag work for persons admin
@@ -145,7 +145,15 @@
 	messagedeleter2:Destroy()
 	end
 	end)
-
+	
+	SfolderS.ChildAdded:Connect(function(messagedeleter3)
+	if messagedeleter3:IsA("Message") and _G.messagedeleter then
+	wait(0)
+	messagedeleter3.Text = ""
+	wait(0)
+	messagedeleter3:Destroy()
+	end
+	end)
 
 	
 	--// gamepass autogive admin
