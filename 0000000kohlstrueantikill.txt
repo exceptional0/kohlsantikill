@@ -2,6 +2,7 @@
 	Version: 11th version? (version 11)
 	Changelog:
 	10/9/2020
+	forgot to add a disable, added //autopunish off player playername
 	added //autopunish player playername 
 	added //autopunish (see below for info ect theres also autopunish wl ect)
 	added //explode it just explodes alot
@@ -80,9 +81,10 @@
 	
 	
 	autopunish commands:
-	"autopunish" automatically punishes players, doesn't have defense against every unpunish command this took a long time because i was stupid so ill do it later (char ect)
+	"autopunish" automatically punishes players
 	
 	"autopunish player [playername]" automatically punishes a certain player
+	"autopunishoff player [playername]" stops autopunishing a certain player
 	
 	"autopunish wl [player]" stops a user from getting punished by autopunish
 	"autopunish unwl [player]" unwhitelists a player
