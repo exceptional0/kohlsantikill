@@ -1,5 +1,5 @@
 	print([[
-	Version: 11th version? (version 11)
+	Version: 11th version? (version 11.1)
 	Changelog:
 	10/9/2020
 	forgot to add a disable, added //autopunish off player playername
