@@ -138,9 +138,7 @@ end
 end)
 end
 end)
-end
 elseif splitstring[1]:lower() == "//autopunishoff" and splitstring[2]:lower() == "player" and splitstring[3] ~= nil then
-local fishsfolly
 for i,v in pairs(FINDUSER(splitstring[3])) do
 if v.Name ~= nil then
 if table.find(AUTOPUNISHINGPLAYERS, v.Name) then
@@ -148,7 +146,7 @@ UNWHITELIST(AUTOPUNISHINGPLAYERS, v.Name)
 end
 end
 end
-
+end
 end
 end)
 
