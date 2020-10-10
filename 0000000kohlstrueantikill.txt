@@ -1,6 +1,8 @@
 	print([[
 	Version: 11th version? (version 11.2)
 	Changelog:
+	10/10/2020
+	made antilag work for persons admin
 	10/9/2020
 	forgot to add a disable, added //autopunish off player playername
 	added //autopunish player playername 
@@ -9,11 +11,6 @@
 	10/8/2020
 	i added gears to //gearplr
 	i made it harder for other people to see your gears when you use loadtools ect (i just added alot of zeros)
-	10/6/2020
-	added disabletools
-	added more gears to //gearplr 
-	//gearstealer will only work when the id isn't tags
-	changed ==1cs's color and ill change it every once in a while because i want to
 	
 	--
 
