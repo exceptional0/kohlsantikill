@@ -1,5 +1,5 @@
 	print([[
-	Version: 11th version? (version 11.1)
+	Version: 11th version? (version 11.2)
 	Changelog:
 	10/9/2020
 	forgot to add a disable, added //autopunish off player playername
@@ -140,6 +140,14 @@
 	end
 	end)
 	
+	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
+	if messagedeleter2:IsA("Message") and _G.messagedeleter then
+	wait(0)
+	messagedeleter2.Text = ""
+	wait(0)
+	messagedeleter2:Destroy()
+	end
+	end)
 
 
 	
