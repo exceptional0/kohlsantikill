@@ -2,7 +2,7 @@
 	Version: 11th version? (version 11.2)
 	Changelog:
 	10/10/2020
-	made antilag work for persons admin
+	made messagedeleter/antilag work for persons admin
 	10/9/2020
 	forgot to add a disable, added //autopunish off player playername
 	added //autopunish player playername 
