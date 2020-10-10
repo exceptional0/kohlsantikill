@@ -74,13 +74,14 @@ end
 if TOBEAUTOPUNISHED ~= nil and TOBEAUTOPUNISHEDNAME ~= nil then
 table.insert(AUTOPUNISHINGPLAYERS, TOBEAUTOPUNISHEDNAME)
 
+PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 
 TOBEAUTOPUNISHED.Chatted:Connect(function(MSGHERE)
 if table.find(AUTOPUNISHINGPLAYERS, TOBEAUTOPUNISHEDNAME) then
 local impstring = string.split(MSGHERE," ")
 if impstring[1]:lower() == "unpunish" or impstring[1]:lower() == ":unpunish" or impstring[1]:lower() == "respawn" or impstring[1]:lower() == ":respawn" or impstring[1]:lower() == "reset" or impstring[1]:lower() == ":reset" or impstring[1]:lower() == "char" or impstring[1]:lower() == ":char" or impstring[1]:lower() == "reload" or impstring[1]:lower() == ":reload" and impstring[2] ~= nil then
 if impstring[2]:lower() == "me" then
-PLAYERS:Chat("punish " ..VICTIMJOINED.Name.. "")
+PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 end
 end
 end
