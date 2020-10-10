@@ -107,6 +107,7 @@ wait(0.2)
 PLAYERS:Chat("punish " ..NOUNPUNISHING.Name "")
 end
 end
+end
 end)
 end
 end
@@ -148,7 +149,6 @@ end
 end
 end
 
-end
 end
 end)
 
