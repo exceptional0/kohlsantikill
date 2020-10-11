@@ -1,5 +1,5 @@
 	print([[
-	Version: 11th version? (version 11.3)
+	Version: 11th version? (version 11.4)
 	Changelog:
 	10/10/2020
 	made messagedeleter/antilag work for persons admin
@@ -2866,6 +2866,8 @@ if fReezebRain:match("//removeantikill") then
 	
 end
 end)	
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/autopunish.lua",true))()
 	players.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then 
 	removeantikill(whohasantikill.antikillon, deltable.Name)
@@ -2873,7 +2875,9 @@ end)
 	clearthorns(thornstable, deltable.Name)
 	elseif table.find(whitelistedtable.users, deltable.Name) then
 	unwhitelist(deltable.Name)
+	elseif table.find(AUTOPUNISHINGPLAYERS, deltable.Name) then
+	clearthorns(AUTOPUNISHINGPLAYERS, deltable.Name)
 	end
 	end)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/autopunish.lua",true))()
+	
 	print("admin ready!")
