@@ -1939,7 +1939,21 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	japanesehorrorstory:Chat("ff sowdnadawidnaldadnawldknwadawndkajwldn")
 	japanesehorrorstory:Chat("ff sowdnadawidnaldadnawldknwadawndkajwldn")
 	japanesehorrorstory:Chat("ff sowdnadawidnaldadnawldknwadawndkajwldn")
-
+	elseif msg:lower() == "//ineed@someone" then
+	_G.ineedatsomeone = true
+	local IREALLYNEEDATSOMEONE = game:GetService("Players")
+	while wait(0.4) and _G.ineedatsomeone do
+	local firstarg = math.random(0,10)
+	local secondarg = math.random(0,10)
+	local thirdarg = math.random(0,10)
+	local fogarg = math.random(70,150)
+	IREALLYNEEDATSOMEONE:Chat("part/" ..firstarg.. "/" ..secondarg.. "/" ..thirdarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("time 0")
+	IREALLYNEEDATSOMEONE:Chat("fogend " ..fogarg.. "")
+	IREALLYNEEDATSOMEONE:Chat("disco")
+	IREALLYNEEDATSOMEONE:Chat("clone all")
+	end
+	
 	end
 	end)
 	wait(0.04)
