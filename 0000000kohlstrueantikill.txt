@@ -1,5 +1,5 @@
 	print([[
-	Version: version (version 12)
+	Version: version (version 12.1)
 	Changelog:
 	10/19/2020
 	someone told me to change //servercrash's method so i did
@@ -609,22 +609,22 @@ end
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	elseif msg:match("//mcrashserver") then
+	elseif msg:match("//mcrashserver") then	
 	local prefix = ":"
-	
-	players:Chat("h meanie!")
-	for i=1,3 do
-	game.Players:Chat(prefix.. "size all 0.3")
+	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
+	local lname = lplrispossiblycool.Name
+	lplrispossiblycool1:Chat("h meanie!")
+	lplrispossiblycool1:Chat(prefix.. "gear all 94794847")
+	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
+	repeat
+	wait()
+	until lplrispossiblycool.Character.HumanoidRootPart ~= nil
+	lplrispossiblycool.Backpack.VampireVanquisher.Parent = lplrispossiblycool.Character
+	for i=1,10 do
+	lplrispossiblycool1:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
-	game.Players:Chat(prefix.. "freeze all")
-	wait(0.2)
-	for i=1,3 do
-	game.Players:Chat(prefix.. "size all 10")
-	wait(0.2)
-	end
-	game.Players:Chat(prefix.. "clone all")
-	wait(0.2)
 	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
@@ -1312,19 +1312,19 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
-
-	for i=1,3 do
+	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
+	local lname = lplrispossiblycool.Name
+	game.Players:Chat(prefix.. "gear all 94794847")
+	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
+	repeat
+	wait()
+	until lplrispossiblycool.Character.HumanoidRootPart ~= nil
+	lplrispossiblycool.Backpack.VampireVanquisher.Parent = lplrispossiblycool.Character
+	for i=1,10 do
 	game.Players:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
-	game.Players:Chat(prefix.. "freeze all")
-	wait(0.2)
-	for i=1,3 do
-	game.Players:Chat(prefix.. "size all 10")
-	wait(0.2)
-	end
-	game.Players:Chat(prefix.. "clone all")
-	wait(0.2)
 	elseif msg:match("//gearpack") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
@@ -1485,22 +1485,22 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	elseif msg:match("//mcrashserver") then
+	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
-	
-	players:Chat("h meanie!")
-	for i=1,3 do
+	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
+	local lname = lplrispossiblycool.Name
+	game.Players:Chat(prefix.. "gear all 94794847")
+	lplrispossiblycool1:Chat("h meanie!")
+	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
+	repeat
+	wait()
+	until lplrispossiblycool.Character.HumanoidRootPart ~= nil
+	lplrispossiblycool.Backpack.VampireVanquisher.Parent = lplrispossiblycool.Character
+	for i=1,10 do
 	game.Players:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
-	game.Players:Chat(prefix.. "freeze all")
-	wait(0.2)
-	for i=1,3 do
-	game.Players:Chat(prefix.. "size all 10")
-	wait(0.2)
-	end
-	game.Players:Chat(prefix.. "clone all")
-	wait(0.2)
 	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
