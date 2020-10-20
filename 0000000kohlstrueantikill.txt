@@ -1,6 +1,8 @@
 	print([[
 	Version: version (version 12.1)
 	Changelog:
+	10/20/2020
+	gui when it loads
 	10/19/2020
 	someone told me to change //servercrash's method so i did
 	10/10/2020
@@ -3263,3 +3265,23 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end)
 	
 	print("admin ready!")
+	-- Farewell Infortality.
+	local laughGUI = Instance.new("ScreenGui")
+	local BoxOfTheLegendaryFunny = Instance.new("TextBox")
+	--Properties:
+	laughGUI.Name = "laughGUI"
+	laughGUI.Parent = game:WaitForChild("CoreGui")
+	laughGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	BoxOfTheLegendaryFunny.Name = "BoxOfTheLegendaryFunny"
+	BoxOfTheLegendaryFunny.Parent = laughGUI
+	BoxOfTheLegendaryFunny.BackgroundColor3 = Color3.new(0, 0, 0)
+	BoxOfTheLegendaryFunny.Position = UDim2.new(0.232323229, 0, 0, 0)
+	BoxOfTheLegendaryFunny.Size = UDim2.new(0, 424, 0, 48)
+	BoxOfTheLegendaryFunny.Font = Enum.Font.SourceSans
+	BoxOfTheLegendaryFunny.Text = "hi so your admin loaded (ill delete myself in a few seconds)"
+	BoxOfTheLegendaryFunny.TextColor3 = Color3.new(1, 1, 1)
+	BoxOfTheLegendaryFunny.TextSize = 14
+
+	wait(4)
+	laughGUI:Destroy()
