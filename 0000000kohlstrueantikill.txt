@@ -2506,15 +2506,10 @@ local anticrasherrr = true
 	--reload, nausea, clear sky
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
-v.Chatted:Connect(function(talking)
-if talking:match(" ") and anticrasherrr == true then
-	local splitstring = string.split(talking, " ")
-	local chicken = game:GetService("Players")
-	local victims = splitstring[2]
-	local victim = splitstring[2]
-	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
-	wait(0.1)
-	chicken:Chat("removetools all")
+local chicken = game.Players
+v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
@@ -2541,12 +2536,13 @@ if talking:match(" ") and anticrasherrr == true then
 	elseif toolremover ~= nil then
 	toolremover:Destroy()
 	lplayerisimportant.PlayerGui.HelpGui:Destroy()
-	end
-	end
-	end
-	end)
-	end
-	end
+
+end
+end
+end)
+end
+end)
+
 	
 	
 	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou)
@@ -2559,19 +2555,12 @@ if talking:match(" ") and anticrasherrr == true then
 	end)
 	
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined ~= thornsuser then
-local victimname = victimhasjoined.Name
-victimhasjoined.Chatted:Connect(function(talking2)
-if talking2:match(" ") and anticrasherrr == true then
-	local splitstring = string.split(talking2, " ")
-	local chicken = game:GetService("Players")
-	local victims = splitstring[2]
-	local victim = splitstring[2]
-	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
-	--reload, nausea, clear sky
-	wait(0.1)
-	chicken:Chat("removetools all")
-	local personiwanttobrutallymurder = victimhasjoined
+if victimhasjoined.Name ~= thornsusername then
+local chicken = game.Players
+victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+chicken:Chat("removetools all")
+	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
@@ -2597,12 +2586,12 @@ if talking2:match(" ") and anticrasherrr == true then
 	elseif toolremover ~= nil then
 	toolremover:Destroy()
 	lplayerisimportant.PlayerGui.HelpGui:Destroy()
-	end
-	end
-	end
-	end)
-	end
-	end)
+
+end
+end
+end)
+end
+end)
 	
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
