@@ -1,5 +1,5 @@
 	print([[
-	Version: metaroom - angel (version 16 )
+	Version: metaroom - angel (version 17 )
 	Changelog:
 	1/21/2021:
 	anticrasheron and anticrasheroff
@@ -2510,6 +2510,7 @@ local chicken = game.Players
 v:WaitForChild("Backpack")
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+v.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
@@ -2562,6 +2563,7 @@ local chicken = game.Players
 victimhasjoined:WaitForChild("Backpack")
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+victimhasjoined.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
