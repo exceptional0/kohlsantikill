@@ -149,7 +149,7 @@
 	messagedeleter2:Destroy()
 	end
 	end)
-	
+	--10 - QMCMAS, remix by Keiichi Suzuki 46:40
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
 	if messagedeleter3:IsA("Message") and _G.messagedeleter then
 	wait(0)
@@ -321,7 +321,7 @@ end
 	local function loadgearpack(plrname, gpname)
 	local ChosenPlayer
 	for i,v in pairs(getplr(plrname)) do
-	if v ~= nil then
+	if v.Name ~= nil then
 	ChosenPlayer = v.Name
 	else
 	ChosenPlayer = "me"
@@ -2497,7 +2497,100 @@ if splitstring[1]:lower() == "//thornswl" then
 	end
 end
 end)
-
+local anticrasherrr = true
+for i,v in pairs(thornsvictims:GetPlayers()) do
+if v.Name ~= thornsusername then
+v.Chatted:Connect(function(talking)
+if talking:match(" ") and anticrasherrr == true then
+	local splitstring = string.split(talking, " ")
+	local chicken = game:GetService("Players")
+	local victims = splitstring[2]
+	local victim = splitstring[2]
+	if splitstring[1] == "gear" or ":gear" and splitstring[3] == "94794847" then
+	--reload, nausea, clear sky
+	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
+	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
+	wait(0.2)
+	local personiwanttobrutallymurder = v
+	local channel6 = game:GetService("Players")
+	local lplayerisimportant = channel6.LocalPlayer
+	local backpack = lplayerisimportant.Backpack
+	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	backpack:WaitForChild("PortableJustice")
+	local toolremover = backpack.PortableJustice
+	if channel6.LocalPlayer.Character ~= nil then
+	toolremover.Parent = channel6.LocalPlayer.Character
+	toolremover = channel6.LocalPlayer.Character.PortableJustice
+	end
+	if personiwanttobrutallymurder.Character ~= nil and toolremover ~= nil then
+	toolremover:WaitForChild("MouseClick")
+	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
+	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
+	channel6:Chat("unff " ..personiwanttobrutallymurder.Name.. "")
+	wait(0)
+	wait(0.1)
+	local arg1 = personiwanttobrutallymurder.Character
+	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
+	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	elseif toolremover ~= nil then
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	end
+	end
+	end)
+	end
+	end)
+	
+	
+thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
+if victimhasjoined ~= thornsuser then
+local victimname = victimhasjoined.Name
+victimhasjoined.Chatted:Connect(function(talking2)
+if talking2:match(" ") and thornstoggle == true then
+	local splitstring = string.split(talking2, " ")
+	local chicken = game:GetService("Players")
+	local victims = splitstring[2]
+	local victim = splitstring[2]
+	if splitstring[1] == "gear" or ":gear" and splitstring[3] == "94794847" then
+	--reload, nausea, clear sky
+	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
+	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
+	wait(0.2)
+	local personiwanttobrutallymurder = v
+	local channel6 = game:GetService("Players")
+	local lplayerisimportant = channel6.LocalPlayer
+	local backpack = lplayerisimportant.Backpack
+	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	backpack:WaitForChild("PortableJustice")
+	local toolremover = backpack.PortableJustice
+	if channel6.LocalPlayer.Character ~= nil then
+	toolremover.Parent = channel6.LocalPlayer.Character
+	toolremover = channel6.LocalPlayer.Character.PortableJustice
+	end
+	if personiwanttobrutallymurder.Character ~= nil and toolremover ~= nil then
+	toolremover:WaitForChild("MouseClick")
+	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
+	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
+	channel6:Chat("unff " ..personiwanttobrutallymurder.Name.. "")
+	wait(0)
+	wait(0.1)
+	local arg1 = personiwanttobrutallymurder.Character
+	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
+	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	elseif toolremover ~= nil then
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	end
+	end
+	end
+	end)
+	end
+	end)
+	
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
