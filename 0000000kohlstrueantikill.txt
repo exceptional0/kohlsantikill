@@ -2544,11 +2544,20 @@ if talking:match(" ") and anticrasherrr == true then
 	end)
 	
 	
+	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou)
+	if fuckyou == "//anticrashoff" then
+	anticrasherrr = false
+	end
+	if fuckyou == "//anticrashon" then
+	anticrasherrr = true
+	end
+	end)
+	
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsuser then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
-if talking2:match(" ") and thornstoggle == true then
+if talking2:match(" ") and anticrasherrr == true then
 	local splitstring = string.split(talking2, " ")
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
