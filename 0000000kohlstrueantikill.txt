@@ -2570,9 +2570,8 @@ if talking2:match(" ") and anticrasherrr == true then
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
-	chicken:Chat("name " ..victimname.Name.. " crasher wannabe")
-	chicken:Chat("tp " ..victimname.Name.. " " ..victimname.Name.. " " ..victimname.Name.. "")
-	wait(0.2)
+	chicken:Chat("reset " ..victimname.. "")
+	chicken:Chat("tp " ..victimname.. " " ..victimname.. " " ..victimname.. "")
 	local personiwanttobrutallymurder = victimhasjoined
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
