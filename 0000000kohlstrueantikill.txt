@@ -1,5 +1,5 @@
 	print([[
-	Version: cyan hardcore (version 15)
+	Version: machine girl - cyan hardcore (version 15)
 	Changelog:
 	1/21/2021:
 	anticrasheron and anticrasheroff
@@ -2513,6 +2513,7 @@ if talking:match(" ") and anticrasherrr == true then
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
+	wait(0.1)
 	chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
@@ -2568,6 +2569,7 @@ if talking2:match(" ") and anticrasherrr == true then
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
+	wait(0.1)
 	chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = victimhasjoined
 	local channel6 = game:GetService("Players")
