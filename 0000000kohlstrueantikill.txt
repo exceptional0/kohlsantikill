@@ -2503,6 +2503,7 @@ end
 end)
 
 local anticrasherrr = true
+	--reload, nausea, clear sky
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
@@ -2512,8 +2513,7 @@ if talking:match(" ") and anticrasherrr == true then
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
-	--reload, nausea, clear sky
-	chicken:Chat("reset " ..v.Name.. "")
+	chicken:Chat("removetools " ..v.Name.. "")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
