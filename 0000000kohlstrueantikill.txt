@@ -2511,7 +2511,7 @@ if talking:match(" ") and anticrasherrr == true then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
-	if splitstring[1] == "gear" or ":gear" and splitstring[3] == "94794847" then
+	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
 	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
 	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
@@ -2568,7 +2568,7 @@ if talking2:match(" ") and anticrasherrr == true then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
-	if splitstring[1] == "gear" or ":gear" and splitstring[3] == "94794847" then
+	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
 	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
 	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
