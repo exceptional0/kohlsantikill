@@ -2513,7 +2513,7 @@ if talking:match(" ") and anticrasherrr == true then
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
-	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
+	chicken:Chat("name " ..v.Name.. " wannabe crasher")
 	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
 	wait(0.2)
 	local personiwanttobrutallymurder = v
@@ -2570,7 +2570,7 @@ if talking2:match(" ") and anticrasherrr == true then
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
-	chicken:Chat("name " ..v.Name.. " stupid server crasher wannabe")
+	chicken:Chat("name " ..v.Name.. " crasher wannabe")
 	chicken:Chat("tp " ..v.Name.. " " ..v.Name.. " " ..v.Name.. "")
 	wait(0.2)
 	local personiwanttobrutallymurder = v
