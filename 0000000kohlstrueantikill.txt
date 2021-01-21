@@ -1,5 +1,5 @@
 	print([[
-	Version: version daidmaokdlm (version 13.1)
+	Version: version dad went on a vision quest and is still trying to find himself -BT, The COD father (version 14)
 	Changelog:
 	1/21/2021:
 	anticrasheron and anticrasheroff
