@@ -2507,6 +2507,7 @@ local anticrasherrr = true
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
+v:WaitForChild("Backpack")
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
 chicken:Chat("removetools all")
@@ -2558,6 +2559,7 @@ end
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
+victimhasjoined:WaitForChild("Backpack")
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
 chicken:Chat("removetools all")
