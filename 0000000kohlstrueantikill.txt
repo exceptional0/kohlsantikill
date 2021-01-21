@@ -1,5 +1,5 @@
 	print([[
-	Version: WHY IS MY GUN WHIPPYING BACK AND FORTH LIKE A WINDSHOOT WIPER! -BT, The COD father (version 15)
+	Version: server crasher repellent (version 15)
 	Changelog:
 	1/21/2021:
 	anticrasheron and anticrasheroff
@@ -2568,8 +2568,7 @@ if talking2:match(" ") and anticrasherrr == true then
 	local victim = splitstring[2]
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
-	chicken:Chat("reset " ..victimname.. "")
-	chicken:Chat("tp " ..victimname.. " " ..victimname.. " " ..victimname.. "")
+	chicken:Chat("removetools " ..v.Name.. "")
 	local personiwanttobrutallymurder = victimhasjoined
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
