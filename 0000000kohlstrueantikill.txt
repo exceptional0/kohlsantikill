@@ -2501,6 +2501,7 @@ if splitstring[1]:lower() == "//thornswl" then
 	end
 end
 end)
+
 local anticrasherrr = true
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
@@ -2543,9 +2544,10 @@ if talking:match(" ") and anticrasherrr == true then
 	lplayerisimportant.PlayerGui.HelpGui:Destroy()
 	end
 	end
-	end)
 	end
 	end)
+	end
+	end
 	
 	
 	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou)
