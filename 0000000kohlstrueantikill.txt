@@ -2514,8 +2514,6 @@ if talking:match(" ") and anticrasherrr == true then
 	if splitstring[1] == "gear" and splitstring[3] == "94794847" or splitstring[1] == ":gear" and splitstring[3] == "94794847" then
 	--reload, nausea, clear sky
 	chicken:Chat("reset " ..v.Name.. "")
-	chicken:Chat("pm " ..v.Name.. " nice try")
-	wait(0.2)
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
