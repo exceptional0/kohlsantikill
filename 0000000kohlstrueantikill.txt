@@ -1,6 +1,9 @@
 	print([[
-	Version: metaroom - angel (version 17 )
+	Version: funne (version 18 )
 	Changelog:
+	1/26/2021:
+	i accidentally didnt add the autodisablers when i redid loop commands sooo
+	i fixed that
 	1/21/2021:
 	anticrasheron and anticrasheroff
 	10/20/2020
@@ -9,12 +12,7 @@
 	someone told me to change //servercrash's method so i did
 	10/10/2020
 	made messagedeleter/antilag work for persons admin
-	10/9/2020
-	forgot to add a disable, added //autopunish off player playername
-	added //autopunish player playername 
-	added //autopunish (see below for info ect theres also autopunish wl ect)
-	added //explode it just explodes alot
-	
+
 	--
 
 	--trueantikill will most likely not work if you are running these commands in order from likeliness disable to fix:
@@ -105,9 +103,8 @@
 	
 	mini person tutorial:
 	1. //box [player]
-	2. dog [player]
-	3. creeper [player]
 	4. undog [player]
+	counting
 	don't think this is good enough for a command
 	--]])
 	
@@ -869,10 +866,11 @@ end
 	if not table.find(whitelistedtable.loopexplodeon, whname) then
 	table.insert(whitelistedtable.loopexplodeon, whname)
 	end
-	while wait() and table.find(whitelistedtable.loopexplodeon, whname) do
+	repeat
+	wait()
 	TALKTALKTALKTALK:Chat("explode " ..foolishfool.. "")
 	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfool) == nil or table.find(whitelistedtable.loopexplodeon, whname) == nil
 	elseif splitstring[1]:lower() == "//protection" then
 	if not table.find(whitelistedtable.protectionon, whname) then
 	table.insert(whitelistedtable.protectionon, whname)
@@ -885,16 +883,17 @@ end
 	if not table.find(whitelistedtable.loopflingon, whname) then
 	table.insert(whitelistedtable.loopflingon , whname)
 	end
-	while wait() and table.find(whitelistedtable.loopflingon, whname) do
+	repeat
+	wait()
 	chicken:Chat("fling " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfool) == nil or table.find(whitelistedtable.loopflingon, whname) == nil
 	elseif splitstring[1]:lower() == "//loopkill" then
 	if not table.find(whitelistedtable.loopkillon, whname) then
 	table.insert(whitelistedtable.loopkillon, whname)
 	end
-	while wait(2) and table.find(whitelistedtable.loopkillon, whname) do
+	repeat
 	chicken:Chat("kill " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfool) == nil or table.find(whitelistedtable.loopkillon, whname) == nil
 	--end if loopres
 	end
 	end
@@ -2011,10 +2010,11 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	until game.Players:FindFirstChild(foolishfool) == nil or _G.lag == false
 	elseif splitstring[1]:lower() == "//loopexplode" then
 	_G.loopexplode = true
-	while wait() and _G.loopexplode do
+	repeat
+	wait()
 	TALKTALKTALKTALK:Chat("explode " ..foolishfool.. "")
 	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopexplode == false
 	elseif splitstring[1]:lower() == "//protection" then
 	_G.exploiterprotection = true
 	while wait(1) and _G.exploiterprotection do
@@ -2025,6 +2025,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	_G.crowdcontrol = true
 	while wait() and _G.crowdcontrol do
 	TALKTALKTALKTALK:Chat("reset others")
+	wait()
 	TALKTALKTALKTALK:Chat("tp others me")
 	end
 	
@@ -2046,15 +2047,17 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	elseif splitstring[1]:lower() == "//loopfling" then
 	_G.loopfling = true
-	while wait() and _G.loopfling do
+	repeat
+	wait()
 	chicken:Chat("fling " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopfling == false
 	
 	elseif splitstring[1]:lower() == "//loopkill" then
 	_G.loopkill = true
-	while wait(4) and _G.loopkill do
+	repeat
+	wait(0.4)
 	chicken:Chat("kill " ..foolishfool.. "")
-	end
+	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopkill == false
 	--end if loopres
 	end
 	end
