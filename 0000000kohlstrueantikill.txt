@@ -1,5 +1,5 @@
 	print([[
-	Version: funne (version 18 )
+	Version: hehe haha (version 18.1)
 	Changelog:
 	1/26/2021:
 	i accidentally didnt add the autodisablers when i redid loop commands sooo
@@ -2014,7 +2014,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	wait()
 	TALKTALKTALKTALK:Chat("explode " ..foolishfool.. "")
 	TALKTALKTALKTALK:Chat("respawn " ..foolishfool.. "")
-	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopexplode == false
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.loopexplode == false
 	elseif splitstring[1]:lower() == "//protection" then
 	_G.exploiterprotection = true
 	while wait(1) and _G.exploiterprotection do
