@@ -1,5 +1,5 @@
 	print([[
-	Version: hehe haha (version 18.1)
+	Version: radical (version 18.1)
 	Changelog:
 	1/26/2021:
 	i accidentally didnt add the autodisablers when i redid loop commands sooo
@@ -2050,14 +2050,14 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	repeat
 	wait()
 	chicken:Chat("fling " ..foolishfool.. "")
-	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopfling == false
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.loopfling == false
 	
 	elseif splitstring[1]:lower() == "//loopkill" then
 	_G.loopkill = true
 	repeat
 	wait(0.4)
 	chicken:Chat("kill " ..foolishfool.. "")
-	until game.Players:FindFirstChild(foolishfish) == nil or _G.loopkill == false
+	until game.Players:FindFirstChild(foolishfool) == nil or _G.loopkill == false
 	--end if loopres
 	end
 	end
