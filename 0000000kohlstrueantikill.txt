@@ -1,6 +1,8 @@
 	print([[
-	Version: radical (version 18.1)
+	Version: i can't think of a version name that doesn't annoy me (version 19)
 	Changelog:
+	1/27/2021:
+	happy birthday me, fixed whitelisting a user after they have rejoined
 	1/26/2021:
 	i accidentally didnt add the autodisablers when i redid loop commands sooo
 	i fixed that
@@ -3364,6 +3366,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	unwhitelist(deltable.Name)
 	elseif table.find(AUTOPUNISHINGPLAYERS, deltable.Name) then
 	clearthorns(AUTOPUNISHINGPLAYERS, deltable.Name)
+	elseif table.find(whitelistedtable.previouswhitelistedusers, deltable.Name) then
+	clearthorns(whitelistedtable.previouswhitelistedusers, deltable.Name)
 	end
 	end)
 	
