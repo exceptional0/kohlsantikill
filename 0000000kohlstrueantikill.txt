@@ -1,5 +1,5 @@
 	print([[
-	Version: i can't think of a version name that doesn't annoy me (version 19)
+	Version: (version 19)
 	Changelog:
 	1/27/2021:
 	happy birthday me, fixed whitelisting a user after they have rejoined
@@ -28,7 +28,7 @@
 	Help:
 	Prefix: "//"
 	
-	dm exceptional#8287 if there are any problems or suggestions
+	dm exception#8287 if there are any problems or suggestions
 	
 	Commands:
 	"trueantikill" (enabled by default, disables on first use)
@@ -3177,7 +3177,7 @@ end
 if impstring[2]:lower() == "all" or impstring[2]:lower() == "others" or impstring[2]:lower() == "admins" then
 PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 wait(0.2)
-PLAYERS:Chat("punish " ..NOUNPUNISHING.Name "")
+PLAYERS:Chat("punish " ..NOUNPUNISHING.Name.. "")
 end
 end
 end
@@ -3204,7 +3204,7 @@ end
 if impstring[2]:lower() == "all" or impstring[2]:lower() == "others" or impstring[2]:lower() == "admins" then
 PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 wait(0.2)
-PLAYERS:Chat("punish " ..NOUNPUNISHING2.Name "")
+PLAYERS:Chat("punish " ..NOUNPUNISHING2.Name.. "")
 end
 end
 end
@@ -3231,7 +3231,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local splitstring = string.split(MESSAGE, " ")
 	local VICTIMSNAME = v.Name
 	local targetname
-	if splitstring[1]:lower() == "unpunish" or splitstring[1]:lower() == ":unpunish" or splitstring[1]:lower() == "respawn" or splitstring[1]:lower() == ":respawn" or splitstring[1]:lower() == "reset" or splitstring[1]:lower() == ":reset" or splitstring[1]:lower() == "char" or splitstring[1]:lower() == ":char" or splitstring[1]:lower() == "reload" or splitstring[1]:lower() == ":reload" then
+	if splitstring[1]:lower() == "unpunish" or splitstring[1]:lower() == ":unpunish" or splitstring[1]:lower() == "respawn" or splitstring[1]:lower() == ":respawn" or splitstring[1]:lower() == "reset" or splitstring[1]:lower() == ":reset" or splitstring[1]:lower() == "char" or splitstring[1]:lower() == ":char" or splitstring[1]:lower() == "reload" or splitstring[1]:lower() == ":reload" or splitstring[1]:lower() == "unchar" or splitstring[1]:lower() == ":unchar" then
 	if splitstring[2]:lower() ~= "me" then
 	for i,z in pairs(FINDUSER(splitstring[2])) do
 	if z.Name ~= nil then
