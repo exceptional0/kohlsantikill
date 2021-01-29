@@ -1,6 +1,8 @@
 	print([[
 	Version: (version 19)
 	Changelog:
+	1/28/2021:
+	anticrasher and maybe some other stuff is fixed, something else had a small error and i fixed that so commands under it work now
 	1/27/2021:
 	happy birthday me, fixed whitelisting a user after they have rejoined
 	1/26/2021:
@@ -80,8 +82,8 @@
 	"llogs" make logs laggy
 	"flogs" flood logs with random thing
 	"explode [player]" alot
-	"anticrasheron" stops people from using the annoying bat gear
-	"anticrasheroff" you know what this does don't you?
+	"anticrashon" stops people from using the annoying bat gear
+	"anticrashoff" you know what this does don't you?
 	
 	
 	
@@ -3265,6 +3267,9 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..targetname.. "")
 	end
 	end
+	elseif splitstring[2]:lower() == "me" then
+	PLAYERS:Chat("punish " ..v.Name.. "")
+	end
 	end
 	if splitstring[2]:lower() == "all" then
 	for i,x in pairs(PLAYERS:GetPlayers()) do
@@ -3273,9 +3278,6 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..x.Name.. "")
 	end
 	end	
-	elseif splitstring[2]:lower() == "me" then
-	PLAYERS:Chat("punish " ..v.Name.. "")
-	end
 	--end if splitstring[1]:lower() == "unpunish" then below
 	end
 	end
@@ -3305,6 +3307,9 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..targetname.. "")
 	end
 	end
+	elseif splitstring[2]:lower() == "me" then
+	PLAYERS:Chat("punish " ..VICTIMJOINED.Name.. "")
+	end
 	end
 	if splitstring[2]:lower() == "all" then
 	for i,x in pairs(PLAYERS:GetPlayers()) do
@@ -3313,9 +3318,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..x.Name.. "")
 	end
 	end	
-	elseif splitstring[2]:lower() == "me" then
-	PLAYERS:Chat("punish " ..VICTIMJOINED.Name.. "")
-	end
+
 	--end if splitstring[1]:lower() == "unpunish" then below
 	end
 	end
@@ -3332,6 +3335,9 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..targetname.. "")
 	end
 	end
+	elseif splitstring[2]:lower() == "me" then
+	PLAYERS:Chat("punish " ..VICTIMJOINED.Name.. "")
+	end
 	end
 	if splitstring[2]:lower() == "all" then
 	for i,x in pairs(PLAYERS:GetPlayers()) do
@@ -3340,9 +3346,6 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	PLAYERS:Chat("punish " ..x.Name.. "")
 	end
 	end	
-	elseif splitstring[2]:lower() == "me" then
-	PLAYERS:Chat("punish " ..VICTIMJOINED.Name.. "")
-	end
 	--end if splitstring[1]:lower() == "unpunish" then below
 	end
 	end
