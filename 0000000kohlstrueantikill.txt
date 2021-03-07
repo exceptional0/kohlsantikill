@@ -619,7 +619,7 @@ end
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	elseif msg:match("//mcrashserver") then	
+	elseif msg:lower() == "//mcrashserver" then
 	local prefix = ":"
 	local lplrispossiblycool1 = game:GetService("Players")
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
@@ -635,7 +635,7 @@ end
 	lplrispossiblycool1:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
-	elseif msg:match("//mshiftcrash") then
+	elseif msg:lower() == "//mshiftcrash" then
 	local prefix = ":"
 	
 	players:Chat("gear all 4842207161")
