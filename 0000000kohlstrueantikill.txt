@@ -1,6 +1,8 @@
 	print([[
-	Version: goreshit - Hashtag Shut The Fuck Up (version 21)
+	Version: goreshit - Hashtag Shut The Fuck Up (version 22)
 	Changelog:
+	4/6/2021: 
+	bug fix maybe
 	2/5/2021:
 	new command for regular and whitelisted users: "//regen"
 	made whitelisted users able to use //disabletools 
