@@ -1,8 +1,6 @@
 	print([[
-	Version: machine girl - The Ugly Art (version 22)
+	Version: goreshit - Hashtag Shut The Fuck Up (version 21)
 	Changelog:
-	3/7/2021:
-	re-added //mcrashserver for non-whitelisted users, was a mistake removing it and is fixed now MOST LIKELY LMFAO
 	2/5/2021:
 	new command for regular and whitelisted users: "//regen"
 	made whitelisted users able to use //disabletools 
@@ -621,7 +619,7 @@ end
 	event:InvokeServer(A_1, A_2)
 	end
 	end
-	elseif msg:lower() == "//mcrashserver" then
+	elseif msg:match("//mcrashserver") then	
 	local prefix = ":"
 	local lplrispossiblycool1 = game:GetService("Players")
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
@@ -637,7 +635,7 @@ end
 	lplrispossiblycool1:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
-	elseif msg:lower() == "//mshiftcrash" then
+	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
 	players:Chat("gear all 4842207161")
@@ -1547,22 +1545,6 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	lplrispossiblycool.Backpack.VampireVanquisher.Parent = lplrispossiblycool.Character
 	for i=1,10 do
 	game.Players:Chat(prefix.. "size all 0.3")
-	wait(0.2)
-	end
-	elseif msg:lower() == "//mcrashserver" then
-	local prefix = ":"
-	local lplrispossiblycool1 = game:GetService("Players")
-	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
-	local lname = lplrispossiblycool.Name
-	lplrispossiblycool1:Chat("h meanie!")
-	lplrispossiblycool1:Chat(prefix.. "gear all 94794847")
-	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
-	repeat
-	wait()
-	until lplrispossiblycool.Character.HumanoidRootPart ~= nil
-	lplrispossiblycool.Backpack.VampireVanquisher.Parent = lplrispossiblycool.Character
-	for i=1,10 do
-	lplrispossiblycool1:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
 	elseif msg:match("//mshiftcrash") then
@@ -3270,7 +3252,13 @@ end
 end)
 end
 end)
-elseif splitstring[1]:lower() == "//autopunishoff" and splitstring[2]:lower() == "player" and splitstring[3] ~= nil then
+end
+end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(fuck)
+local splitstring = string.split(fuck," ") 
+if splitstring[1]:lower() == "//autopunishoff" and splitstring[2]:lower() == "player" and splitstring[3] ~= nil then
 for i,v in pairs(FINDUSER(splitstring[3])) do
 if v.Name ~= nil then
 if table.find(AUTOPUNISHINGPLAYERS, v.Name) then
@@ -3279,9 +3267,7 @@ end
 end
 end
 end
-end
 end)
-
 
 for i,v in pairs(PLAYERS:GetPlayers()) do
 if v.Name ~= LOCALPLAYERNAME and not table.find(WHITELISTED, v.Name) then
