@@ -1,5 +1,5 @@
 	print([[
-	Version: goreshit - Hashtag Shut The Fuck Up (version 22)
+	Version: lolno (version 23)
 	Changelog:
 	4/6/2021: 
 	bug fix maybe
@@ -2555,7 +2555,10 @@ local anticrasherrr = true
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
-v:WaitForChild("Backpack")
+print("waiting(anticrasher)")
+repeat 
+wait(0.2)
+until v.Backpack ~= nil and v.Character ~= nil
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
 v.Backpack:WaitForChild("VampireVanquisher")
