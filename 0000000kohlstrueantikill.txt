@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 26)
+	Version: lolno (version 27)
 	Changelog:
 	4/12/2021:
 	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
@@ -36,7 +36,7 @@
 	Help:
 	Prefix: "//"
 	
-	dm exception#8287 if there are any problems or suggestions
+	dm exception#1112 if there are any problems or suggestions
 	
 	Commands:
 	"trueantikill" (enabled by default, disables on first use)
@@ -3477,6 +3477,15 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	
 	for i,v in pairs(GMAIL:GetPlayers()) do
 	if v.Name ~= MAXIMIZE.Name then
+	if v.Character ~= nil then
+	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
+	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
+	print("" ..restrainedname.. " attempted to move a part and was respawned.")
+	end
+	end)
+	end
+	
 	v.CharacterAdded:Connect(function(podayto)
 	local restrainedname = v.Name
 	v.Character:WaitForChild("Torso")
