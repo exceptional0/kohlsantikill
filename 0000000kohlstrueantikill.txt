@@ -1,6 +1,8 @@
 	print([[
-	Version: lolno (version 24)
+	Version: lolno (version 24.1)
 	Changelog:
+	4/12/2021:
+	private script support
 	4/6/2021: 
 	bug fix maybe
 	2/5/2021:
@@ -171,7 +173,7 @@
 
 	
 	--// gamepass autogive admin
-	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
+	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) and _G.permloaded == false then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
@@ -197,8 +199,10 @@
 	end
 	wait(2.5)
 	
-	
-	
+	if _G.spermisloading then
+	repeat
+	wait(1)
+	until _G.permloaded
 	--// locals setup 
 	local trueantikill = true
 	local loopexplode = false
@@ -2369,7 +2373,7 @@ if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	inflictthornsdamage:Chat("bonfire " ..victimname.. "")
 	if defensivethorns == true then
 	wait(0.1)
-	inflictthornsdamage:Chat("unfire " ..thornsusername2 "")
+	inflictthornsdamage:Chat("unfire " ..thornsusername2.. "")
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and victims:lower() == "all" or splitstring[1]:lower() == "reload" and victims:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and victims:lower() == "all" or splitstring[1]:lower() == ":reload" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
