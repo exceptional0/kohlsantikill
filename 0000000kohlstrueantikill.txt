@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 24.1)
+	Version: lolno (version 24.2)
 	Changelog:
 	4/12/2021:
 	private script support
@@ -203,6 +203,7 @@
 	repeat
 	wait(1)
 	until _G.permloaded
+	end
 	--// locals setup 
 	local trueantikill = true
 	local loopexplode = false
