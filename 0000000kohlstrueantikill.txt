@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 25)
+	Version: lolno (version 26)
 	Changelog:
 	4/12/2021:
 	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
@@ -3437,7 +3437,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end)
 	
 	--anti-partmove
-
+	print("s")
 	local GMAIL = game.Players
 	local MAXIMIZE = game.Players.LocalPlayer
 	local RESTRAININGORDERS = {}
@@ -3450,6 +3450,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	table.insert(RESTRAININGORDERS,v.Name)
 	end
 	end
+	print("s1")
 	elseif splitstring[1] == "//unpartwhitelist" and splitstring[2] ~= nil then
 	if not table.find(RESTRAININGORDERS,splitstring[2]) then
 	for i,v in pairs(getplr(splitstring[2])) do
@@ -3468,7 +3469,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end -- if ITSDEATHGRIPS
 	end --elseif orgin(ifsplitstring = partwhitelist
 	end) -- function
-	
+	print("s2")
 	local prefix = ":"
 	local function MESSAGE(xxx)
 	GMAIL:Chat(xxx)
@@ -3476,7 +3477,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	
 	for i,v in pairs(GMAIL:GetPlayers()) do
 	if v.Name ~= MAXIMIZE.Name then
-	v.CharacterAdded:Wait()
+	v.CharacterAdded:Connect(function(podayto)
 	local restrainedname = v.Name
 	v.Character:WaitForChild("Torso")
 	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
@@ -3485,13 +3486,14 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	print("" ..restrainedname.. " attempted to move a part and was respawned.")
 	end
 	end)
+	end)
 	end
 	end
 	
-	
+	print("s3")
 		GMAIL.PlayerAdded:Connect(function(vampirism)
 		if vampirism.Name ~= MAXIMIZE.Name then
-		vampirism.CharacterAdded:Wait()
+		vampirism.CharacterAdded:Connect(function(onomatopoeia)
 		local restrainedname = vampirism.Name
 		vampirism.Character:WaitForChild("Torso")
 		vampirism.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
@@ -3499,6 +3501,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 		MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
 		print("" ..restrainedname.. " attempted to move a part and was respawned.")
 		end
+		end)
 		end)
 		end
 		end)
