@@ -1,7 +1,8 @@
 	print([[
-	Version: lolno (version 24.2)
+	Version: lolno (version 25)
 	Changelog:
 	4/12/2021:
+	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
 	private script support
 	4/6/2021: 
 	bug fix maybe
@@ -19,8 +20,7 @@
 	anticrasheron and anticrasheroff
 	10/20/2020
 	gui when it loads
-	10/19/2020
-	someone told me to change //servercrash's method so i did
+
 
 
 	--
@@ -93,6 +93,10 @@
 	"printpacks" prints your gearpacks
 	"regen" regens the admin pads
 	
+	antipartmove commands:
+	"antipartmove" [TOGGLE] prevents people from moving parts (respawns them and prints who they are, ENABLED BY DEFAULT)
+	"partwhitelist" [player] whitelists a player from antipartmove
+	"unpartwhitelist" [player] you know what this does, you're a fool if you don't
 	
 	autopunish commands:
 	"autopunish" automatically punishes players
@@ -3431,6 +3435,74 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	clearthorns(whitelistedtable.previouswhitelistedusers, deltable.Name)
 	end
 	end)
+	
+	--anti-partmove
+
+	local GMAIL = game.Players
+	local MAXIMIZE = game.Players.LocalPlayer
+	local RESTRAININGORDERS = {}
+	local ITSDEATHGRIPS = true
+	MAXIMIZE.Chatted:Connect(function(MYDREAM)
+	local splitstring = string.split(MYDREAM," ")
+	if splitstring[1] == "//partwhitelist" and splitstring[2] ~= nil then
+	for i,v in pairs(getplr(splitstring[2])) do
+	if v ~= nil then
+	table.insert(RESTRAININGORDERS,v.Name)
+	end
+	end
+	elseif splitstring[1] == "//unpartwhitelist" and splitstring[2] ~= nil then
+	if not table.find(RESTRAININGORDERS,splitstring[2]) then
+	for i,v in pairs(getplr(splitstring[2])) do
+	if v ~= nil then
+	removefromtable(RESTRAININGORDERS,v.Name)
+	end	-- v ~= nil
+	end	--getplr 
+	elseif table.find(RESTRAININGORDERS,splitstring[2]) then
+	removefromtable(RESTRAININGORDERS,splitstring[2])
+	end	--table.find
+	elseif splitstring[1] == "//antipartmove" then
+	if ITSDEATHGRIPS == true then
+	ITSDEATHGRIPS = false
+	else
+	ITSDEATHGRIPS = true
+	end -- if ITSDEATHGRIPS
+	end --elseif orgin(ifsplitstring = partwhitelist
+	end) -- function
+	
+	local prefix = ":"
+	local function MESSAGE(xxx)
+	GMAIL:Chat(xxx)
+	end
+	
+	for i,v in pairs(GMAIL:GetPlayers()) do
+	if v.Name ~= MAXIMIZE.Name then
+	v.CharacterAdded:Wait()
+	local restrainedname = v.Name
+	v.Character:WaitForChild("Torso")
+	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
+	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
+	print("" ..restrainedname.. " attempted to move a part and was respawned.")
+	end
+	end)
+	end
+	end
+	
+	
+		GMAIL.PlayerAdded:Connect(function(vampirism)
+		if vampirism.Name ~= MAXIMIZE.Name then
+		vampirism.CharacterAdded:Wait()
+		local restrainedname = vampirism.Name
+		vampirism.Character:WaitForChild("Torso")
+		vampirism.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+		if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
+		MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
+		print("" ..restrainedname.. " attempted to move a part and was respawned.")
+		end
+		end)
+		end
+		end)
+		
 	
 	print("admin ready!")
 	-- Farewell Infortality.
