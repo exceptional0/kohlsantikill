@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 28)
+	Version: lolno (version 29)
 	Changelog:
 	4/12/2021:
 	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
@@ -2607,7 +2607,52 @@ end
 end)
 end
 end
+	local antivel = true
 
+for i,v in pairs(thornsvictims:GetPlayers()) do
+if v.Name ~= thornsusername then
+local chicken = game.Players
+
+repeat 
+wait(0.2)
+until v.Backpack ~= nil and v.Character ~= nil
+v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
+print("waiting(antibomb)1")
+v.Backpack:WaitForChild("RemoteExplosiveDetonator")
+chicken:Chat("removetools all")
+	local personiwanttobrutallymurder = v
+	local channel6 = game:GetService("Players")
+	local lplayerisimportant = channel6.LocalPlayer
+	local backpack = lplayerisimportant.Backpack
+	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	backpack:WaitForChild("PortableJustice")
+	local toolremover = backpack.PortableJustice
+	if channel6.LocalPlayer.Character ~= nil then
+	toolremover.Parent = channel6.LocalPlayer.Character
+	toolremover = channel6.LocalPlayer.Character.PortableJustice
+	end
+	if personiwanttobrutallymurder.Character ~= nil and toolremover ~= nil then
+	toolremover:WaitForChild("MouseClick")
+	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
+	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
+	channel6:Chat("unff " ..personiwanttobrutallymurder.Name.. "")
+	wait(0)
+	wait(0.1)
+	local arg1 = personiwanttobrutallymurder.Character
+	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
+	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	elseif toolremover ~= nil then
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+
+end
+end
+end)
+end
+end
 
 	
 	
@@ -2619,7 +2664,7 @@ end
 	anticrasherrr = true
 	end
 	end)
-	local antivel = true
+	
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
@@ -2660,7 +2705,47 @@ end
 end)
 end
 end)
-	
+	thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
+if victimhasjoined.Name ~= thornsusername then
+local chicken = game.Players
+victimhasjoined:WaitForChild("Backpack")
+victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+victimhasjoined.Backpack:WaitForChild("VampireVanquisher")
+chicken:Chat("removetools all")
+	local personiwanttobrutallymurder = v
+	local channel6 = game:GetService("Players")
+	local lplayerisimportant = channel6.LocalPlayer
+	local backpack = lplayerisimportant.Backpack
+	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	backpack:WaitForChild("PortableJustice")
+	local toolremover = backpack.PortableJustice
+	if channel6.LocalPlayer.Character ~= nil then
+	toolremover.Parent = channel6.LocalPlayer.Character
+	toolremover = channel6.LocalPlayer.Character.PortableJustice
+	end
+	if personiwanttobrutallymurder.Character ~= nil and toolremover ~= nil then
+	toolremover:WaitForChild("MouseClick")
+	channel6:Chat("fly " ..personiwanttobrutallymurder.Name.. "")
+	channel6:Chat("tp " ..personiwanttobrutallymurder.Name.. " me")
+	channel6:Chat("unff " ..personiwanttobrutallymurder.Name.. "")
+	wait(0)
+	wait(0.1)
+	local arg1 = personiwanttobrutallymurder.Character
+	local notarg = lplayerisimportant.Character.PortableJustice.MouseClick
+	notarg:FireServer(arg1)
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+	elseif toolremover ~= nil then
+	toolremover:Destroy()
+	lplayerisimportant.PlayerGui.HelpGui:Destroy()
+
+end
+end
+end)
+end
+end)
+
 	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou2)
 	if fuckyou2 == "//antibomboff" then
 	antivel = false
