@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 27)
+	Version: lolno (version 28)
 	Changelog:
 	4/12/2021:
 	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
@@ -92,6 +92,8 @@
 	"anticrashoff" you know what this does don't you?
 	"printpacks" prints your gearpacks
 	"regen" regens the admin pads
+	"antibombon" 
+	"antibomboff"
 	
 	antipartmove commands:
 	"antipartmove" [TOGGLE] prevents people from moving parts (respawns them and prints who they are, ENABLED BY DEFAULT)
@@ -2617,14 +2619,14 @@ end
 	anticrasherrr = true
 	end
 	end)
-	
+	local antivel = true
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
 victimhasjoined:WaitForChild("Backpack")
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
-if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
-victimhasjoined.Backpack:WaitForChild("VampireVanquisher")
+if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
+victimhasjoined.Backpack:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
@@ -2658,6 +2660,15 @@ end
 end)
 end
 end)
+	
+	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou2)
+	if fuckyou2 == "//antibomboff" then
+	antivel = false
+	end
+	if fuckyou2 == "//antibombon" then
+	antivel = true
+	end
+	end)
 	
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
