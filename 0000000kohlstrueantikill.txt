@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 31)
+	Version: lolno (version 30)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -156,18 +156,17 @@
 	_G.messagedeleter = true
 	print("message deleter is on by default, protects you from being lagged.")
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
-	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter then
-	lplayer.PlayerGui:WaitForChild("MessageGUI")
-	messagedeleter:Destroy()
-	elseif messagedeleter.Name == "HintGUI" and _G.messagedeleter then
-	lplayer.PlayerGui:WaitForChild("HintGUI")
+	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
+	wait(0)
 	messagedeleter:Destroy()
 	end
 	end)
 	
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
-	lplayer.PlayerGui:WaitForChild("Message")
+	wait(0)
+	messagedeleter2.Text = ""
+	wait(0)
 	messagedeleter2:Destroy()
 	end
 	end)
