@@ -2668,23 +2668,24 @@ end
 	end
 	end)
 	
-thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
+game.Players.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
 local personiwanttobrutallymurder = victimhasjoined
-personiwanttobrutallymurder:WaitForChild("Backpack")
-personiwanttobrutallymurder.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+victimhasjoined.CharacterAdded:Connect(function()
+local nvvr = personiwanttobrutallymurder:WaitForChild("Backpack")
+nvvr.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
 print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibomb, cause of a part glitch)")
-personiwanttobrutallymurder.Backpack:WaitForChild("RemoteExplosiveDetonator")
+nvvr:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools " ..victimhasjoined.Name.. "")
 	if personiwanttobrutallymurder.Character ~= nil then
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
-	local backpack = lplayerisimportant.Backpack
+	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
-	backpack:WaitForChild("PortableJustice")
-	local toolremover = backpack.PortableJustice
+	mbackpack:WaitForChild("PortableJustice")
+	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
 	toolremover.Parent = channel6.LocalPlayer.Character
 	toolremover = channel6.LocalPlayer.Character.PortableJustice
@@ -2709,25 +2710,27 @@ end
 end
 end
 end)
+end)
 end
 end)
-thornsvictims.PlayerAdded:Connect(function(victimhasjoined2)
+game.Players.PlayerAdded:Connect(function(victimhasjoined2)
 if victimhasjoined2.Name ~= thornsusername then
 local chicken = game.Players
 local personiwanttobrutallymurder = victimhasjoined2
-personiwanttobrutallymurder:WaitForChild("Backpack")
-personiwanttobrutallymurder.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+victimhasjoined2.CharacterAdded:Connect(function()
+local nvvrim = victimhasjoined2:WaitForChild("Backpack")
+nvvrim.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
 print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//anticrash, cause of server crashes)")
-personiwanttobrutallymurder.Backpack:WaitForChild("VampireVanquisher")
+nvvrim:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
 	if personiwanttobrutallymurder.Character ~= nil then
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
-	local backpack = lplayerisimportant.Backpack
+	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
-	backpack:WaitForChild("PortableJustice")
-	local toolremover = backpack.PortableJustice
+	mbackpack:WaitForChild("PortableJustice")
+	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
 	toolremover.Parent = channel6.LocalPlayer.Character
 	toolremover = channel6.LocalPlayer.Character.PortableJustice
@@ -2751,6 +2754,7 @@ chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
 end
 end
 end
+end)
 end)
 end
 end)
