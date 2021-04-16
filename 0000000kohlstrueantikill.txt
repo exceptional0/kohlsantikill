@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 31)
+	Version: lolno (version 31.FUUUUUUUUUCKKKKKKKKKKKKK)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -3573,8 +3573,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end
 	
 	for i,v in pairs(GMAIL:GetPlayers()) do
-	local restrainedname = v.Name
 	if v.Name ~= MAXIMIZE.Name then
+	local restrainedname = v.Name
 	if v.Character ~= nil then
 	local restrainedname = v.Name
 	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
