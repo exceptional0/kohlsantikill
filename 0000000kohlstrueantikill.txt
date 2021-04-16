@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 31.4)
+	Version: lolno (version 31.5)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -2671,14 +2671,13 @@ end
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
-repeat 
-wait(0.2)
-until victimhasjoined.Character ~= nil
+local personiwanttobrutallymurder = victimhasjoined
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
+print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibomb, cause of a part glitch)"
 victimhasjoined.Backpack:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools " ..victimhasjoined.Name.. "")
-	local personiwanttobrutallymurder = victimhasjoined
+	if personiwanttobrutallymurder.Character ~= nil then
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
@@ -2707,20 +2706,20 @@ chicken:Chat("removetools " ..victimhasjoined.Name.. "")
 
 end
 end
+end
 end)
 end
 end)
-	thornsvictims.PlayerAdded:Connect(function(victimhasjoined2)
+thornsvictims.PlayerAdded:Connect(function(victimhasjoined2)
 if victimhasjoined2.Name ~= thornsusername then
 local chicken = game.Players
-repeat 
-wait(0.2)
-until victimhasjoined2.Character ~= nil
+local personiwanttobrutallymurder = victimhasjoined2
 victimhasjoined2.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
+print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//anticrash, cause of server crashes)"
 victimhasjoined2.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
-	local personiwanttobrutallymurder = victimhasjoined2
+	if personiwanttobrutallymurder.Character ~= nil then
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
@@ -2747,6 +2746,7 @@ chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
 	toolremover:Destroy()
 	lplayerisimportant.PlayerGui.HelpGui:Destroy()
 
+end
 end
 end
 end)
