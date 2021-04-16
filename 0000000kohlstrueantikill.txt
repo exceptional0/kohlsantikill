@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 31.2)
+	Version: lolno (version 31.3)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -2677,8 +2677,8 @@ until victimhasjoined.Backpack ~= nil and victimhasjoined.Character ~= nil
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
 victimhasjoined.Backpack:WaitForChild("RemoteExplosiveDetonator")
-chicken:Chat("removetools all")
-	local personiwanttobrutallymurder = v
+chicken:Chat("removetools " ..victimhasjoined.Name.. "")
+	local personiwanttobrutallymurder = victimhasjoined
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
@@ -2719,8 +2719,8 @@ until victimhasjoined2.Backpack ~= nil and victimhasjoined2.Character ~= nil
 victimhasjoined2.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
 victimhasjoined2.Backpack:WaitForChild("VampireVanquisher")
-chicken:Chat("removetools all")
-	local personiwanttobrutallymurder = v
+chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
+	local personiwanttobrutallymurder = victimhasjoined2
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
