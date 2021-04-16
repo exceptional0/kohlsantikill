@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 30)
+	Version: lolno (version 31)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -3573,6 +3573,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end
 	
 	for i,v in pairs(GMAIL:GetPlayers()) do
+	local restrainedname = v.Name
 	if v.Name ~= MAXIMIZE.Name then
 	if v.Character ~= nil then
 	local restrainedname = v.Name
