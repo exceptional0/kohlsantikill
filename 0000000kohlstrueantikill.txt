@@ -1,5 +1,5 @@
 	print([[
-	Version: lolno (version 31.FUUUUUUUUUCKKKKKKKKKKKKK)
+	Version: lolno (version 31.2)
 	Changelog:
 	4/13/2021:
 	anti-partmove bug fix LMFAO
@@ -2671,7 +2671,9 @@ end
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined.Name ~= thornsusername then
 local chicken = game.Players
-victimhasjoined:WaitForChild("Backpack")
+repeat 
+wait(0.2)
+until victimhasjoined.Backpack ~= nil and victimhasjoined.Character ~= nil
 victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
 victimhasjoined.Backpack:WaitForChild("RemoteExplosiveDetonator")
@@ -2708,13 +2710,15 @@ end
 end)
 end
 end)
-	thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
-if victimhasjoined.Name ~= thornsusername then
+	thornsvictims.PlayerAdded:Connect(function(victimhasjoined2)
+if victimhasjoined2.Name ~= thornsusername then
 local chicken = game.Players
-victimhasjoined:WaitForChild("Backpack")
-victimhasjoined.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+repeat 
+wait(0.2)
+until victimhasjoined2.Backpack ~= nil and victimhasjoined2.Character ~= nil
+victimhasjoined2.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
-victimhasjoined.Backpack:WaitForChild("VampireVanquisher")
+victimhasjoined2.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools all")
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
