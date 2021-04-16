@@ -1,6 +1,9 @@
 	print([[
-	Version: lolno (version 31.5)
+	Version: onomatopoeia (version 32)
 	Changelog:
+	4/16/2021:
+	antipartmove working 100%
+	anticrasher working 100%
 	4/13/2021:
 	anti-partmove bug fix LMFAO
 	
@@ -3587,7 +3590,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local restrainedname = v.Name
 	if v.Character ~= nil then
 	local restrainedname = v.Name
-	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+	local vvvvvvv = v.Character:WaitForChild("Torso")
+	vvvvvvv.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
 	print("" ..restrainedname.. " attempted to move a part and was respawned.")
@@ -3596,8 +3600,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end
 	
 	v.CharacterAdded:Connect(function(podayto)
-	v.Character:WaitForChild("Torso")
-	v.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+	local lifestealisop = v.Character:WaitForChild("Torso")
+	lifestealisop.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
 	print("" ..restrainedname.. " attempted to move a part and was respawned.")
@@ -3612,8 +3616,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 		if vampirism.Name ~= MAXIMIZE.Name then
 		vampirism.CharacterAdded:Connect(function(onomatopoeia)
 		local restrainedname = vampirism.Name
-		vampirism.Character:WaitForChild("Torso")
-		vampirism.Character.Torso.ChildAdded:Connect(function(GOVERNMENTPLATES)
+		local siphon = vampirism.Character:WaitForChild("Torso")
+		siphon.ChildAdded:Connect(function(GOVERNMENTPLATES)
 		if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 		MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
 		print("" ..restrainedname.. " attempted to move a part and was respawned.")
