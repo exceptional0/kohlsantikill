@@ -1,5 +1,5 @@
 	print([[
-	Version: .........cache is (version 33)
+	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 33)
 	Changelog:
 	4/16/2021:
 	antipartmove working 100%
@@ -3551,6 +3551,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end)
 	
 	--anti-partmove
+	
 	local GMAIL = game.Players
 	local MAXIMIZE = game.Players.LocalPlayer
 	local RESTRAININGORDERS = {}
