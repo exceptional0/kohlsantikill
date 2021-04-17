@@ -1,5 +1,5 @@
 	print([[
-	Version: onomatopoeia (version 32)
+	Version: .........cache is (version 33)
 	Changelog:
 	4/16/2021:
 	antipartmove working 100%
@@ -2573,21 +2573,20 @@ for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
 
-repeat 
-wait(0.2)
-until v.Backpack ~= nil and v.Character ~= nil
+v.CharacterAdded:Connect(function()
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
-print("waiting(anticrasher)1")
+print("" ..v.Name.. " has a blacklisted gear (//anticrash, cause of server crashes)")
 v.Backpack:WaitForChild("VampireVanquisher")
-chicken:Chat("removetools all")
+chicken:Chat("removetools " ..v.Name.. "")
+	if v.Character ~= nil then
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
-	local backpack = lplayerisimportant.Backpack
+	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
-	backpack:WaitForChild("PortableJustice")
-	local toolremover = backpack.PortableJustice
+	mbackpack:WaitForChild("PortableJustice")
+	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
 	toolremover.Parent = channel6.LocalPlayer.Character
 	toolremover = channel6.LocalPlayer.Character.PortableJustice
@@ -2610,6 +2609,8 @@ chicken:Chat("removetools all")
 
 end
 end
+end
+end)
 end)
 end
 end
@@ -2619,21 +2620,20 @@ for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
 
-repeat 
-wait(0.2)
-until v.Backpack ~= nil and v.Character ~= nil
+v.CharacterAdded:Connect(function()
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
-print("waiting(antibomb)1")
+print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibomb, cause of a part glitch)")
 v.Backpack:WaitForChild("RemoteExplosiveDetonator")
-chicken:Chat("removetools all")
+chicken:Chat("removetools " ..v.Name.. "")
+	if v.Character ~= nil then
 	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
-	local backpack = lplayerisimportant.Backpack
+	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
-	backpack:WaitForChild("PortableJustice")
-	local toolremover = backpack.PortableJustice
+	mbackpack:WaitForChild("PortableJustice")
+	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
 	toolremover.Parent = channel6.LocalPlayer.Character
 	toolremover = channel6.LocalPlayer.Character.PortableJustice
@@ -2656,6 +2656,8 @@ chicken:Chat("removetools all")
 
 end
 end
+end
+end)
 end)
 end
 end
