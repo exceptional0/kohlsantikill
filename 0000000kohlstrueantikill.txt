@@ -1,5 +1,5 @@
 	print([[
-	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 33)
+	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 34)
 	Changelog:
 	4/16/2021:
 	antipartmove working 100%
@@ -1056,6 +1056,11 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	if splitstring[1]:lower() == "kill" and victim == thornsusername or splitstring[1]:lower() == "kill" and victims:lower() == "all" or splitstring[1]:lower() == "kill" and victims:lower() == "others" or splitstring[1]:lower() == ":kill" and victim == thornsusername or splitstring[1]:lower() == ":kill" and victims:lower() == "all" or splitstring[1]:lower() == ":kill" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("kill " ..victimname.. "")	
+	elseif splitstring[1]:lower() == "smoke" and victim == thornsusername or splitstring[1]:lower() == "smoke" and victims:lower() == "all" or splitstring[1]:lower() == "smoke" and victims:lower() == "others" or splitstring[1]:lower() == ":smoke" and victim == thornsusername or splitstring[1]:lower() == ":smoke" and victims:lower() == "all" or splitstring[1]:lower() == ":smoke" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("smoke " ..victimname.. "")
+	if table.find(whitelistedtable.defenseon, whname) then
+	inflictthornsdamage:Chat("unsmoke " ..thornsusername.. "")
+	end
 	elseif splitstring[1]:lower() == "explode" and victim == thornsusername or splitstring[1]:lower() == "explode" and victims:lower() == "all" or splitstring[1]:lower() == "explode" and victims:lower() == "others" or splitstring[1]:lower() == ":explode" and victim == thornsusername or splitstring[1]:lower() == ":explode" and victims:lower() == "all" or splitstring[1]:lower() == ":explode" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("explode " ..victimname.. "")
 	elseif splitstring[1]:lower() == "respawn" and victim == thornsusername or splitstring[1]:lower() == "respawn" and victims:lower() == "all" or splitstring[1]:lower() == "respawn" and victims:lower() == "others" or splitstring[1]:lower() == ":respawn" and victim == thornsusername or splitstring[1]:lower() == ":respawn" and victims:lower() == "all" or splitstring[1]:lower() == ":respawn" and victims:lower() == "others" then
@@ -1214,6 +1219,11 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	if table.find(whitelistedtable.defenseon, whname) then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
+	end
+	elseif splitstring[1]:lower() == "smoke" and victim == thornsusername or splitstring[1]:lower() == "smoke" and victims:lower() == "all" or splitstring[1]:lower() == "smoke" and victims:lower() == "others" or splitstring[1]:lower() == ":smoke" and victim == thornsusername or splitstring[1]:lower() == ":smoke" and victims:lower() == "all" or splitstring[1]:lower() == ":smoke" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("smoke " ..victimname.. "")
+	if table.find(whitelistedtable.defenseon, whname) then
+	inflictthornsdamage:Chat("unsmoke " ..thornsusername.. "")
 	end
 	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and victims:lower() == "all" or splitstring[1]:lower() == "stun" and victims:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and victims:lower() == "all" or splitstring[1]:lower() == ":stun" and victims:lower() == "others" then
 	inflictthornsdamage:Chat("stun " ..victimname.. "")
@@ -2803,6 +2813,11 @@ if talking:match(" ") and thornstoggle == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
 	end
+	elseif splitstring[1]:lower() == "smoke" and victim == thornsusername or splitstring[1]:lower() == "smoke" and victims:lower() == "all" or splitstring[1]:lower() == "smoke" and victims:lower() == "others" or splitstring[1]:lower() == ":smoke" and victim == thornsusername or splitstring[1]:lower() == ":smoke" and victims:lower() == "all" or splitstring[1]:lower() == ":smoke" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("smoke " ..victimname.. "")
+	if defensivethorns == true then
+	inflictthornsdamage:Chat("unsmoke " ..thornsusername.. "")
+	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
 	elseif splitstring[1]:lower() == "stun" and victim == thornsusername or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "stun" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":stun" and victim == thornsusername or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":stun" and splitstring[2]:lower() == "others" then
@@ -2951,6 +2966,11 @@ if talking2:match(" ") and thornstoggle == true then
 	if defensivethorns == true then
 	wait(0.1)
 	inflictthornsdamage:Chat("fly " ..thornsusername.. "")
+	end
+	elseif splitstring[1]:lower() == "smoke" and victim == thornsusername or splitstring[1]:lower() == "smoke" and victims:lower() == "all" or splitstring[1]:lower() == "smoke" and victims:lower() == "others" or splitstring[1]:lower() == ":smoke" and victim == thornsusername or splitstring[1]:lower() == ":smoke" and victims:lower() == "all" or splitstring[1]:lower() == ":smoke" and victims:lower() == "others" then
+	inflictthornsdamage:Chat("smoke " ..victimname.. "")
+	if defensivethorns == true then
+	inflictthornsdamage:Chat("unsmoke " ..thornsusername.. "")
 	end
 	elseif splitstring[1]:lower() == "reload" and victim == thornsusername2 or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == "reload" and splitstring[2]:lower() == "others" or splitstring[1]:lower() == ":reload" and victim == thornsusername2 or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "all" or splitstring[1]:lower() == ":reload" and splitstring[2]:lower() == "others" then
 	inflictthornsdamage:Chat("reload " ..victimname.. "")
