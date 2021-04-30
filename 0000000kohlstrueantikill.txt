@@ -2592,7 +2592,7 @@ local anticrasherrr = true
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
-
+local personiwanttobrutallymurder = v
 v.CharacterAdded:Connect(function()
 v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "VampireVanquisher" and anticrasherrr == true then
@@ -2600,7 +2600,6 @@ print("" ..v.Name.. " has a blacklisted gear (//anticrash, cause of server crash
 v.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools " ..v.Name.. "")
 	if v.Character ~= nil then
-	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
@@ -2639,15 +2638,14 @@ end
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername then
 local chicken = game.Players
-
-v.CharacterAdded:Connect(function()
-v.Backpack.ChildAdded:Connect(function(fuckingmurderer)
+local personiwanttobrutallymurder = v
+personiwanttobrutallymurder.CharacterAdded:Connect(function()
+personiwanttobrutallymurder.Backpack.ChildAdded:Connect(function(fuckingmurderer)
 if fuckingmurderer.Name == "RemoteExplosiveDetonator" and antivel == true then
 print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibomb, cause of a part glitch)")
-v.Backpack:WaitForChild("RemoteExplosiveDetonator")
+personiwanttobrutallymurder.Backpack:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools " ..v.Name.. "")
 	if v.Character ~= nil then
-	local personiwanttobrutallymurder = v
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
