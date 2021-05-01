@@ -1,5 +1,5 @@
 	print([[
-	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 35)
+	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 36)
 	Changelog:
 	4/16/2021:
 	antipartmove working 100%
@@ -3659,7 +3659,13 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 		if vampirism.Name ~= MAXIMIZE.Name then
 		vampirism.CharacterAdded:Connect(function(onomatopoeia)
 		local restrainedname = vampirism.Name
-		local siphon = vampirism.Character:WaitForChild("Torso")
+		local humanoidy = vampirism.Character:WaitForChild("Humanoid")
+		local siphon
+		if humanoidy.RigType == Enum.HumanoidRigType.R6 then
+		siphon = vampirism.Character:WaitForChild("Torso")
+		elseif humanoidy.RigType == Enum.HumanoidRigType.R15 then
+		siphon = vampirism.Character:WaitForChild("UpperTorso")
+		end	
 		siphon.ChildAdded:Connect(function(GOVERNMENTPLATES)
 		if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 		MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
