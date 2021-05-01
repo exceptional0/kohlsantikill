@@ -1,6 +1,10 @@
 	print([[
-	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 36)
+	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 37)
 	Changelog:
+	5/1/2021:
+	kohls bc support maybe idk i dont play it usually (r15)
+	thorns fix (bug was for example: person says "kill" then error happens or they die idk)
+	autopunish bug fix i have no clue what i did
 	4/16/2021:
 	antipartmove working 100%
 	anticrasher working 100%
@@ -2580,7 +2584,7 @@ if splitstring[1]:lower() == "//thornswl" then
 	end
 	if victim ~= nil then
 	clearthorns(thornstable,victim)
-	print("cleared away the thorns surrounding " ..victim.Name.. ".")
+	print("removed thorns from " ..victim.Name.. ".")
 	end
 	end
 	end
@@ -2796,6 +2800,7 @@ if v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
 	local splitstring = string.split(talking, " ")
+	if splitstring[1] ~= nil and splitstring[2] ~= nil then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
@@ -2942,9 +2947,11 @@ if talking:match(" ") and thornstoggle == true then
 	end
 	end
 	end
+	end
 	end)
 	end
 	end
+	
 
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsuser then
@@ -2952,6 +2959,7 @@ local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and thornstoggle == true then
 	local splitstring = string.split(talking2, " ")
+	if splitstring[1] ~= nil and splitstring[2] ~= nil then
 	local chicken = game:GetService("Players")
 	local victims = splitstring[2]
 	local victim = splitstring[2]
@@ -3093,6 +3101,7 @@ if talking2:match(" ") and thornstoggle == true then
 	elseif splitstring[1]:lower() == "gear" and victim ~= thornsusername and gearstealertoggle == true and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" or splitstring[1]:lower() == ":gear" and gearstealertoggle == true and victim ~= thornsusername and splitstring[2]:lower() ~= "others" and splitstring[2]:lower() ~= "all" then
 	inflictthornsdamage:Chat("gear " ..thornsusername.. " " ..splitstring[3].. "")
 	--end if string == "kill" then
+	end
 	end
 	end
 	end
@@ -3350,9 +3359,11 @@ PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
 TOBEAUTOPUNISHED.Chatted:Connect(function(MSGHERE)
 if table.find(AUTOPUNISHINGPLAYERS, TOBEAUTOPUNISHEDNAME) then
 local impstring = string.split(MSGHERE," ")
+if impstring[1] ~= nil and impstring[2] ~= nil then
 if impstring[1]:lower() == "unpunish" or impstring[1]:lower() == ":unpunish" or impstring[1]:lower() == "respawn" or impstring[1]:lower() == ":respawn" or impstring[1]:lower() == "reset" or impstring[1]:lower() == ":reset" or impstring[1]:lower() == "char" or impstring[1]:lower() == ":char" or impstring[1]:lower() == "reload" or impstring[1]:lower() == ":reload" and impstring[2] ~= nil then
 if impstring[2]:lower() == "me" then
 PLAYERS:Chat("punish " ..TOBEAUTOPUNISHEDNAME.. "")
+end
 end
 end
 end
@@ -3362,6 +3373,7 @@ if NOUNPUNISHING.Name ~= LOCALPLAYERNAME and not table.find(WHITELISTED, NOUNPUN
 NOUNPUNISHING.Chatted:Connect(function(MESSAGEISHERE)
 if table.find(AUTOPUNISHINGPLAYERS, TOBEAUTOPUNISHEDNAME) and NOUNPUNISHING.Name ~= LOCALPLAYERNAME and not table.find(WHITELISTED, NOUNPUNISHING.Name) then
 local impstring = string.split(MESSAGEISHERE," ")
+if impstring[2] ~= nil then
 if impstring[1]:lower() == "unpunish" or impstring[1]:lower() == ":unpunish" or impstring[1]:lower() == "respawn" or impstring[1]:lower() == ":respawn" or impstring[1]:lower() == "reset" or impstring[1]:lower() == ":reset" or impstring[1]:lower() == "char" or impstring[1]:lower() == ":char" or impstring[1]:lower() == "reload" or impstring[1]:lower() == ":reload" and impstring[2] ~= nil then
 for i,v in pairs(FINDUSER(impstring[2])) do
 if v.Name ~= nil then
@@ -3383,7 +3395,6 @@ end)
 end
 end
 end
-
 PLAYERS.PlayerAdded:Connect(function(NOUNPUNISHING2)
 if NOUNPUNISHING2.Name ~= LOCALPLAYERNAME and table.find(AUTOPUNISHINGPLAYERS, TOBEAUTOPUNISHEDNAME) and not table.find(WHITELISTED, NOUNPUNISHING2.Name) then
 NOUNPUNISHING2.Chatted:Connect(function(MESSAGEISHERE)
@@ -3412,6 +3423,7 @@ end)
 end
 end
 end)
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(fuck)
 local splitstring = string.split(fuck," ") 
