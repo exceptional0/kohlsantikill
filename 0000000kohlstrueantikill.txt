@@ -3621,7 +3621,13 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local restrainedname = v.Name
 	if v.Character ~= nil then
 	local restrainedname = v.Name
-	local vvvvvvv = v.Character:WaitForChild("Torso")
+	local humanoidv = v.Character:WaitForChild("Humanoid")
+	local vvvvvvv
+	if humanoidv.RigType == Enum.HumanoidRigType.R6 then
+	vvvvvvv = v.Character:WaitForChild("Torso")
+	elseif humanoidv.RigType == Enum.HumanoidRigType.R15 then
+	vvvvvvv = v.Character:WaitForChild("UpperTorso")
+	end
 	vvvvvvv.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
@@ -3631,7 +3637,13 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end
 	
 	v.CharacterAdded:Connect(function(podayto)
-	local lifestealisop = v.Character:WaitForChild("Torso")
+	local humanoidx = v.Character:WaitForChild("Humanoid")
+	local lifestealisop
+	if humanoidx.RigType == Enum.HumanoidRigType.R6 then
+	lifestealisop = v.Character:WaitForChild("Torso")
+	elseif humanoidx.RigType == Enum.HumanoidRigType.R15 then
+	lifestealisop = v.Character:WaitForChild("UpperTorso")
+	end	
 	lifestealisop.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
