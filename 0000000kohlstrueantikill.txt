@@ -3391,8 +3391,8 @@ PLAYERS:Chat("punish " ..NOUNPUNISHING.Name.. "")
 end
 end
 end
-end)
 end
+end)
 end
 end
 PLAYERS.PlayerAdded:Connect(function(NOUNPUNISHING2)
@@ -3417,13 +3417,13 @@ PLAYERS:Chat("punish " ..NOUNPUNISHING2.Name.. "")
 end
 end
 end
-end)
 end
 end)
 end
-end
-end)
-end
+end) --h
+end --h
+end --h
+end) 
 
 game.Players.LocalPlayer.Chatted:Connect(function(fuck)
 local splitstring = string.split(fuck," ") 
