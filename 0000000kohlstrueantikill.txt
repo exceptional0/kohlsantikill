@@ -2704,7 +2704,7 @@ end)
 end)
 end
 end
-local afreeze == true
+local afreeze = true
 for i,v in pairs(players:GetPlayers()) do
 if v.Name ~= lplayer.Name and afreeze == true then
 v.Chatted:Connect(function(onomatopoeia22)
