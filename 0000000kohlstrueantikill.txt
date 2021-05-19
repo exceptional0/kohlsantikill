@@ -1369,13 +1369,12 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	local splitstring2 = string.split(msg, " ")
 	local person
-	local command
+	local command = splitstring2[1]
 	local target2
 	local targetname2
 	if splitstring2 ~= nil then 
 	if table.getn(splitstring2) >= 2 then
 	person = splitstring2[2]
-	command = splitstring2[1]
 	target2 = xget(person)
 	if target2 ~= "0" then
 	targetname2 = target2.Name
