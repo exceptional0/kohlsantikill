@@ -1408,13 +1408,13 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif command:lower() == "//q" then
 	if person ~= "all" and person ~= "others" and person ~= "admins" then
 	players:Chat("reset " ..targetname2.. "")
-	players:Chat("setgrav " ..targetname2.. " -4000000")
+	players:Chat("setgrav " ..targetname2.. " -90000000000")
 	wait(0.2)
 	players:Chat("punish " ..targetname2.. "")
 	players:Chat("blind " ..targetname2.. "")
 	else
 	players:Chat("reset " ..person.. "")
-	players:Chat("setgrav " ..person.. " -4000000")
+	players:Chat("setgrav " ..person.. " -90000000000")
 	wait(0.2)
 	players:Chat("punish " ..person.. "")
 	players:Chat("blind " ..person.. "")
