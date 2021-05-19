@@ -344,7 +344,7 @@ end
 	repeat
 	wait(0.054)
 	local maxn = #gearpacks[bees]
-	players:Chat("gear " ..ChosenPlayer.. " "..string.rep("0",13).. ..unpack(gearpacks[bees],minn,minn).. "")
+	players:Chat("gear " ..ChosenPlayer.. " " ..string.rep("0",13).. "" ..unpack(gearpacks[bees],minn,minn).. "")
 	minn = minn + 1
 	until minn == maxn + 1
 	else
