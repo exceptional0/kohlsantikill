@@ -1,5 +1,5 @@
 	print([[
-	Version: hi (38)
+	Version: hi (39)
 	Changelog:
 	5/19/2021:
 	antifreezecrash (afcon,afcoff)
