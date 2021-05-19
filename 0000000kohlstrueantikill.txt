@@ -2,6 +2,7 @@
 	Version: hi (38)
 	Changelog:
 	5/19/2021:
+	antifreezecrash (afcon,afcoff)
 	i should remake this admin but fuck it
 	new command: //q [player] 
 	gets them out of your sight
@@ -79,6 +80,8 @@
 	"antibombon" annoying part velocity gear 
 	"antibomboff" annoying part velocity gear anti disabler
 	"q [player]" gets them out of your sight
+	"afcon" antifreezecrash
+	"afcoff" antifreezecrashoff
 	
 	antipartmove commands:
 	"antipartmove" [TOGGLE] prevents people from moving parts (respawns them and prints who they are, ENABLED BY DEFAULT)
@@ -2701,15 +2704,44 @@ end)
 end)
 end
 end
-
-	
+local afreeze == true
+for i,v in pairs(players:GetPlayers()) do
+if v.Name ~= lplayer.Name and afreeze == true then
+v.Chatted:Connect(function(onomatopoeia22)
+local simpstring = string.split(onomatopoeia22," ")
+if table.getn(simpstring) >= 3 then
+local command = simpstring[1]
+if command:match("size") and tonumber(simpstring[3]) <= 0.5 then
+players:Chat("reset " ..simpstring[2].. "")
+end
+end
+end)
+end
+end
+players.PlayerAdded:Connect(function(MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013)
+if MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013.Name ~= lplayer.Name and afreeze == true then
+local plll = MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013
+plll.Chatted:Connect(function(FROMTERRIBLESATURN)
+local spspsspwspwosdoadoawd = string.split(FROMTERRIBLESATURN," ")
+if table.getn(spspsspwspwosdoadoawd) >= 3 then
+local command = spspsspwspwosdoadoawd[1]
+if command:match("size") and tonumber(simpstring[3]) <= 0.5 then
+players:Chat("reset " ..spspsspwspwosdoadoawd[2].. "")
+end
+end
+end)
+end
+end)
 	
 	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou)
-	if fuckyou == "//anticrashoff" then
+	if fuckyou:lower() == "//anticrashoff" then
 	anticrasherrr = false
-	end
-	if fuckyou == "//anticrashon" then
+	elseif fuckyou:lower() == "//anticrashon" then
 	anticrasherrr = true
+	elseif fuckyou:lower() == "//afcon" then
+	afreeze = true
+	elseif fuckyou:lower() == "//afcoff" then
+	afreeze = false
 	end
 	end)
 	
