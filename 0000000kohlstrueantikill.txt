@@ -115,9 +115,10 @@
 	local chatted = lplayer.Chatted
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
 	local market = game:GetService("MarketplaceService")
-	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
+	--new lagtext stolen from shortcut 
+	local lagtext = "                                                                                                                                                                                                                                                                                                                                                                                                                                        v                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 soaw"
 	local removesong = false	
-	
+	--s
 
 	--lagtext and anti lava blocks is from oofkohlsv2
 	
