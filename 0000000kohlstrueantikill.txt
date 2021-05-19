@@ -2725,7 +2725,7 @@ plll.Chatted:Connect(function(FROMTERRIBLESATURN)
 local spspsspwspwosdoadoawd = string.split(FROMTERRIBLESATURN," ")
 if table.getn(spspsspwspwosdoadoawd) >= 3 then
 local command = spspsspwspwosdoadoawd[1]
-if command:match("size") and tonumber(simpstring[3]) <= 0.5 then
+if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 then
 players:Chat("reset " ..spspsspwspwosdoadoawd[2].. "")
 end
 end
