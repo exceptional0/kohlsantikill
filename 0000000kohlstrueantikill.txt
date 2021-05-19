@@ -1,36 +1,10 @@
 	print([[
-	Version: 4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4/4 (version 37)
+	Version: hi (38)
 	Changelog:
-	5/1/2021:
-	kohls bc support maybe idk i dont play it usually (r15)
-	thorns fix (bug was for example: person says "kill" then error happens or they die idk)
-	autopunish bug fix i have no clue what i did
-	4/16/2021:
-	antipartmove working 100%
-	anticrasher working 100%
-	4/13/2021:
-	anti-partmove bug fix LMFAO
-	
-	4/12/2021:
-	added anti-partmove, enabled by default for everyone but you (//antipartmove, enabled by default)
-	private script support
-	4/6/2021: 
-	bug fix maybe
-	2/5/2021:
-	new command for regular and whitelisted users: "//regen"
-	made whitelisted users able to use //disabletools 
-	1/28/2021:
-	anticrasher and maybe some other stuff is fixed, something else had a small error and i fixed that so commands under it work now
-	1/27/2021:
-	happy birthday me, fixed whitelisting a user after they have rejoined
-	1/26/2021:
-	i accidentally didnt add the autodisablers when i redid loop commands sooo
-	i fixed that
-	1/21/2021:
-	anticrasheron and anticrasheroff
-	10/20/2020
-	gui when it loads
-
+	5/19/2021:
+	i should remake this admin but fuck it
+	new command: //q [player] 
+	gets them out of your sight
 
 
 	--
@@ -102,8 +76,9 @@
 	"anticrashoff" you know what this does don't you?
 	"printpacks" prints your gearpacks
 	"regen" regens the admin pads
-	"antibombon" 
-	"antibomboff"
+	"antibombon" annoying part velocity gear 
+	"antibomboff" annoying part velocity gear anti disabler
+	"q [player]" gets them out of your sight
 	
 	antipartmove commands:
 	"antipartmove" [TOGGLE] prevents people from moving parts (respawns them and prints who they are, ENABLED BY DEFAULT)
@@ -1381,8 +1356,34 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	end
 	
+	local function xget(name)
+	local name2 = "0"
+	for i2,v2 in pairs(getplr(name)) do
+	if v2 ~= nil then
+	name2 = v2
+	end
+	end
+	return name2
+	end
 	--// commands
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+	local splitstring2 = string.split(msg, " ")
+	local person
+	local command
+	local target2
+	local targetname2
+	if splitstring2 ~= nil then 
+	if table.getn(splitstring2) >= 2 then
+	person = splitstring2[2]
+	command = splitstring2[1]
+	target2 = xget(person)
+	if target2 ~= "0" then
+	targetname2 = target2.Name
+	else
+	targetname2 = "0"
+	end
+	end
+	end
 	if msg:lower() == "//trueantikill" then
 	if trueantikill == false then
 	trueantikill = true
@@ -1404,8 +1405,21 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	game.Players:Chat(prefix.. "size all 0.3")
 	wait(0.2)
 	end
+	elseif command:lower() == "//q" then
+	if person ~= "all" and person ~= "others" and person ~= "admins" then
+	players:Chat("reset " ..targetname2.. "")
+	players:Chat("setgrav " ..targetname2.. " -4000000")
+	wait(0.2)
+	players:Chat("punish " ..targetname2.. "")
+	players:Chat("blind " ..targetname2.. "")
+	else
+	players:Chat("reset " ..person.. "")
+	players:Chat("setgrav " ..person.. " -4000000")
+	wait(0.2)
+	players:Chat("punish " ..person.. "")
+	players:Chat("blind " ..person.. "")
+	end
 	elseif msg:match("//gearpack") then
-	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
