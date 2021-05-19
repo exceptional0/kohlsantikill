@@ -1,5 +1,5 @@
 	print([[
-	Version: hi (39)
+	Version: hi (40)
 	Changelog:
 	5/19/2021:
 	antifreezecrash (afcon,afcoff)
@@ -333,7 +333,7 @@ end
 	if v.Name ~= nil then
 	ChosenPlayer = v.Name
 	else
-	ChosenPlayer = "me"
+	ChosenPlayer = plrname
 	end
 	end
 	local bees = tostring(gpname)
@@ -344,7 +344,7 @@ end
 	repeat
 	wait(0.054)
 	local maxn = #gearpacks[bees]
-	players:Chat("gear " ..ChosenPlayer.. " 00000000000000000000000000000000000000000000000000000000000000" ..unpack(gearpacks[bees],minn,minn).. "")
+	players:Chat("gear " ..ChosenPlayer.. " "..string.rep("0",13).. ..unpack(gearpacks[bees],minn,minn).. "")
 	minn = minn + 1
 	until minn == maxn + 1
 	else
@@ -489,55 +489,55 @@ end
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000092142829")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000094233344")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000117544573")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000268586231")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000068539623")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000045177979")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000233520257")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000087361662")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000233520257")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000071037101")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212641536")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "92142829")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "94233344")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "117544573")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "268586231")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "68539623")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "45177979")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "233520257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "87361662")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "233520257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "71037101")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "212641536")
 	wait(0.1)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000099119240")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212296936")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000292969139")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000079446473")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000127506257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "99119240")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "212296936")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "292969139")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "79446473")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "127506257")
 	wait()
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000097885508")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000016924676")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000106064315")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000077443461")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000080576967")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000060357972")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000061459706")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "97885508")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "16924676")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "106064315")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "77443461")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "80576967")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "60357972")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "61459706")
 	wait(0.3)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000061459706")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000082357101")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000082357123")
-	chicken:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000001208300505")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000026421972")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "61459706")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "82357101")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "82357123")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "1208300505")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
 	end
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000139577901")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000094233286")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000115377964")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "139577901")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "94233286")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "115377964")
 	wait()
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000116693764")
-	chicken:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000001145358579")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000243788599")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000021420014")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000030847685")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000085879456")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "116693764")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "1145358579")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "243788599")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "21420014")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "30847685")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "85879456")
 	wait(0.1)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000034898883")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "34898883")
 	end
 	elseif msg:match("//rocketfailure") then
 	local splitstring = string.split(msg, " ")
@@ -564,7 +564,7 @@ end
 	elseif msg:match("//shiftlock") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	players:Chat("gear all 000000000000000000000000000000000000000000000000000000000000004842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -574,7 +574,7 @@ end
 	elseif msg:match("//everythingisred") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	game.Players:Chat("gear me 18474459")
+	game.Players:Chat("gear me  " ..string.rep("0",13).. "18474459")
 	wait(0.1)
 	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
@@ -598,7 +598,7 @@ end
 	elseif msg:match("//everythingismagenta") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	game.Players:Chat("gear me 0000000000000000000000000000000000000000000000000000000000000018474459")
+	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
 	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
@@ -626,7 +626,7 @@ end
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
 	lplrispossiblycool1:Chat("h meanie!")
-	lplrispossiblycool1:Chat(prefix.. "gear all 94794847")
+	lplrispossiblycool1:Chat(prefix.. "gear all " ..string.rep("0",13).. "94794847")
 	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
 	repeat
 	wait()
@@ -639,7 +639,7 @@ end
 	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
-	players:Chat("gear all 4842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -661,7 +661,7 @@ end
 	elseif msg:match("//shiftcrash") then
 	local prefix = ":"
 	
-	players:Chat("gear all 000000000000000000000000000000000000000000000000000000000000004842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -710,91 +710,91 @@ end
 	local gearstr = gearimp:lower()
 	if gearstr == "paint" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000018474459")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "18474459")
 	end
 	elseif gearstr == "radio" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212641536")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "212641536")
 	end
 	elseif gearstr == "timestop" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000071037101")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "71037101")
 	end
 	elseif gearstr == "airstrike" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000088885539")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "88885539")
 	end
 	elseif gearstr == "treehouse" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000119917513")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "119917513")
 	end
 	elseif gearstr == "zombiestaff" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000026421972")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
 	end
 	elseif gearstr == "bodyswap" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000078730532")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "78730532")
 	end
 	elseif gearstr == "ultimateyellowcar" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000253519495")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "253519495")
 	end
 	elseif gearstr == "megaphone" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000044116233")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "44116233")
 	end
 	elseif gearstr == "snowballcannon" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000067755182")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "67755182")
 	end
 	elseif gearstr == "medusasword" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000059190534")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "59190534")
 	end
 	elseif gearstr == "rmagiccarpet" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000225921000")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "225921000")
 	end
 	elseif gearstr == "deluxecarpet" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000477910063")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "477910063")
 	end
 	elseif gearstr == "procket" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000298085284")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "298085284")
 	end
 	elseif gearstr == "subtripmine" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000011999247")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "11999247")
 	end
 	elseif gearstr == "bombotable" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000243788010")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "243788010")
 	end
 	elseif gearstr == "cameraglitch" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000987032734")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "987032734")
 	end
 	elseif gearstr == "sensglitch" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000068354832")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "68354832")
 	end
 	elseif gearstr == "arshiftlock" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000004842207161")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "4842207161")
 	end
 	elseif gearstr == "darkheart" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000016895215")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "16895215")
 	end
 	elseif gearstr == "rcwand" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000075550883")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "75550883")
 	end
 	elseif gearstr == "exceptionalsfavorite" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000075941738")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "75941738")
 	end
 	end
 	elseif msg:match("//loadtools") then
@@ -816,7 +816,7 @@ end
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
 	backpack:WaitForChild("PortableJustice")
 	local toolremover = backpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
@@ -1397,7 +1397,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local lplrispossiblycool1 = game:GetService("Players")
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
-	game.Players:Chat(prefix.. "gear all 94794847")
+	game.Players:Chat(prefix.. "gear all " ..string.rep("0",13).. "94794847")
 	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
 	repeat
 	wait()
@@ -1431,55 +1431,55 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000092142829")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000094233344")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000117544573")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000268586231")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000068539623")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000045177979")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000233520257")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000087361662")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000233520257")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000071037101")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212641536")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "92142829")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "94233344")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "117544573")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "268586231")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "68539623")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "45177979")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "233520257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "87361662")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "233520257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "71037101")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "212641536")
 	wait(0.1)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000099119240")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212296936")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000292969139")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000079446473")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000127506257")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "99119240")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "212296936")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "292969139")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "79446473")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "127506257")
 	wait()
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000097885508")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000016924676")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000106064315")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000077443461")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000080576967")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000060357972")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000061459706")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "97885508")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "16924676")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "106064315")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "77443461")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "80576967")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "60357972")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "61459706")
 	wait(0.3)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000061459706")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000082357101")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000082357123")
-	chicken:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000001208300505")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000026421972")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "61459706")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "82357101")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "82357123")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "1208300505")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
 	end
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000139577901")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000094233286")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000115377964")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "139577901")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "94233286")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "115377964")
 	wait()
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000116693764")
-	chicken:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000001145358579")
-	chicken:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000243788599")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000021420014")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000030847685")
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000085879456")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "116693764")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "1145358579")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "243788599")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "21420014")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "30847685")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "85879456")
 	wait(0.1)
-	chicken:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000034898883")
+	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "34898883")
 	end
 	elseif msg:match("//requestadmin") then
 	   local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
@@ -1529,7 +1529,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("//shiftlock") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	players:Chat("gear all 000000000000000000000000000000000000000000000000000000000000004842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -1539,7 +1539,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("//everythingisred") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	game.Players:Chat("gear me 0000000000000000000000000000000000000000000000000000000000000018474459")
+	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
 	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
@@ -1563,7 +1563,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("==1cs") then
 	local splitstring = string.split(msg, " ")
 	local person = splitstring[2]
-	game.Players:Chat("gear me 18474459")
+	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
 	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
 	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
@@ -1590,7 +1590,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local lplrispossiblycool1 = game:GetService("Players")
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
-	game.Players:Chat(prefix.. "gear all 94794847")
+	game.Players:Chat(prefix.. "gear all " ..string.rep("0",13).. "94794847")
 	lplrispossiblycool1:Chat("h meanie!")
 	lplrispossiblycool.Backpack:WaitForChild("VampireVanquisher")
 	repeat
@@ -1604,7 +1604,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("//mshiftcrash") then
 	local prefix = ":"
 	
-	players:Chat("gear all 000000000000000000000000000000000000000000000000000000000000004842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -1626,7 +1626,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	elseif msg:match("//shiftcrash") then
 	local prefix = ":"
 	
-	players:Chat("gear all 000000000000000000000000000000000000000000000000000000000000004842207161")
+	players:Chat("gear all " ..string.rep("0",13).. "4842207161")
 	lplayer.Backpack:WaitForChild("AR")
 	lplayer.Backpack.AR.Parent = lplayer.Character
 	wait(0.3)
@@ -1675,111 +1675,111 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local gearstr = gearimp:lower()
 	if gearstr == "paint" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000018474459")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "18474459")
 	end
 	elseif gearstr == "radio" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000212641536")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "212641536")
 	end
 	elseif gearstr == "timestop" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000071037101")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "71037101")
 	end
 	elseif gearstr == "airstrike" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000088885539")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "88885539")
 	end
 	elseif gearstr == "treehouse" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000119917513")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "119917513")
 	end
 	elseif gearstr == "zombiestaff" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000026421972")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
 	end
 	elseif gearstr == "bodyswap" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000078730532")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "78730532")
 	end
 	elseif gearstr == "ultimateyellowcar" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000253519495")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "253519495")
 	end
 	elseif gearstr == "megaphone" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000044116233")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "44116233")
 	end
 	elseif gearstr == "snowballcannon" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000067755182")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "67755182")
 	end
 	elseif gearstr == "medusasword" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000059190534")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "59190534")
 	end
 	elseif gearstr == "rmagiccarpet" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000225921000")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "225921000")
 	end
 	elseif gearstr == "deluxecarpet" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000477910063")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "477910063")
 	end
 	elseif gearstr == "procket" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000298085284")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "298085284")
 	end
 	elseif gearstr == "subtripmine" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000011999247")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "11999247")
 	end
 	elseif gearstr == "bombotable" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000243788010")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "243788010")
 	end
 	elseif gearstr == "cameraglitch" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000000000000987032734")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "987032734")
 	end
 	elseif gearstr == "sensglitch" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000068354832")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "68354832")
 	end
 	elseif gearstr == "arshiftlock" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000000000004842207161")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "4842207161")
 	end
 	elseif gearstr == "darkheart" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000016895215")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "16895215")
 	end
 	elseif gearstr == "rcwand" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000075550883")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "75550883")
 	end
 	elseif gearstr == "exceptionalsfavorite" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000075941738")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "75941738")
 	end
 	elseif gearstr == "rocketjump" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000000000000169602103")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "169602103")
 	end
 	elseif gearstr == "fans" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000124126528")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "124126528")
 	end
 	elseif gearstr == "badbunny" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 00000000000000000000000000000000000000000000024839406")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "24839406")
 	end
 	elseif gearstr == "ltrap" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 000000000000000000000000000000000000000000000000000000080576913")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "80576913")
 	end
 	elseif gearstr == "forcefield" then
 	for i,v in pairs(getplr(person)) do
-	bird:Chat("gear " ..person.. " 0000000000000000000000000000000000000000000000000000000000000090718618")
+	bird:Chat("gear " ..person.. " " ..string.rep("0",13).. "90718618")
 	end
 	end
 	elseif msg:match("//gearprint") then
@@ -1887,7 +1887,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
 	backpack:WaitForChild("PortableJustice")
 	local toolremover = backpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
@@ -1962,7 +1962,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:lower() == "//ll" or msg:lower() == "//itsasecret" or msg:lower() == "//llogs" then
 	local speakish = game:GetService("Players")
-	local foolishfish = "japanese horror story japanese horror story? they're pretty scary japanese horror is good horror anyway this is pretty long now"
+	local foolishfish = "dwadawdawdadaw"
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
@@ -2628,7 +2628,7 @@ chicken:Chat("removetools " ..v.Name.. "")
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
 	mbackpack:WaitForChild("PortableJustice")
 	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
@@ -2674,7 +2674,7 @@ chicken:Chat("removetools " ..v.Name.. "")
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
 	mbackpack:WaitForChild("PortableJustice")
 	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
@@ -2760,7 +2760,7 @@ chicken:Chat("removetools " ..victimhasjoined.Name.. "")
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
 	mbackpack:WaitForChild("PortableJustice")
 	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
@@ -2805,7 +2805,7 @@ chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
 	local channel6 = game:GetService("Players")
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
-	channel6:Chat("gear me 0000000000000000000000000000000000000000000000000000082357101")
+	channel6:Chat("gear me "  ..string.rep("0",13).. "82357101")
 	mbackpack:WaitForChild("PortableJustice")
 	local toolremover = mbackpack.PortableJustice
 	if channel6.LocalPlayer.Character ~= nil then
