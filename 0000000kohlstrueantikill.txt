@@ -4,7 +4,8 @@
 	5/19/2021:
 	antifreezecrash (afcon,afcoff)
 	i should remake this admin but fuck it
-	new command: //q [player] 
+	new command: //q [player],//antidog 
+	//q:
 	gets them out of your sight
 
 
@@ -82,6 +83,7 @@
 	"q [player]" gets them out of your sight
 	"afcon" antifreezecrash
 	"afcoff" antifreezecrashoff
+	"antidog" (toggle, enabled by default)
 	
 	antipartmove commands:
 	"antipartmove" [TOGGLE] prevents people from moving parts (respawns them and prints who they are, ENABLED BY DEFAULT)
@@ -303,7 +305,12 @@ end
 	end)
 	end)
 	
-	
+	local hmmmmmmmmmmmmmmmmmmmmmmmmm = true
+	lplayer.Character.ChildAdded:Connect(function(pissed)
+	if pissed.Name == "Addon" and pissed:IsA("Seat") and hmmmmmmmmmmmmmmmmmmmmmmmmm == true then
+	players:Chat("undog me")
+	end
+	end)
 	local Name = "gearpacks.txt"
 	local idtable = {}
 
@@ -2177,6 +2184,12 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	_G.ineedatsomeone = false
 	elseif msg:lower() == "//loopresoff" then
 	_G.loopres = false
+	elseif msg:lower() == "//antidog" then
+	if hmmmmmmmmmmmmmmmmmmmmmmmmm ~= true then
+	hmmmmmmmmmmmmmmmmmmmmmmmmm = true
+	else
+	hmmmmmmmmmmmmmmmmmmmmmmmmm = false
+	end
 	end
 	end)
 	
