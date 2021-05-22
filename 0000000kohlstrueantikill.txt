@@ -344,7 +344,7 @@ end
 	
 	--fixed somehow
 	local function loadgearpack(plrname, gpname)
-	local ChosenPlayer = xget(plrname)
+	local ChosenPlayer = xget(plrname).Name or xget(plrname)
 	local bees = tostring(gpname)
 	print(bees)
 	if gearpacks[bees] ~= nil then
