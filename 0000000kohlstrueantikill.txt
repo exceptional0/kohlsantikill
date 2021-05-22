@@ -344,14 +344,7 @@ end
 	
 	--fixed somehow
 	local function loadgearpack(plrname, gpname)
-	local ChosenPlayer
-	for i,v in pairs(getplr(plrname)) do
-	if v.Name ~= nil then
-	ChosenPlayer = v.Name
-	else
-	ChosenPlayer = plrname
-	end
-	end
+	local ChosenPlayer = xget(plrname)
 	local bees = tostring(gpname)
 	print(bees)
 	if gearpacks[bees] ~= nil then
@@ -1840,7 +1833,9 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local impname = splitstring[3]
 	loadgearpack(person,impname)
 	elseif msg:lower() == "//printpacks" then
-	print(unpack(gearpacks))
+	for ii,vv in pairs(gearpacks) do
+	print(ii, vv)
+	end
 	elseif msg:lower() == "//antimusic" then
 	if removesong == true then
 	removesong = false
