@@ -234,7 +234,16 @@ function getplr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v
     return Found    
 end
 
-	
+function cget(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
+    local Found = {}
+    local Target = String:lower()
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                table.insert(Found,v)
+            end
+        end    
+    return Found    
+end
 	
 	
 	--// Anti Spam Kill (first execute)
@@ -1368,7 +1377,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	local function xget(name)
 	local name2 = name
-	for i2,v2 in pairs(getplr(name)) do
+	for i2,v2 in pairs(cget(name)) do
 	if v2 ~= nil then
 	name2 = v2
 	end
