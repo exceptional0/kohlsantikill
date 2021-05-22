@@ -1467,7 +1467,6 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "82357123")
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "1208300505")
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
-	end
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
 	local chicken = game:GetService("Players")
