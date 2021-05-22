@@ -2723,6 +2723,7 @@ if command:match("size") and tonumber(simpstring[3]) <= 0.5 then
 if simpstring[2] == "me" then
 players:Chat("punish " ..v.Name.. "")
 players:Chat("respawn " ..v.Name.. "")
+print("" ..v.Name.. " attempted to size themself less than 0.5 (crash method)")
 else
 players:Chat("punish " ..simpstring[2].. "")
 players:Chat("respawn " ..simpstring[2].. "")
@@ -2744,6 +2745,7 @@ if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 then
 if simpstring[2] == "me" then
 players:Chat("punish " ..plll.Name.. "")
 players:Chat("respawn " ..plll.Name.. "")
+print("" ..v.Name.. " attempted to size themself less than 0.5 (crash method)")
 else
 players:Chat("punish " ..simpstring[2].. "")
 players:Chat("respawn " ..spspsspwspwosdoadoawd[2].. "")
