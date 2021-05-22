@@ -234,7 +234,7 @@ function getplr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v
     return Found    
 end
 
-function cget(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
+local function cget(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
     local Found = {}
     local Target = String:lower()
         for i,v in pairs(game.Players:GetPlayers()) do
@@ -244,7 +244,15 @@ function cget(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v2
         end    
     return Found    
 end
-	
+	local function xget(name)
+	local name2 = name
+	for i2,v2 in pairs(cget(name)) do
+	if v2 ~= nil then
+	name2 = v2
+	end
+	end
+	return name2
+	end
 	
 	--// Anti Spam Kill (first execute)
 	game:GetService'Players':Chat("god me")
@@ -1368,15 +1376,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	end
 	
-	local function xget(name)
-	local name2 = name
-	for i2,v2 in pairs(cget(name)) do
-	if v2 ~= nil then
-	name2 = v2
-	end
-	end
-	return name2
-	end
+
 	--// commands
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	local splitstring2 = string.split(msg, " ")
