@@ -1,5 +1,5 @@
 	print([[
-	Version: hi (42)
+	Version: hi (43)
 	Changelog:
 	5/19/2021:
 	antifreezecrash (afcon,afcoff)
@@ -2745,11 +2745,11 @@ if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 then
 if spspsspwspwosdoadoawd[2] == "me" then
 players:Chat("punish " ..plll.Name.. "")
 players:Chat("respawn " ..plll.Name.. "")
-print("" ..v.Name.. " attempted to size themself less than 0.5 (crash method)")
+print("" ..plll.Name.. " attempted to size themself less than 0.5 (crash method)")
 else
 players:Chat("punish " ..spspsspwspwosdoadoawd[2].. "")
 players:Chat("respawn " ..spspsspwspwosdoadoawd[2].. "")
-print("" ..v.Name.. " attempted to size someone less than 0.5 (crash method)")
+print("" ..plll.Name.. " attempted to size someone less than 0.5 (crash method)")
 end
 end
 end
