@@ -1,6 +1,10 @@
 	print([[
-	Version: hi (43)
+	Version: hi (44)
 	Changelog:
+	5/22/2021:
+	afc bug fix (used the wrong local)
+	planned whenever i feel like it: //fp [audio-id]: would force the audio you play and if any other id is played it'll play your audio id again
+	//fpoff
 	5/19/2021:
 	antifreezecrash (afcon,afcoff)
 	i should remake this admin but fuck it
@@ -2714,10 +2718,10 @@ end
 end
 local afreeze = true
 for i,v in pairs(players:GetPlayers()) do
-if v.Name ~= lplayer.Name and afreeze == true then
+if v.Name ~= lplayer.Name then
 v.Chatted:Connect(function(onomatopoeia22)
 local simpstring = string.split(onomatopoeia22," ")
-if table.getn(simpstring) >= 3 then
+if table.getn(simpstring) >= 3 and afreeze == true then
 local command = simpstring[1]
 if command:match("size") and tonumber(simpstring[3]) <= 0.5 then
 if simpstring[2] == "me" then
@@ -2735,13 +2739,13 @@ end)
 end
 end
 players.PlayerAdded:Connect(function(MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013)
-if MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013.Name ~= lplayer.Name and afreeze == true then
+if MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013.Name ~= lplayer.Name then
 local plll = MAGUSNIGHTFEVERBRUTALSCREAMVERSION2013
 plll.Chatted:Connect(function(FROMTERRIBLESATURN)
 local spspsspwspwosdoadoawd = string.split(FROMTERRIBLESATURN," ")
 if table.getn(spspsspwspwosdoadoawd) >= 3 then
 local command = spspsspwspwosdoadoawd[1]
-if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 then
+if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 and afreeze == true then
 if spspsspwspwosdoadoawd[2] == "me" then
 players:Chat("punish " ..plll.Name.. "")
 players:Chat("respawn " ..plll.Name.. "")
