@@ -2742,12 +2742,12 @@ local spspsspwspwosdoadoawd = string.split(FROMTERRIBLESATURN," ")
 if table.getn(spspsspwspwosdoadoawd) >= 3 then
 local command = spspsspwspwosdoadoawd[1]
 if command:match("size") and tonumber(spspsspwspwosdoadoawd[3]) <= 0.5 then
-if simpstring[2] == "me" then
+if spspsspwspwosdoadoawd[2] == "me" then
 players:Chat("punish " ..plll.Name.. "")
 players:Chat("respawn " ..plll.Name.. "")
 print("" ..v.Name.. " attempted to size themself less than 0.5 (crash method)")
 else
-players:Chat("punish " ..simpstring[2].. "")
+players:Chat("punish " ..spspsspwspwosdoadoawd[2].. "")
 players:Chat("respawn " ..spspsspwspwosdoadoawd[2].. "")
 print("" ..v.Name.. " attempted to size someone less than 0.5 (crash method)")
 end
