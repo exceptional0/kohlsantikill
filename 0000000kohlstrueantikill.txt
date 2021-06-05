@@ -127,7 +127,7 @@
 	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
 	local removesong = false	
 	local SfolderS = game.Workspace.Terrain["_Game"].Folder
-
+	local Debris = game:GetService("Debris")
 	--lagtext and anti lava blocks is from oofkohlsv2
 	
 	-- // Anti Lava Blocks from oofkohlsv2
@@ -155,8 +155,7 @@
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
 	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
 	coroutine.wrap(function()
-	wait(0)
-	messagedeleter:Destroy()
+	Debris:AddItem(messagedeleter,0)
 	end)()
 	end
 	end)
@@ -165,8 +164,7 @@
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
 	coroutine.wrap(function()
-	wait(0)
-	messagedeleter2:Destroy()
+	Debris:AddItem(messagedeleter2,0)
 	end)()
 	end
 	end)
@@ -176,8 +174,7 @@
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
 	if messagedeleter3:IsA("Message") and _G.messagedeleter then
 	coroutine.wrap(function()
-	wait(0)
-	messagedeleter3:Destroy()
+	Debris:AddItem(messagedeleter3,0)
 	end)()
 	end
 	end)
