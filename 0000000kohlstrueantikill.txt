@@ -1,5 +1,5 @@
 	print([[
-	Version: bigfoot footBIG (49)
+	Version: bigfoot footBIG (50)
 	Changelog:
 	5/22/2021:
 	afc bug fix (used the wrong local)
@@ -134,14 +134,18 @@
 	coroutine.wrap(function()
 	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
     if v:IsA("TouchTransmitter") then
+	coroutine.wrap(function()
     v:Destroy()
+	end)()
     end
 	end
 	end)()
 	coroutine.wrap(function()
 	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
 	if NOMOOSICPLS.Name == "Sound" and removesong == true then
+	coroutine.wrap(function()
 	players:Chat("music")
+	end)()
 	end
 	end)
 	end)()
@@ -150,18 +154,22 @@
 	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
 	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
+	coroutine.wrap(function()
 	wait(0)
 	messagedeleter:Destroy()
+	end)()
 	end
 	end)
 	end)()
 	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
+	coroutine.wrap(function()
 	wait(0)
 	messagedeleter2.Text = ""
 	wait(0)
 	messagedeleter2:Destroy()
+	end)()
 	end
 	end)
 	end)()
@@ -169,10 +177,12 @@
 	--10 - QMCMAS, remix by Keiichi Suzuki 46:40
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
 	if messagedeleter3:IsA("Message") and _G.messagedeleter then
+	coroutine.wrap(function()
 	wait(0)
 	messagedeleter3.Text = ""
 	wait(0)
 	messagedeleter3:Destroy()
+	end)()
 	end
 	end)
 	end)()
