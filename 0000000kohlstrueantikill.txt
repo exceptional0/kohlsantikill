@@ -1,5 +1,5 @@
 	print([[
-	Version: bigfoot (47)
+	Version: bigfoot footbig (48)
 	Changelog:
 	5/22/2021:
 	afc bug fix (used the wrong local)
@@ -126,7 +126,7 @@
 	local market = game:GetService("MarketplaceService")
 	local lagtext = game:HttpGetAsync("https://raw.githubusercontent.com/exceptional0/kohlsantikill/master/largetext.txt")
 	local removesong = false	
-	
+	local SfolderS = game.Workspace.Terrain["_Game"].Folder
 
 	--lagtext and anti lava blocks is from oofkohlsv2
 	
@@ -139,7 +139,6 @@
 	end
 	end)()
 	coroutine.wrap(function()
-	local SfolderS = game.Workspace.Terrain["_Game"].Folder
 	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
 	if NOMOOSICPLS.Name == "Sound" and removesong == true then
 	players:Chat("music")
