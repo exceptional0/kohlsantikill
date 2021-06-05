@@ -1,5 +1,5 @@
 	print([[
-	Version: bigfoot footbig (48)
+	Version: bigfoot footBIG (49)
 	Changelog:
 	5/22/2021:
 	afc bug fix (used the wrong local)
@@ -3727,7 +3727,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local function MESSAGE(xxx)
 	GMAIL:Chat(xxx)
 	end
-	
+	coroutine.wrap(function()
 	for i,v in pairs(GMAIL:GetPlayers()) do
 	if v.Name ~= MAXIMIZE.Name then
 	local restrainedname = v.Name
@@ -3736,9 +3736,9 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local humanoidv = v.Character:WaitForChild("Humanoid")
 	local vvvvvvv
 	if humanoidv.RigType == Enum.HumanoidRigType.R6 then
-	vvvvvvv = v.Character:WaitForChild("Torso")
+	vvvvvvv = v.Character:WaitForChild("Torso",4)
 	elseif humanoidv.RigType == Enum.HumanoidRigType.R15 then
-	vvvvvvv = v.Character:WaitForChild("UpperTorso")
+	vvvvvvv = v.Character:WaitForChild("UpperTorso",4)
 	end
 	vvvvvvv.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
@@ -3765,8 +3765,8 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end)
 	end
 	end
-	
-
+	end)()
+		coroutine.wrap(function()
 		GMAIL.PlayerAdded:Connect(function(vampirism)
 		if vampirism.Name ~= MAXIMIZE.Name then
 		vampirism.CharacterAdded:Connect(function(onomatopoeia)
@@ -3787,7 +3787,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 		end)
 		end
 		end)
-		
+		end)()
 		
 		
 		
