@@ -1,5 +1,5 @@
 	print([[
-	Version: hi (46)
+	Version: bigfoot (47)
 	Changelog:
 	5/22/2021:
 	afc bug fix (used the wrong local)
@@ -131,28 +131,32 @@
 	--lagtext and anti lava blocks is from oofkohlsv2
 	
 	-- // Anti Lava Blocks from oofkohlsv2
+	coroutine.wrap(function()
 	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
     if v:IsA("TouchTransmitter") then
     v:Destroy()
     end
 	end
-
+	end)()
+	coroutine.wrap(function()
 	local SfolderS = game.Workspace.Terrain["_Game"].Folder
 	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
 	if NOMOOSICPLS.Name == "Sound" and removesong == true then
 	players:Chat("music")
 	end
 	end)
-	
+	end)()
 	_G.messagedeleter = true
 	print("message deleter is on by default, protects you from being lagged.")
+	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
 	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
 	wait(0)
 	messagedeleter:Destroy()
 	end
 	end)
-	
+	end)()
+	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
 	wait(0)
@@ -161,6 +165,8 @@
 	messagedeleter2:Destroy()
 	end
 	end)
+	end)()
+	coroutine.wrap(function()
 	--10 - QMCMAS, remix by Keiichi Suzuki 46:40
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
 	if messagedeleter3:IsA("Message") and _G.messagedeleter then
@@ -170,8 +176,7 @@
 	messagedeleter3:Destroy()
 	end
 	end)
-
-	
+	end)()
 	--// gamepass autogive admin
 	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) and _G.permloaded == false then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
@@ -259,6 +264,7 @@ end
 	end
 	
 	--// Anti Spam Kill (first execute)
+	coroutine.wrap(function()
 	game:GetService'Players':Chat("god me")
 	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and trueantikill == true then
@@ -325,7 +331,7 @@ end
 	end
 	end)
 	end)
-	
+	end)()
 	local hmmmmmmmmmmmmmmmmmmmmmmmmm = true
 	lplayer.Character.ChildAdded:Connect(function(pissed)
 	if pissed.Name == "Addon" and pissed:IsA("Seat") and hmmmmmmmmmmmmmmmmmmmmmmmmm == true then
@@ -414,19 +420,22 @@ end
 	table.insert(whitelistedtable.previouswhitelistedusers, whname)
 		--// Anti Spam Kill (first execute)
 	game:GetService'Players':Chat("god " ..whname.. "")
+	coroutine.wrap(function()
 	whchar.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whitelistedtable.antikillon, whname) then
 	game:GetService'Players':Chat("god me")
 	end
 	end)
-	
+	end)()
+	coroutine.wrap(function()
 	game:GetService("Players"):Chat(":ff " ..whname.. "")
 	whchar.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and table.find(whitelistedtable.antikillon, whname) then
 	game:GetService("Players"):Chat("ff " ..whname.. "")
 	end
 	end)
-	
+	end)()
+	coroutine.wrap(function()
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
 	print("died")
@@ -451,8 +460,9 @@ end
 	end)
 	end
 	end)
-
+	end)()
 	--// Anti Spam Kill (On Death Restart)
+	coroutine.wrap(function()
 	whuser.CharacterAdded:connect(function(charv)
 	whchar = whuser.Character
 	wait(0)
@@ -480,7 +490,8 @@ end
 	end
 	end)
 	end)
-	
+	end)()
+	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:lower() == "//trueantikill" then
@@ -870,7 +881,7 @@ end
 	end
 	end
 	end)
-	wait(2)
+	end)()
 	
 	local function lagishthefoolish2(foolishfish)
 	local speakish = game:GetService("Players")
@@ -880,9 +891,9 @@ end
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	end
 
-
-	wait(1)
+	wait(0)
 	--loop commands (enable)
+	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:match(" ") then
@@ -962,8 +973,9 @@ end
 	end
 	end
 	end)
-	
+	end)()
 	--// loop commands (disable)
+	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:lower() == "//loopexplodeoff" then
@@ -996,7 +1008,7 @@ end
 	end
 	end
 	end)
-	
+	end)()
 	--thorns
 	
 local thornsvictims = game:GetService("Players")
@@ -1018,7 +1030,7 @@ end
 
 table.insert(whitelistedtable.thornson, whname)
 
-
+coroutine.wrap(function()
 thornsuser.Chatted:Connect(function(message)
 if message:lower() == "//thorns" then
 if not table.find(whitelistedtable.thornson, whname) then
@@ -1040,7 +1052,8 @@ removefromtable(whitelistedtable.gearstealeron, whname)
 end
 end
 end)
-
+end)()
+coroutine.wrap(function()
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername and v.Name ~= impname then
 v.Chatted:Connect(function(talking)
@@ -1193,7 +1206,8 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end)
 	end
 	end
-
+	end)()
+	coroutine.wrap(function()
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsusername and victimhasjoined.Name ~= impname then
 local victimname = victimhasjoined.Name
@@ -1343,6 +1357,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end)
 	end
 	end)
+	end)()
 	end
 	end
 	end
@@ -1382,6 +1397,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 
 	--// commands
+	coroutine.wrap(function()
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
 	local splitstring2 = string.split(msg, " ")
 	local person
@@ -2063,7 +2079,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	end
 	end)
-	wait(0.04)
+	end)()
+	wait(0)
 	
 	local function lagishthefoolish(foolishfish)
 	local speakish = game:GetService("Players")
