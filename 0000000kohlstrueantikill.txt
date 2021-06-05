@@ -166,8 +166,6 @@
 	if messagedeleter2:IsA("Message") and _G.messagedeleter then
 	coroutine.wrap(function()
 	wait(0)
-	messagedeleter2.Text = ""
-	wait(0)
 	messagedeleter2:Destroy()
 	end)()
 	end
@@ -178,8 +176,6 @@
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
 	if messagedeleter3:IsA("Message") and _G.messagedeleter then
 	coroutine.wrap(function()
-	wait(0)
-	messagedeleter3.Text = ""
 	wait(0)
 	messagedeleter3:Destroy()
 	end)()
