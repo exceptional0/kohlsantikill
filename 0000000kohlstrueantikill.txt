@@ -1,5 +1,5 @@
 	print([[
-	Version: hi (45)
+	Version: hi (46)
 	Changelog:
 	5/22/2021:
 	afc bug fix (used the wrong local)
@@ -2724,6 +2724,7 @@ local simpstring = string.split(onomatopoeia22," ")
 if table.getn(simpstring) >= 3 and afreeze == true then
 local command = simpstring[1]
 local arr = simpstring[3]
+if tonumber(arr) ~= nil then
 if command:match("size") and tonumber(arr) <= 0.5 then
 if simpstring[2] == "me" then
 players:Chat("punish " ..v.Name.. "")
@@ -2733,6 +2734,7 @@ else
 players:Chat("punish " ..simpstring[2].. "")
 players:Chat("respawn " ..simpstring[2].. "")
 print("" ..v.Name.. " attempted to size someone less than 0.5 (crash method)")
+end
 end
 end
 end
@@ -2747,6 +2749,7 @@ local spspsspwspwosdoadoawd = string.split(FROMTERRIBLESATURN," ")
 if table.getn(spspsspwspwosdoadoawd) >= 3 then
 local command = spspsspwspwosdoadoawd[1]
 local bbbbrraiiinzzzzzzzzzzzzzzzzzzzzzzzzzzz = spspsspwspwosdoadoawd[3]
+if tonumber(spspsspwspwosdoadoawd[3]) ~= nil then
 if command:match("size") and tonumber(bbbbrraiiinzzzzzzzzzzzzzzzzzzzzzzzzzzz) <= 0.5 and afreeze == true then
 if spspsspwspwosdoadoawd[2] == "me" then
 players:Chat("punish " ..plll.Name.. "")
@@ -2756,6 +2759,7 @@ else
 players:Chat("punish " ..spspsspwspwosdoadoawd[2].. "")
 players:Chat("respawn " ..spspsspwspwosdoadoawd[2].. "")
 print("" ..plll.Name.. " attempted to size someone less than 0.5 (crash method)")
+end
 end
 end
 end
