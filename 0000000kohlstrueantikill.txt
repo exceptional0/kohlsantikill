@@ -3912,33 +3912,34 @@ local function dothedo(part,color,tt)
 	
 	if sussybakaaaaaa == "obby" then
 	--1
+	local xColor = BrickColor.New(tonumber(messy[3]),tonumber(messy[4]),tonumber(messy[5]))
 	coroutine.wrap(function()
 	for i,v in ipairs(houseofinstantdeath) do
-	dothedo(v,xcolor,false)
+	dothedo(v,xColor,false)
 	end
 	end)()
 	--1^
 	elseif sussybakaaaaaa == "house" then
 	coroutine.wrap(function()
 	for i,v in ipairs(houseofdoujinshi) do
-	dothedo(v,xcolor,false)
+	dothedo(v,xColor,false)
 	end
 	end)()
 	coroutine.wrap(function()
 	for i,v in ipairs(houseofsuffering) do
-	dothedo(v,xcolor,false)
+	dothedo(v,xColor,false)
 	end
 	end)()
 	elseif sussybakaaaaaa == "obbybox" then
 	coroutine.wrap(function()
 	for i,v in ipairs(houseofetiquette) do
-	dothedo(v,xcolor,false)
+	dothedo(v,xColor,false)
 	end
 	end)()
 	elseif sussybakaaaaaa == "buildingbricks" or sussybakaaaaaa == "buildabrick" then
 	coroutine.wrap(function()
 	for i,v in ipairs(houseofhouse) do
-	dothedo(v,xcolor,false)
+	dothedo(v,xColor,false)
 	end
 	end)()
 	
