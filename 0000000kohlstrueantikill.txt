@@ -129,7 +129,11 @@
 	local SfolderS = game.Workspace.Terrain["_Game"].Folder
 	local Debris = game:GetService("Debris")
 	--lagtext and anti lava blocks is from oofkohlsv2
-	
+	if _G.spermisloading then
+	repeat
+	wait(0.3)
+	until _G.permloaded
+	end
 	-- // Anti Lava Blocks from oofkohlsv2
 	coroutine.wrap(function()
 	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
@@ -179,8 +183,10 @@
 	end
 	end)
 	end)()
-	--// gamepass autogive admin
-	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) and _G.permloaded == false then
+
+	--// gamepass autogive admin 
+	--note: too lazy to improve
+	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) and not _G.permloaded then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
@@ -206,11 +212,7 @@
 	end
 	wait(2.5)
 	
-	if _G.spermisloading then
-	repeat
-	wait(1)
-	until _G.permloaded
-	end
+
 	--// locals setup 
 	local trueantikill = true
 	local loopexplode = false
@@ -3739,10 +3741,11 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	local humanoidv = v.Character:WaitForChild("Humanoid")
 	local vvvvvvv
 	if humanoidv.RigType == Enum.HumanoidRigType.R6 then
-	vvvvvvv = v.Character:WaitForChild("Torso",4)
+	vvvvvvv = v.Character:WaitForChild("Torso",10)
 	elseif humanoidv.RigType == Enum.HumanoidRigType.R15 then
-	vvvvvvv = v.Character:WaitForChild("UpperTorso",4)
+	vvvvvvv = v.Character:WaitForChild("UpperTorso",10)
 	end
+	if vvvvvvv ~= nil then
 	vvvvvvv.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
@@ -3750,21 +3753,24 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	end
 	end)
 	end
+	end
 	
 	v.CharacterAdded:Connect(function(podayto)
 	local humanoidx = v.Character:WaitForChild("Humanoid")
 	local lifestealisop
 	if humanoidx.RigType == Enum.HumanoidRigType.R6 then
-	lifestealisop = v.Character:WaitForChild("Torso")
+	lifestealisop = v.Character:WaitForChild("Torso",10)
 	elseif humanoidx.RigType == Enum.HumanoidRigType.R15 then
-	lifestealisop = v.Character:WaitForChild("UpperTorso")
+	lifestealisop = v.Character:WaitForChild("UpperTorso",10)
 	end	
+	if lifestealisop ~= nil then
 	lifestealisop.ChildAdded:Connect(function(GOVERNMENTPLATES)
 	if GOVERNMENTPLATES.Name == "Snap" and ITSDEATHGRIPS == true and not table.find(RESTRAININGORDERS,restrainedname) then
 	MESSAGE("" ..prefix.. "respawn " ..restrainedname.. "")
 	print("" ..restrainedname.. " attempted to move a part and was respawned.")
 	end
 	end)
+	end
 	end)
 	end
 	end
