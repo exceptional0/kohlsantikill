@@ -1,17 +1,14 @@
 	print([[
-	Version: 52/more optimized pog maybe made messagedeleter op
+	Version: 52/made message deleter op (?), small optimizations
 	Changelog:
+	9/22/2021:
+	improved message deleter
+	i do not test my code before updating it
 	5/22/2021:
 	lgear + kpaint copy and pasted in hopefully it works  :troll:
 	
 	planned whenever i feel like it: //fp [audio-id]: would force the audio you play and if any other id is played it'll play your audio id again
 	//fpoff
-	5/19/2021:
-	antifreezecrash (afcon,afcoff)
-	i should remake this admin but fuck it
-	new command: //q [player],//antidog 
-	//q:
-	gets them out of your sight
 
 
 	--
