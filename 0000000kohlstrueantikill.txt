@@ -24,7 +24,7 @@
 	Help:
 	Prefix: "//"
 	
-	dm exception#1112 if there are any problems or suggestions
+	dm ████████████ if there are any problems or suggestions
 	
 	Commands:
 	"trueantikill" (enabled by default, disables on first use)
