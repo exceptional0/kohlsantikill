@@ -1,5 +1,5 @@
 	print([[
-	Version: more optimized pog maybe made messagedeleter op
+	Version: 52/more optimized pog maybe made messagedeleter op
 	Changelog:
 	5/22/2021:
 	lgear + kpaint copy and pasted in hopefully it works  :troll:
