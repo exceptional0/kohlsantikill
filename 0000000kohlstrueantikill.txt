@@ -1,5 +1,5 @@
 	print([[
-	Version: 52/made message deleter op (?), small optimizations
+	Version: 52.1/made message deleter op (?), small optimizations
 	Changelog:
 	9/22/2021:
 	improved message deleter
@@ -126,7 +126,7 @@
 	don't think this is good enough for a command
 	--]])
 	
-	local players = players
+	local players = game:GetService("Players")
 	local lplayer = players.LocalPlayer
 	local chatted = lplayer.Chatted
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
