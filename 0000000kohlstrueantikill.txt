@@ -1,5 +1,5 @@
 	print([[
-	Version: horribly unoptimized (51)
+	Version: more optimized pog maybe made messagedeleter op
 	Changelog:
 	5/22/2021:
 	lgear + kpaint copy and pasted in hopefully it works  :troll:
@@ -129,7 +129,7 @@
 	don't think this is good enough for a command
 	--]])
 	
-	local players = game:GetService("Players")
+	local players = players
 	local lplayer = players.LocalPlayer
 	local chatted = lplayer.Chatted
 	local gamefolder = game:GetService("Workspace").Terrain["_Game"]
@@ -145,66 +145,46 @@
 	until _G.permloaded
 	end
 	-- // Anti Lava Blocks from oofkohlsv2
-	coroutine.wrap(function()
 	for _,v in pairs(gamefolder.Workspace.Obby:GetDescendants()) do
     if v:IsA("TouchTransmitter") then
-	coroutine.wrap(function()
     v:Destroy()
-	end)()
     end
 	end
-	end)()
-	coroutine.wrap(function()
 	SfolderS.ChildAdded:connect(function(NOMOOSICPLS)
 	if NOMOOSICPLS.Name == "Sound" and removesong == true then
-	coroutine.wrap(function()
-	players:Chat("music")
-	end)()
+	task.defer(NOMOOSICPLS.Destroy,NOMOOSICPLS)
 	end
 	end)
-	end)()
-	_G.messagedeleter = true
+	getgenv().messagedeleter = true
 	print("message deleter is on by default, protects you from being lagged.")
-	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter)
-	if messagedeleter.Name == "MessageGUI" and _G.messagedeleter or messagedeleter.Name == "HintGUI" and _G.messagedeleter then
-	coroutine.wrap(function()
-	Debris:AddItem(messagedeleter,0)
-	end)()
+	if messagedeleter.Name == "MessageGUI" and getgenv().messagedeleter or messagedeleter.Name == "HintGUI" and getgenv().messagedeleter then
+	task.defer(messagedeleter.Destroy,messagedeleter)
 	end
 	end)
-	end)()
-	coroutine.wrap(function()
 	lplayer.PlayerGui.ChildAdded:Connect(function(messagedeleter2)
-	if messagedeleter2:IsA("Message") and _G.messagedeleter then
-	coroutine.wrap(function()
-	Debris:AddItem(messagedeleter2,0)
-	end)()
+	if messagedeleter2:IsA("Message") and getgenv().messagedeleter then
+	task.defer(messagedeleter2.Destroy,messagedeleter2)
 	end
 	end)
-	end)()
-	coroutine.wrap(function()
 	--10 - QMCMAS, remix by Keiichi Suzuki 46:40
 	SfolderS.ChildAdded:Connect(function(messagedeleter3)
-	if messagedeleter3:IsA("Message") and _G.messagedeleter then
-	coroutine.wrap(function()
-	Debris:AddItem(messagedeleter3,0)
-	end)()
+	if messagedeleter3:IsA("Message") and getgenv().messagedeleter then
+	task.defer(messagedeleter3.Destroy,messagedeleter3)
 	end
 	end)
-	end)()
 
 	--// gamepass autogive admin 
 	--note: too lazy to improve
-	if not market:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) and not _G.permloaded then
+	if not market:UserOwnsGamePassAsync(lplayer.UserId, 66254) and not _G.permloaded then
     local path = game:GetService("Workspace").Terrain["_Game"].Admin.Pads
     for i,v in pairs(path:GetChildren()) do
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
             for x,y in pairs(path:GetDescendants()) do
                 if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 0)
                     wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 1)
                 end
             end
         else
@@ -212,9 +192,9 @@
             wait()
             for x,y in pairs(path:GetDescendants()) do
                 if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 0)
                     wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 1)
                 end
             end
             end
@@ -237,13 +217,13 @@ function getplr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls v
         end
     elseif Target == "others" then
         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name ~= game.Players.LocalPlayer.Name then
+            if v.Name ~= lplayer.Name then
                 table.insert(Found,v)
             end
         end   
 	elseif Target == "me" then
         for i,v in pairs(game.Players:GetPlayers()) do
-            if v.Name == game.Players.LocalPlayer.Name then
+            if v.Name == lplayer.Name then
                 table.insert(Found,v)
             end
         end  
@@ -279,67 +259,67 @@ end
 	
 	--// Anti Spam Kill (first execute)
 	coroutine.wrap(function()
-	game:GetService'Players':Chat("god me")
-	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	players:Chat("god me")
+	lplayer.Character.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and trueantikill == true then
-	game:GetService'Players':Chat("god me")
+	players:Chat("god me")
 	end
 	end)
 	
-	game:GetService("Players"):Chat(":ff me")
-	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	players:Chat(":ff me")
+	lplayer.Character.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and trueantikill == true then
-	game:GetService("Players"):Chat("ff me")
+	players:Chat("ff me")
 	end
 	end)
 	
-	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+	lplayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	game:GetService("Players"):Chat("reset me")
+	players:Chat("reset me")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god me")
-	game:GetService("Players"):Chat("ff me")
+	players:Chat("god me")
+	players:Chat("ff me")
 	
 	
-	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	lplayer.Character.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and trueantikill == true then
-	game:GetService("Players"):Chat("god me")
+	players:Chat("god me")
 	end
 	end)
 	
-	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	lplayer.Character.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and trueantikill == true then
-	game:GetService("Players"):Chat("ff me")
+	players:Chat("ff me")
 	end
 	end)
 	end
 	end)
 
 	--// Anti Spam Kill (On Death Restart)
-	game.Players.LocalPlayer.CharacterAdded:connect(function(char)
-	game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
+	lplayer.CharacterAdded:connect(function(char)
+	lplayer.Character:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if trueantikill == true then 
-	game:GetService("Players"):Chat("reset me")
+	players:Chat("reset me")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god me")
-	game:GetService("Players"):Chat("ff me")
+	players:Chat("god me")
+	players:Chat("ff me")
 	
 	wait(0)
 	
-	game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(egg)
+	lplayer.Character.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and trueantikill == true then
-	game:GetService("Players"):Chat("god me")
+	players:Chat("god me")
 	end
 	end)
 	
-	game:GetService("Players").LocalPlayer.Character.ChildRemoved:Connect(function(Object)
+	lplayer.Character.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and trueantikill == true then
 	wait(0)
-	game:GetService("Players"):Chat("ff me")
+	players:Chat("ff me")
 	end
 	end)
 	end
@@ -433,79 +413,70 @@ end
 	if not table.find(whitelistedtable.previouswhitelistedusers, whname) then
 	table.insert(whitelistedtable.previouswhitelistedusers, whname)
 		--// Anti Spam Kill (first execute)
-	game:GetService'Players':Chat("god " ..whname.. "")
-	coroutine.wrap(function()
+	players:Chat("god " ..whname.. "")
 	whchar.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService'Players':Chat("god me")
+	players:Chat("god me")
 	end
 	end)
-	end)()
-	coroutine.wrap(function()
-	game:GetService("Players"):Chat(":ff " ..whname.. "")
+	players:Chat(":ff " ..whname.. "")
 	whchar.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService("Players"):Chat("ff " ..whname.. "")
+	players:Chat("ff " ..whname.. "")
 	end
 	end)
-	end)()
-	coroutine.wrap(function()
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
 	print("died")
-	game:GetService("Players"):Chat("reset " ..whname.. "")
+	players:Chat("reset " ..whname.. "")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god " ..whname.. "")
-	game:GetService("Players"):Chat("ff " ..whname.. "")
+	players:Chat("god " ..whname.. "")
+	players:Chat("ff " ..whname.. "")
 	
 	
 	whchar.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService("Players"):Chat("god " ..whname.. "")
+	players:Chat("god " ..whname.. "")
 	end
 	end)
 	
 	whchar.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService("Players"):Chat("ff " ..whname.. "")
+	players:Chat("ff " ..whname.. "")
 	end
 	end)
 	end
 	end)
-	end)()
 	--// Anti Spam Kill (On Death Restart)
-	coroutine.wrap(function()
 	whuser.CharacterAdded:connect(function(charv)
 	whchar = whuser.Character
 	wait(0)
 	whchar:WaitForChild("Humanoid").Died:Connect(function(doometernal)
     if table.find(whitelistedtable.antikillon, whname) then 
-	game:GetService("Players"):Chat("reset " ..whname.. "")
+	players:Chat("reset " ..whname.. "")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god " ..whname.. "")
-	game:GetService("Players"):Chat("ff " ..whname.. "")
+	players:Chat("god " ..whname.. "")
+	players:Chat("ff " ..whname.. "")
 	
 	
 	whchar.Humanoid.Changed:Connect(function(egg)
 	if egg == "Health" and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService("Players"):Chat("god " ..whname.. "")
+	players:Chat("god " ..whname.. "")
 	end
 	end)
 	
 	whchar.ChildRemoved:Connect(function(Object)
 	if Object:IsA("ForceField") and table.find(whitelistedtable.antikillon, whname) then
-	game:GetService("Players"):Chat("ff " ..whname.. "")
+	players:Chat("ff " ..whname.. "")
 	end
 	end)
 	end
 	end)
 	end)
-	end)()
-	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:lower() == "//trueantikill" then
@@ -516,7 +487,7 @@ end
 	end
 	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
-	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool1 = players
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
 	game.Players:Chat(prefix.. "gear all 94794847")
@@ -531,7 +502,7 @@ end
 	end
 	elseif msg:match("//gearpack") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -569,7 +540,7 @@ end
 	end
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "139577901")
@@ -587,7 +558,7 @@ end
 	end
 	elseif msg:match("//rocketfailure") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -601,7 +572,7 @@ end
 	end
 	elseif msg:match("//improveday") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	chicken:Chat("time 7")
 	wait()
@@ -622,13 +593,13 @@ end
 	local person = splitstring[2]
 	game.Players:Chat("gear me  " ..string.rep("0",13).. "18474459")
 	wait(0.1)
-	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
-	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	lplayer.Backpack:WaitForChild("PaintBucket")
+	lplayer.Backpack.PaintBucket.Parent = lplayer.Character
+	lplayer.Character:WaitForChild("PaintBucket")
+	lplayer.Character.PaintBucket:WaitForChild("Remotes")
+	lplayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	local a = workspace:GetDescendants()
-	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local egg = lplayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Really red").Color
 	for i, v in pairs(a) do
 	if v:IsA("BasePart") then
@@ -637,7 +608,7 @@ end
 	Data.Color = ColorSelection
 	local A_1 = "PaintPart"
 	local A_2 = Data
-	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local event = lplayer.Character.PaintBucket.Remotes.ServerControls
 	event:InvokeServer(A_1, A_2)
 	end
 	end
@@ -646,14 +617,14 @@ end
 	local person = splitstring[2]
 	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
-	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
-	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	lplayer.Backpack:WaitForChild("PaintBucket")
+	lplayer.Backpack.PaintBucket.Parent = lplayer.Character
+	lplayer.Character:WaitForChild("PaintBucket")
+	lplayer.Character.PaintBucket:WaitForChild("Remotes")
+	lplayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	wait(0.6)
 	local a = workspace:GetDescendants()
-	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local egg = lplayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Magenta").Color
 	for i, v in pairs(a) do
 	if v:IsA("BasePart") then
@@ -662,13 +633,13 @@ end
 	Data.Color = ColorSelection
 	local A_1 = "PaintPart"
 	local A_2 = Data
-	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local event = lplayer.Character.PaintBucket.Remotes.ServerControls
 	event:InvokeServer(A_1, A_2)
 	end
 	end
 	elseif msg:match("//mcrashserver") then	
 	local prefix = ":"
-	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool1 = players
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
 	lplrispossiblycool1:Chat("h meanie!")
@@ -727,7 +698,7 @@ end
 	wait(0.2)
 	elseif msg:match("//box") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -750,7 +721,7 @@ end
 	end
 	elseif msg:match("//gearplr") then
 	local splitstring = string.split(msg, " ")
-	local bird = game:GetService("Players")
+	local bird = players
 	local person = splitstring[2]
 	local gearimp = splitstring[3]
 	local gearstr = gearimp:lower()
@@ -845,7 +816,7 @@ end
 	end
 	elseif msg:match("//loadtools") then
 	local splitstring = string.split(msg, " ")
-	local bird1 = game:GetService("Players")
+	local bird1 = players
 	local person = splitstring[2]
 	local impname = splitstring[3]
 	loadgearpack(person,impname)
@@ -859,7 +830,7 @@ end
 	for i,v in pairs(getplr(personiwanttobrutallymurder)) do
 	personiwanttobrutallymurder = v
 	end
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
@@ -895,10 +866,9 @@ end
 	end
 	end
 	end)
-	end)()
 	
 	local function lagishthefoolish2(foolishfish)
-	local speakish = game:GetService("Players")
+	local speakish = players
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
@@ -907,13 +877,12 @@ end
 
 	wait(0)
 	--loop commands (enable)
-	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:match(" ") then
 	local splitstring = string.split(msg, " ")
-	local TALKTALKTALKTALK = game:GetService("Players")
-	local chicken = game:GetService("Players")
+	local TALKTALKTALKTALK = players
+	local chicken = players
 	local foolishfool = splitstring[2]
 	for i,v in pairs(getplr(foolishfool)) do
 	foolishfool = v.Name
@@ -987,9 +956,7 @@ end
 	end
 	end
 	end)
-	end)()
 	--// loop commands (disable)
-	coroutine.wrap(function()
 	whchatted:Connect(function(msg)
 	if table.find(whitelistedtable.users, whname) then
 	if msg:lower() == "//loopexplodeoff" then
@@ -1022,11 +989,10 @@ end
 	end
 	end
 	end)
-	end)()
 	--thorns
 	
-local thornsvictims = game:GetService("Players")
-local inflictthornsdamage = game:GetService("Players")
+local thornsvictims = players
+local inflictthornsdamage = players
 local thornsuser = whuser
 local thornsusername = whname
 local impname = thornsvictims.LocalPlayer.Name
@@ -1044,7 +1010,6 @@ end
 
 table.insert(whitelistedtable.thornson, whname)
 
-coroutine.wrap(function()
 thornsuser.Chatted:Connect(function(message)
 if message:lower() == "//thorns" then
 if not table.find(whitelistedtable.thornson, whname) then
@@ -1066,14 +1031,12 @@ removefromtable(whitelistedtable.gearstealeron, whname)
 end
 end
 end)
-end)()
-coroutine.wrap(function()
 for i,v in pairs(thornsvictims:GetPlayers()) do
 if v.Name ~= thornsusername and v.Name ~= impname then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local splitstring = string.split(talking, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	-- i think i named victimname wrong LOL too late to change it now though
@@ -1220,15 +1183,13 @@ if talking:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end)
 	end
 	end
-	end)()
-	coroutine.wrap(function()
 thornsvictims.PlayerAdded:Connect(function(victimhasjoined)
 if victimhasjoined ~= thornsusername and victimhasjoined.Name ~= impname then
 local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local splitstring = string.split(talking2, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
@@ -1371,7 +1332,6 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end)
 	end
 	end)
-	end)()
 	end
 	end
 	end
@@ -1411,8 +1371,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 
 	--// commands
-	coroutine.wrap(function()
-	game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+	lplayer.Chatted:Connect(function(msg)
 	local splitstring2 = string.split(msg, " ")
 	local person
 	local command = splitstring2[1]
@@ -1437,7 +1396,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
-	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool1 = players
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
 	game.Players:Chat(prefix.. "gear all " ..string.rep("0",13).. "94794847")
@@ -1466,11 +1425,11 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif command:lower() == "//p" then
 	--this one was stolen from shortcut lmfao
-	if game.Players.LocalPlayer.Character ~= nil then
-	game.Players.LocalPlayer.Character:Destroy()
+	if lplayer.Character ~= nil then
+	lplayer.Character:Destroy()
 	end
 	elseif msg:match("//gearpack") then
-	local chicken = game:GetService("Players")
+	local chicken = players
 	person = targetname2
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "92142829")
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "94233344")
@@ -1505,7 +1464,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "26421972")
 	elseif msg:match("//rangedpack") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	chicken:Chat("gear " ..person.. " " ..string.rep("0",13).. "139577901")
@@ -1527,9 +1486,9 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
         if v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
             for x,y in pairs(path:GetDescendants()) do
                 if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 0)
                     wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 1)
                 end
             end
         elseif not v.Name:match("Touch to get") and v:FindFirstChildOfClass("Part") then
@@ -1537,16 +1496,16 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
             wait()
             for x,y in pairs(path:GetDescendants()) do
                 if y:IsA("TouchTransmitter") then
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 0)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 0)
                     wait()
-                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y.Parent, 1)
+                    firetouchinterest(lplayer.Character.HumanoidRootPart, y.Parent, 1)
                 end
             end
             end
 	end
 	elseif msg:match("//rocketfailure") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -1560,7 +1519,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:match("//improveday") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	chicken:Chat("time 7")
 	wait()
@@ -1581,13 +1540,13 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local person = splitstring[2]
 	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
-	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
-	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	lplayer.Backpack:WaitForChild("PaintBucket")
+	lplayer.Backpack.PaintBucket.Parent = lplayer.Character
+	lplayer.Character:WaitForChild("PaintBucket")
+	lplayer.Character.PaintBucket:WaitForChild("Remotes")
+	lplayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	local a = workspace:GetDescendants()
-	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local egg = lplayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Really red").Color
 	for i, v in pairs(a) do
 	if v:IsA("BasePart") then
@@ -1596,7 +1555,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	Data.Color = ColorSelection
 	local A_1 = "PaintPart"
 	local A_2 = Data
-	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local event = lplayer.Character.PaintBucket.Remotes.ServerControls
 	event:InvokeServer(A_1, A_2)
 	end
 	end
@@ -1605,14 +1564,14 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	local person = splitstring[2]
 	game.Players:Chat("gear me " ..string.rep("0",13).. "18474459")
 	wait(0.1)
-	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
-	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket")
-	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes")
-	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
+	lplayer.Backpack:WaitForChild("PaintBucket")
+	lplayer.Backpack.PaintBucket.Parent = lplayer.Character
+	lplayer.Character:WaitForChild("PaintBucket")
+	lplayer.Character.PaintBucket:WaitForChild("Remotes")
+	lplayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls")
 	wait(0.6)
 	local workspacefolder = game:GetService("Workspace").Terrain["_Game"].Workspace
-	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local egg = lplayer.Character.PaintBucket.Remotes.ServerControls
 	local ColorSelection = BrickColor.new("Maroon").Color
 	for i, v in pairs(workspacefolder:GetDescendants()) do
 	if v:IsA("BasePart") then
@@ -1621,13 +1580,13 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	Data.Color = ColorSelection
 	local A_1 = "PaintPart"
 	local A_2 = Data
-	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local event = lplayer.Character.PaintBucket.Remotes.ServerControls
 	event:InvokeServer(A_1, A_2)
 	end
 	end
 	elseif msg:lower() == "//crashserver" then
 	local prefix = ":"
-	local lplrispossiblycool1 = game:GetService("Players")
+	local lplrispossiblycool1 = players
 	local lplrispossiblycool = lplrispossiblycool1.LocalPlayer
 	local lname = lplrispossiblycool.Name
 	game.Players:Chat(prefix.. "gear all " ..string.rep("0",13).. "94794847")
@@ -1686,7 +1645,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	wait(0.2)
 	elseif msg:match("//box") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -1709,7 +1668,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:match("//gearplr") then
 	local splitstring = string.split(msg, " ")
-	local bird = game:GetService("Players")
+	local bird = players
 	local person = splitstring[2]
 	local gearimp = splitstring[3]
 	local gearstr = gearimp:lower()
@@ -1852,17 +1811,17 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	forcefield -
 	]])
 	elseif msg:lower() == "//rejoinserver" then
-	game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+	game:GetService("TeleportService"):Teleport(game.PlaceId, lplayer)
 	elseif msg:match("//savetools") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local gearpackname = splitstring[2]
 	table.remove(splitstring,1)
 	table.remove(splitstring,1)
 	savegearpack(gearpackname,unpack(splitstring))
 	elseif msg:match("//loadtools") then
 	local splitstring = string.split(msg, " ")
-	local bird1 = game:GetService("Players")
+	local bird1 = players
 	local person = splitstring[2]
 	local impname = splitstring[3]
 	loadgearpack(person,impname)
@@ -1878,10 +1837,10 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	players:Chat("music")
 	end
 	elseif msg:lower() == "//messagedeleter" then
-	if not _G.messagedeleter then
-	_G.messagedeleter = true
+	if not getgenv().messagedeleter then
+	getgenv().messagedeleter = true
 	else
-	_G.messagedeleter = false
+	getgenv().messagedeleter = false
 	end
 	elseif msg:lower() == "//nowplaying" then
 	if SfolderS:FindFirstChild("Sound") then
@@ -1891,7 +1850,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	elseif msg:match("//whitelistuser") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	local person = v.Name
@@ -1899,7 +1858,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	whitelistplr(person)
 	elseif msg:match("//unwhitelist") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	person = v.Name
@@ -1908,7 +1867,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	unwhitelist(person)
 	elseif msg:match("//restore") then
 	local splitstring = string.split(msg, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local person = splitstring[2]
 	for i,v in pairs(getplr(person)) do
 	person = v.Name
@@ -1926,7 +1885,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	for i,v in pairs(getplr(personiwanttobrutallymurder)) do
 	personiwanttobrutallymurder = v
 	end
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local backpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
@@ -1997,7 +1956,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	end
 	end
 	elseif msg:lower() == "//ll" or msg:lower() == "//itsasecret" or msg:lower() == "//llogs" then
-	local speakish = game:GetService("Players")
+	local speakish = players
 	local foolishfish = "dwadawdawdadaw"
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
@@ -2044,7 +2003,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	speakish:Chat("ff " ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("ff" ..foolishfish.. " " ..lagtext.. "")
 	elseif msg:lower() == "//flogs" or msg:lower() == "//itsanothersecret" then
-	local japanesehorrorstory = game:GetService("Players")
+	local japanesehorrorstory = players
 	japanesehorrorstory:Chat("ff foolishfish")
 	japanesehorrorstory:Chat("ff inuxbokuss")
 	japanesehorrorstory:Chat("ff meansforcefield")
@@ -2078,7 +2037,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	japanesehorrorstory:Chat("ff sowdnadawidnaldadnawldknwadawndkajwldn")
 	elseif msg:lower() == "//ineed@someone" then
 	_G.ineedatsomeone = true
-	local IREALLYNEEDATSOMEONE = game:GetService("Players")
+	local IREALLYNEEDATSOMEONE = players
 	while wait(0.4) and _G.ineedatsomeone do
 	local firstarg = math.random(0,10)
 	local secondarg = math.random(0,10)
@@ -2093,11 +2052,10 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	end
 	end)
-	end)()
 	wait(0)
 	--i think this function is retarded but idk tbh
 	local function lagishthefoolish(foolishfish)
-	local speakish = game:GetService("Players")
+	local speakish = players
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
 	speakish:Chat("pm/" ..foolishfish.. " " ..lagtext.. "")
@@ -2110,8 +2068,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	chatted:Connect(function(msg)
 	if msg:match(" ") then
 	local splitstring = string.split(msg, " ")
-	local TALKTALKTALKTALK = game:GetService("Players")
-	local chicken = game:GetService("Players")
+	local TALKTALKTALKTALK = players
+	local chicken = players
 	local foolishfool = splitstring[2]
 	for i,v in pairs(getplr(foolishfool)) do
 	foolishfool = v.Name
@@ -2165,7 +2123,7 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 	elseif splitstring[1]:lower() == "//ineed@someone" then
 	_G.ineedatsomeone = true
-	local IREALLYNEEDATSOMEONE = game:GetService("Players")
+	local IREALLYNEEDATSOMEONE = players
 	while wait(0.4) and _G.ineedatsomeone do
 	local firstarg = math.random(0,10)
 	local secondarg = math.random(0,10)
@@ -2234,8 +2192,8 @@ if talking2:match(" ") and table.find(whitelistedtable.thornson, whname) then
 	
 local thornstable = {}
 local previouskarmatable = {}
-local thornsvictims = game:GetService("Players")
-local inflictthornsdamage = game:GetService("Players")
+local thornsvictims = players
+local inflictthornsdamage = players
 local thornsuser = thornsvictims.LocalPlayer
 local thornsusername = thornsuser.Name
 local thornstoggle = true
@@ -2276,7 +2234,7 @@ if v.Name ~= thornsusername2 and v.Name ~= thornsusername then
 v.Chatted:Connect(function(talking)
 if talking:match(" ") and table.find(thornstable,thornsusername2) then
 	local splitstring = string.split(talking, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	local victimname = v.Name
@@ -2430,7 +2388,7 @@ local victimname = victimhasjoined.Name
 victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and table.find(thornstable,thornsusername2) then
 	local splitstring = string.split(talking2, " ")
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	for i,z in pairs(checkif(victim)) do
@@ -2668,7 +2626,7 @@ print("" ..v.Name.. " has a blacklisted gear (//anticrash, cause of server crash
 v.Backpack:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools " ..v.Name.. "")
 	if v.Character ~= nil then
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
@@ -2714,7 +2672,7 @@ print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibo
 personiwanttobrutallymurder.Backpack:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools " ..v.Name.. "")
 	if v.Character ~= nil then
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
@@ -2798,7 +2756,7 @@ end)
 end
 end)
 	
-	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou)
+	lplayer.Chatted:Connect(function(fuckyou)
 	if fuckyou:lower() == "//anticrashoff" then
 	anticrasherrr = false
 	elseif fuckyou:lower() == "//anticrashon" then
@@ -2822,7 +2780,7 @@ print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//antibo
 nvvr:WaitForChild("RemoteExplosiveDetonator")
 chicken:Chat("removetools " ..victimhasjoined.Name.. "")
 	if personiwanttobrutallymurder.Character ~= nil then
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me " ..string.rep("0",13).. "82357101")
@@ -2867,7 +2825,7 @@ print("" ..personiwanttobrutallymurder.Name.. " has a blacklisted gear (//anticr
 nvvrim:WaitForChild("VampireVanquisher")
 chicken:Chat("removetools " ..victimhasjoined2.Name.. "")
 	if personiwanttobrutallymurder.Character ~= nil then
-	local channel6 = game:GetService("Players")
+	local channel6 = players
 	local lplayerisimportant = channel6.LocalPlayer
 	local mbackpack = lplayerisimportant.Backpack
 	channel6:Chat("gear me "  ..string.rep("0",13).. "82357101")
@@ -2901,7 +2859,7 @@ end)
 end
 end)
 
-	game.Players.LocalPlayer.Chatted:Connect(function(fuckyou2)
+	lplayer.Chatted:Connect(function(fuckyou2)
 	if fuckyou2 == "//antibomboff" then
 	antivel = false
 	end
@@ -2916,7 +2874,7 @@ v.Chatted:Connect(function(talking)
 if talking:match(" ") and thornstoggle == true then
 	local splitstring = string.split(talking, " ")
 	if splitstring[1] ~= nil and splitstring[2] ~= nil then
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	-- i think i named victimname wrong LOL too late to change it now though
@@ -3075,7 +3033,7 @@ victimhasjoined.Chatted:Connect(function(talking2)
 if talking2:match(" ") and thornstoggle == true then
 	local splitstring = string.split(talking2, " ")
 	if splitstring[1] ~= nil and splitstring[2] ~= nil then
-	local chicken = game:GetService("Players")
+	local chicken = players
 	local victims = splitstring[2]
 	local victim = splitstring[2]
 	for i,v in pairs(checkif(victim)) do
@@ -3247,9 +3205,9 @@ function getplrr(String) -- Credits to Timeless/xFunnieuss/reviz admin/oofkohls 
     return Found    
 end
 
-local lPlPlPl = game.Players.LocalPlayer
+local lPlPlPl = lplayer
 local PlPlPl = lPlPlPl.Chatted
-local plrimp = game:GetService("Players")
+local plrimp = players
 
 --[[plrimp.PlayerRemoving:Connect(function(deltable)
 	if table.find(whohasantikill.antikillon, deltable.Name) then 
@@ -3281,40 +3239,40 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	table.insert(whohasantikill.antikillon, giveantikillstring)
 	
 	print(unpack(whohasantikill.antikillon))
-	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
 	giveantikill.Humanoid.Changed:Connect(function(dwnia)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService'Players':Chat("god " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
-	game:GetService("Players"):Chat(":ff " ..giveantikillstring.. "")
+	players:Chat(":ff " ..giveantikillstring.. "")
 	giveantikill.ChildRemoved:Connect(function(squid)
 	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
+	players:Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
 	
 	giveantikill:WaitForChild("Humanoid").Died:Connect(function(fish)
     if table.find(whohasantikill.antikillon, giveantikillstring) then 
 	
-	game:GetService("Players"):Chat("reset " ..giveantikillstring.. "")
+	players:Chat("reset " ..giveantikillstring.. "")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
-	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
+	players:Chat("ff " ..giveantikillstring.. "")
 	
 	
 	giveantikill.Humanoid.Changed:Connect(function(eeeeeeeeeee)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
 	giveantikill.ChildRemoved:Connect(function(waaaa)
 	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
+	players:Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
 	end
@@ -3329,23 +3287,23 @@ for i,v in pairs(getplrr(Praisebeetothebubble)) do
 	
     if table.find(whohasantikill.antikillon, giveantikillstring) then 
 	
-	game:GetService("Players"):Chat("reset " ..giveantikillstring.. "")
+	players:Chat("reset " ..giveantikillstring.. "")
 	
 	wait(0.2)
 	
-	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
-	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
+	players:Chat("ff " ..giveantikillstring.. "")
 	
 	
 	giveantikill.Humanoid.Changed:Connect(function(waaaahhhhh)
 	if egg == "Health" and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService("Players"):Chat("god " ..giveantikillstring.. "")
+	players:Chat("god " ..giveantikillstring.. "")
 	end
 	end)
 	
 	giveantikill.ChildRemoved:Connect(function(renamingthismightfixit)
 	if squid:IsA("ForceField") and table.find(whohasantikill.antikillon, giveantikillstring) then
-	game:GetService("Players"):Chat("ff " ..giveantikillstring.. "")
+	players:Chat("ff " ..giveantikillstring.. "")
 	end
 	end)
 	end
@@ -3393,10 +3351,10 @@ end
 end)	
 
 --autopunish
-local PLAYERS = game:GetService("Players")
+local PLAYERS = players
 local AUTOPUNISH = false
-local LOCALPLAYERNAME = game.Players.LocalPlayer.Name
-local LOCALPLAYER = game.Players.LocalPlayer
+local LOCALPLAYERNAME = lplayer.Name
+local LOCALPLAYER = lplayer
 local WHITELISTED = {}
 local AUTOPUNISHINGPLAYERS = {}
 
@@ -3540,7 +3498,7 @@ end --h
 end --h
 end) 
 
-game.Players.LocalPlayer.Chatted:Connect(function(fuck)
+lplayer.Chatted:Connect(function(fuck)
 local splitstring = string.split(fuck," ") 
 if splitstring[1]:lower() == "//autopunishoff" and splitstring[2]:lower() == "player" and splitstring[3] ~= nil then
 for i,v in pairs(FINDUSER(splitstring[3])) do
@@ -3708,7 +3666,7 @@ if MESSAGE:match(" ") and AUTOPUNISH == true and not table.find(WHITELISTED, v.N
 	--anti-partmove
 	
 	local GMAIL = game.Players
-	local MAXIMIZE = game.Players.LocalPlayer
+	local MAXIMIZE = lplayer
 	local RESTRAININGORDERS = {}
 	local ITSDEATHGRIPS = true
 	MAXIMIZE.Chatted:Connect(function(MYDREAM)
@@ -3833,18 +3791,18 @@ house of house: building bricks
 
 
 local function dothedo(part,color,tt)
-	if not game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket") and not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
+	if not lplayer.Backpack:FindFirstChild("PaintBucket") and not lplayer.Character:FindFirstChild("PaintBucket") then
 	game.Players:Chat("gear me 18474459") 
 	wait(0.1)
-	game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket",10)
-	game.Players.LocalPlayer.Backpack.PaintBucket.Parent = game.Players.LocalPlayer.Character
-	game.Players.LocalPlayer.Character:WaitForChild("PaintBucket",10)
-	game.Players.LocalPlayer.Character.PaintBucket:WaitForChild("Remotes",5)
-	game.Players.LocalPlayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls",5)
+	lplayer.Backpack:WaitForChild("PaintBucket",10)
+	lplayer.Backpack.PaintBucket.Parent = lplayer.Character
+	lplayer.Character:WaitForChild("PaintBucket",10)
+	lplayer.Character.PaintBucket:WaitForChild("Remotes",5)
+	lplayer.Character.PaintBucket.Remotes:WaitForChild("ServerControls",5)
 	end
-	if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
+	if lplayer.Character:FindFirstChild("PaintBucket") then
 	coroutine.wrap(function()
-	local egg = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local egg = lplayer.Character.PaintBucket.Remotes.ServerControls
 	if typeof(color) == "BrickColor" then
 	ColorSelection = color.Color
 	elseif typeof(color) == "String" then
@@ -3856,10 +3814,10 @@ local function dothedo(part,color,tt)
 	Data.Color = ColorSelection
 	local A_1 = "PaintPart"
 	local A_2 = Data
-	local event = game.Players.LocalPlayer.Character.PaintBucket.Remotes.ServerControls
+	local event = lplayer.Character.PaintBucket.Remotes.ServerControls
 	event:InvokeServer(A_1, A_2)
 	if tt == true then
-	game.Players.LocalPlayer.Character.PaintBucket:Destroy()
+	lplayer.Character.PaintBucket:Destroy()
 	end
 	end)()
 	end
@@ -3894,7 +3852,7 @@ local function dothedo(part,color,tt)
 	end
 	end)()
 	end
-	game.Players.LocalPlayer.Chatted:Connect(function(mess)
+	lplayer.Chatted:Connect(function(mess)
 	local messy = string.split(mess," ")
 	if messy[1] == "//rpaint" then
 	math.randomseed(tick())
@@ -4076,7 +4034,7 @@ local tneededn = tneeded.Name
 tneeded = player.Character:WaitForChild(tneededn)
 table.insert(enabledloops,tneededn)
 coroutine.wrap(function()
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+for i,v in pairs(lplayer.Character:GetChildren()) do
 if v.Name == tneededn and v:IsA("Tool") then
 wait(0)
 v:Activate()
@@ -4091,7 +4049,7 @@ coroutine.wrap(function()
 for i,v in pairs(tabb) do
 if player.Character ~= nil then
 if v.Parent == player.Backpack then
-v.Parent = game.Players.LocalPlayer.Character
+v.Parent = lplayer.Character
 wait(0)
 end
 coroutine.wrap(function()
